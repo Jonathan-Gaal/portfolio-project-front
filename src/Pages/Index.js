@@ -1,11 +1,11 @@
-// import SongsAll from "../Components/SongsAll";
+import Gallery from "../Components/Gallery";
 
 const Index = () => {
   return (
     <div className="Index">
       <h1 className="header">Gallery</h1>
 
-      {/* <SongsAll /> */}
+      <Gallery />
     </div>
   );
 };
