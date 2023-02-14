@@ -6,7 +6,7 @@ import Comment from "./Comment";
 
 const API = process.env.REACT_APP_API_URL;
 
-const Comments = () => {
+const Comments = ({ showComments }) => {
   const [comments, setComments] = useState([]);
   let { id } = useParams();
 
@@ -60,20 +60,21 @@ const Comments = () => {
     });
   }, [id]);
   return (
-    <section className="Comments">
-      <h2>Comments</h2>
-      <CommentForm handleSubmit={handleCreateComment}>
-        <h3>Add a New Comment</h3>
-      </CommentForm>
-      {comments.map((comment) => (
-        <Comment
-          key={comment.id}
-          oneComment={comment}
-          handleSubmit={handleEditComment}
-          handleDeleteComment={handleDeleteComment}
-        />
-      ))}
-    </section>
+    <>
+      {showComments ? (
+        <section className="Comments">
+          <CommentForm handleSubmit={handleCreateComment}></CommentForm>
+          {comments.map((comment) => (
+            <Comment
+              key={comment.id}
+              oneComment={comment}
+              handleSubmit={handleEditComment}
+              handleDeleteComment={handleDeleteComment}
+            />
+          ))}
+        </section>
+      ) : null}
+    </>
   );
 };
 
