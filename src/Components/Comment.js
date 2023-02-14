@@ -27,7 +27,7 @@ const Comment = ({ oneComment, handleDeleteComment, handleSubmit }) => {
         </div>
       )}
       <button onClick={() => handleDeleteComment(id)}>Delete Comment</button>
-      <button onClick={toggleView}>Edit This Comment</button>
+      <button onClick={toggleView}>Edit Comment</button>
     </div>
   );
 };

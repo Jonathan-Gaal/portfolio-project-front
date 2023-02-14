@@ -8,6 +8,22 @@ const ArtworkDetails = () => {
   let { id } = useParams();
   let navigate = useNavigate();
   const [artwork, setArtwork] = useState({});
+  const [showComments, setShowComments] = useState(false);
+  const {
+    title,
+    description,
+    category,
+    post_date,
+    image,
+    diameter,
+    width,
+    height,
+    depth,
+  } = artwork;
+
+  const displayComments = () => {
+    setShowComments(!showComments);
+  };
 
   useEffect(() => {
     axios
@@ -22,16 +38,22 @@ const ArtworkDetails = () => {
 
   return (
     <article>
-      <h4>{artwork.title}</h4>
-
-      <h4>{artwork.description}</h4>
+      <img src={image} alt="artwork"></img>
+      <h4>Title: {title}</h4>
+      <h4>Description: {description}</h4>
+      <h4>Category: {category}</h4>
+      <h3>Dimensions</h3>
+      <h4>
+        Width:{width} x Height:{height} x Depth:{depth} Diameter:{diameter}
+      </h4>
 
       <div className="showNavigation">
         <Link to={`/gallery`}>
-          <button>Back</button>
+          <button>Back to Gallery</button>
         </Link>
+        <button onClick={displayComments}>Please Comment!</button>
       </div>
-      <Comments />
+      <Comments showComments={showComments} />
     </article>
   );
 };
