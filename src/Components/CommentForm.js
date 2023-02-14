@@ -4,12 +4,30 @@ import { useParams } from "react-router-dom";
 function CommentForm(props) {
   let { id } = useParams();
   const { commentDetails } = props;
+  let [postDate, setPostDate] = useState("");
+
+  const date = new Date();
+  let day = date.getDate();
+  let month = date.getMonth() + 1;
+  let year = date.getFullYear();
+
+  if (month < 10) {
+    month = `0${month}`;
+  }
+
+  let currentDate = `${month}-${day}-${year}`;
+
+  //   setPostDate(currentDate);
+
+  console.log(postDate);
+
+  //   currentDate();
 
   const [comment, setComment] = useState({
     commenter: "",
     comment: "",
-    rating: 0,
-    song_id: id,
+    post_date: currentDate,
+    art_id: id,
   });
 
   const handleTextChange = (e) => {
@@ -31,8 +49,8 @@ function CommentForm(props) {
     setComment({
       commenter: "",
       comment: "",
-      rating: 0,
-      song_id: id,
+      post_date: "",
+      art_id: id,
     });
   };
   return (
@@ -54,17 +72,6 @@ function CommentForm(props) {
           type="text"
           required
           value={comment.comment}
-          onChange={handleTextChange}
-        />
-        <label htmlFor="rating">Rating:</label>
-        <input
-          id="rating"
-          type="number"
-          name="rating"
-          min="0"
-          max="5"
-          step="1"
-          value={comment.rating}
           onChange={handleTextChange}
         />
 

@@ -3,7 +3,7 @@ import CommentForm from "./CommentForm";
 
 //props = comment from map in Comments
 const Comment = ({ oneComment, handleDeleteComment, handleSubmit }) => {
-  const { commenter, comment, rating, id } = oneComment;
+  const { commenter, comment, post_date, id } = oneComment;
 
   const [viewCommentEditForm, toggleViewCommentEditForm] = useState(false);
 
@@ -21,11 +21,9 @@ const Comment = ({ oneComment, handleDeleteComment, handleSubmit }) => {
         />
       ) : (
         <div>
-          <h4>
-            <span>Rating: {rating}</span>
-          </h4>
           <h5>{commenter}</h5>
           <p>{comment}</p>
+          <p>Posted: {post_date}</p>
         </div>
       )}
       <button onClick={() => handleDeleteComment(id)}>Delete Comment</button>
