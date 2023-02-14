@@ -6,3 +6,37 @@ body {
     text-align: center;
     box-sizing: border-box;
 }
+
+.ShowPageButtons {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#submit{
+    border-radius: 25px;
+}
+
+#galleryBtn, #deleteCommentBtn{
+    margin-right: 2%;
+    margin-bottom: 3%;
+    
+}
+#commentBtn, #editCommentBtn{
+    margin-left: 2%;
+    margin-bottom: 3%;
+}
+
+input{
+    margin-bottom: 3%;
+    margin-right: 3%;
+   
+}
+
+label{
+    margin-left: 2%;
+        
+}
+button{
+    border-radius: 25px;
+    
+}

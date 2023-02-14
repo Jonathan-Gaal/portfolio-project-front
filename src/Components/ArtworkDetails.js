@@ -47,11 +47,13 @@ const ArtworkDetails = () => {
         Width:{width} x Height:{height} x Depth:{depth} Diameter:{diameter}
       </h4>
 
-      <div className="showNavigation">
+      <div className="ShowPageButtons">
         <Link to={`/gallery`}>
-          <button>Back to Gallery</button>
+          <button id="galleryBtn">Back to Gallery</button>
         </Link>
-        <button onClick={displayComments}>Please Comment!</button>
+        <button id="commentBtn" onClick={displayComments}>
+          Please Comment!
+        </button>
       </div>
       <Comments showComments={showComments} />
     </article>
