@@ -38,18 +38,18 @@ const ArtworkDetails = () => {
 
   return (
     <article>
-      <img src={image} alt="artwork"></img>
-      <h1>{title}</h1>
-      <h3>Category: {category}</h3>
+      <div className="Artwork">
+        <img src={image} alt="artwork"></img>
+        <h1>{title}</h1>
+        <h3>Category: {category}</h3>
 
-      <div className="description">
         <h3>Description: {description}</h3>
-      </div>
 
-      <h3>
-        Dimensions: Width:{width} x Height:{height} x Depth:{depth} Diameter:
-        {diameter}
-      </h3>
+        <h3>
+          Dimensions: Width:{width} x Height:{height} x Depth:{depth} Diameter:
+          {diameter}
+        </h3>
+      </div>
 
       <div className="ShowPageButtons">
         <Link to={`/gallery`}>
