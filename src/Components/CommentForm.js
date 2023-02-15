@@ -80,7 +80,6 @@ function CommentForm(props) {
         <input id="submit" type="submit" />
       </form>
       <h3>Comments</h3>
-      <hr></hr>
     </div>
   );
 }

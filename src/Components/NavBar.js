@@ -5,18 +5,15 @@ import "./NavBar.css";
 const NavBar = () => {
   return (
     <nav className="NavBar">
-      <Link to="/gallery">
+      <Link to="/">
         <div className="navBarHeader">
           <img id="navBarLogo" src={navBarLogo} alt="arabic teapot" />
-          <h1> Jon's GALLERIE</h1>
+          <h1> Welcome to Jon's GALLERIE</h1>
         </div>
       </Link>
 
-      <Link to="/">
-        <h2 id="homeBtn">Home</h2>
-      </Link>
-      <Link to="/">
-        <h2 id="aboutBtn">About</h2>
+      <Link to="/gallery">
+        <h2 id="homeBtn">Gallery!</h2>
       </Link>
     </nav>
   );

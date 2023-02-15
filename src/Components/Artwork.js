@@ -8,10 +8,12 @@ const Artwork = ({ artwork }) => {
   return (
     <div>
       <img src={image} alt="artwork" />
-      <h4>{title}</h4>
-      <h4>Category: {category}</h4>
+      <h1>{title}</h1>
+      <h3>Category: {category}</h3>
 
-      <Link to={`/gallery/${artwork.id}`}>See artwork details!</Link>
+      <Link to={`/gallery/${artwork.id}`}>
+        <h4>See artwork details!</h4>
+      </Link>
     </div>
   );
 };
