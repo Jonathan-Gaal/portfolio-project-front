@@ -15,6 +15,9 @@ const NavBar = () => {
       <Link to="/">
         <h2 id="homeBtn">Home</h2>
       </Link>
+      <Link to="/">
+        <h2 id="aboutBtn">About</h2>
+      </Link>
     </nav>
   );
 };
