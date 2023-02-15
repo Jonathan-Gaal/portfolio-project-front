@@ -1,11 +1,12 @@
 .NavBar {
     display: grid;
-    grid-template-columns: 2fr .5fr .5fr .5fr;
+    grid-template-columns: 3fr .5fr .5fr .5fr;
     width: 100vw;
     height: 15vh;
     margin-bottom: 4%;
+    background-image: url("../assets/navBarBG.jpg");
 
-    background-image: linear-gradient(to bottom right, rgb(177, 20, 62), rgba(25, 34, 200, 0.773));
+    /* background-image: linear-gradient(to bottom right, rgb(177, 20, 62), rgba(25, 34, 200, 0.773)); */
     color: white;
     justify-content: center;
     text-align: left;
@@ -14,13 +15,34 @@
 
 }
 
+#navBarLogo{
+    
+    height: 100px;
+    width: 80px;
+    border: ridge 3px goldenrod;
+    border-radius: 50%;
+   
+}
+
+.navBarHeader{
+    display: grid;
+        grid-template-columns: 1fr 6fr;
+        margin-left: 15%;
+}
+
 .NavBar h1 {
-    margin-left: 10%;
+   
+    width: 35%;
+    margin-left: 1%;
     margin-right: 10%;
     margin-top: auto;
     margin-bottom: auto;
     font-size: 2rem;
     text-decoration: underline;
+    background-image: linear-gradient(to bottom right, rgb(177, 20, 62), rgba(25, 200, 194, 0.794));
+    padding: 2%;
+    border-radius: 25px;
+    border: ridge 3px goldenrod;
 }
 
 .NavBar a {
@@ -30,6 +52,12 @@
     margin-bottom: auto;
     font-size: 1.2rem;
 
+}
+
+#homeBtn {
+    font-size: 2rem;
+    text-decoration: underline;
+ 
 }
 
 a:hover {
