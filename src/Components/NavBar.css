@@ -4,13 +4,13 @@
     width: 100vw;
     height: 20vh;
     min-height: 120px;
-    margin-bottom: 4%;
+    margin-bottom: 5%;
     background-image: url("../assets/navBarBG.jpg");
     background-repeat: initial;
     color: white;
     justify-content: center;
     text-align: left;
-    box-shadow: 7px 7px 7px 7px GREY;
+    box-shadow: 20px 20px 20px 7px GREY;
 
 
 }
@@ -30,9 +30,9 @@
         margin-left: 15%;
 }
 
-.NavBar h1 {
+.NavBar h1, .NavBar h2 {
    
-    width: 35%;
+    width: 50%;
     margin-left: 1%;
     margin-right: 10%;
     margin-top: auto;
@@ -43,6 +43,7 @@
     padding: 2%;
     border-radius: 25px;
     border: ridge 3px goldenrod;
+    text-align: center;
 }
 
 .NavBar a {
@@ -55,7 +56,9 @@
 }
 
 #homeBtn {
+    width: 80%;
     margin-right: 30px;
+    
 }
 
 #homeBtn, #aboutBtn {
@@ -72,10 +75,12 @@ a:hover {
 @media screen and (max-width: 768px) {
     .NavBar h1 {
         font-size: 1rem;
+        padding: 5%;
     }
 
     #homeBtn, #aboutBtn{
         font-size: 1.5rem;
+        padding: 5%;
     }
 
     .NavBar a {
