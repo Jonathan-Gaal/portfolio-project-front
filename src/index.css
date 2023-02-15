@@ -9,10 +9,11 @@ background-image: url("./assets/tile_background.jpg");
     
 }
 
-.description {
+.Artwork {
     width: 75%;
     margin-left: auto;
     margin-right: auto;
+    margin-bottom: 2%;
     background-image: linear-gradient(to bottom right, rgb(196, 54, 92), rgba(25, 200, 194, 0.794));
     border: ridge goldenrod 4px;
     border-radius: 25px;
