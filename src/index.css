@@ -5,6 +5,7 @@ body {
     font-family: monospace;
     text-align: center;
     box-sizing: border-box;
+background-color: rgb(233, 175, 142);
     
 }
 
@@ -12,29 +13,52 @@ body {
     width: 75%;
     margin-left: auto;
     margin-right: auto;
-    border: ridge rgb(143, 40, 187) 4px;
+    background-image: linear-gradient(to bottom right, rgb(196, 54, 92), rgba(25, 200, 194, 0.794));
+    border: ridge goldenrod 4px;
     border-radius: 25px;
     padding: 1%;
+    color: white;
     
 }
 
 .ShowPageButtons {
     margin-left: auto;
     margin-right: auto;
+    
+    
 }
 
 #submit{
     border-radius: 25px;
+    font-family: roboto;
+    color: white;
+    background-image: linear-gradient(to bottom right, rgb(196, 54, 92), rgba(25, 200, 194, 0.794));
+    border: ridge 3px goldenrod;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: x-large;
+    padding: 8px;
+    
 }
 
 #galleryBtn, #deleteCommentBtn{
-    margin-right: 2%;
+    margin-right: .5%;
     margin-bottom: 3%;
+    border: ridge 3px goldenrod;
+background-image: linear-gradient(to bottom right, rgb(196, 54, 92), rgba(25, 200, 194, 0.794));
+    color: white;
+    font-family: roboto;
+    font-size: medium;
     
 }
 #commentBtn, #editCommentBtn{
-    margin-left: 2%;
+    margin-left: .5%;
     margin-bottom: 3%;
+    border: ridge 3px goldenrod;
+    background-image: linear-gradient(to bottom right, rgb(196, 54, 92), rgba(25, 200, 194, 0.794));
+    color: white;
+    font-family: roboto;
+    font-size: large;
 }
 
 input{

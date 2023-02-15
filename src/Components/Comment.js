@@ -21,7 +21,7 @@ const Comment = ({ oneComment, handleDeleteComment, handleSubmit }) => {
         />
       ) : (
         <div>
-          <h5>{commenter}</h5>
+          <h3>{commenter}</h3>
           <p>{comment}</p>
           <p>Posted: {post_date}</p>
         </div>

@@ -5,6 +5,7 @@
     height: 15vh;
     margin-bottom: 4%;
     background-image: url("../assets/navBarBG.jpg");
+    background-repeat: initial;
 
     /* background-image: linear-gradient(to bottom right, rgb(177, 20, 62), rgba(25, 34, 200, 0.773)); */
     color: white;
