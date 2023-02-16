@@ -9,7 +9,7 @@ background-image: url("./assets/tile_background.jpg");
     
 }
 
-.Artwork, .Gallery {
+.Artwork, .Gallery, .About {
     width: 75%;
     margin-left: auto;
     margin-right: auto;
@@ -21,6 +21,8 @@ background-image: url("./assets/tile_background.jpg");
     color: white;
     box-shadow: 15px 15px 15px 7px GREY;
 }
+
+
 
 .Comments, .header {
     width: 50%;
@@ -66,7 +68,7 @@ background-image: url("./assets/tile_background.jpg");
 background-image: linear-gradient(to bottom right, rgb(196, 54, 92), rgba(25, 200, 194, 0.794));
     color: white;
     font-family: roboto;
-    font-size: medium;
+    font-size: large;
     box-shadow: 7px 7px 7px 7px GREY;
     
 }
@@ -79,6 +81,33 @@ background-image: linear-gradient(to bottom right, rgb(196, 54, 92), rgba(25, 20
     font-family: roboto;
     font-size: large;
     box-shadow: 7px 7px 7px 7px GREY;
+}
+
+#seeArtworkDetails{
+    width: 20%;
+    margin-left: auto;
+    margin-right: auto;
+    border: ridge 3px goldenrod;
+        background-image: linear-gradient(to bottom right, rgb(196, 54, 92), rgba(25, 200, 194, 0.794));
+        color: white;
+        font-family: roboto;
+        font-size: large;
+        box-shadow: 7px 7px 7px 7px GREY;
+        border-radius: 25px;
+        text-decoration: none;
+}
+
+#artworkImage{
+    width: 70%;
+    border-radius: 25px;
+    border: ridge 3px goldenrod;
+    
+}
+
+#galleryImage{
+    width: 30%;
+    border: ridge 3px goldenrod;
+    border-radius: 25px;
 }
 
 input{
