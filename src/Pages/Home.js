@@ -1,7 +1,10 @@
+import About from "../Components/About";
+
 const Home = () => {
   return (
     <div className="Home">
-      <h1>Home</h1>
+      <h1>Welcome To My Abode!</h1>
+      <About />
     </div>
   );
 };
