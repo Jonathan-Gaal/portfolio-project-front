@@ -8,7 +8,6 @@ const Gallery = () => {
   const [gallery, setGallery] = useState([]);
 
   useEffect(() => {
-    console.log(API);
     axios
       .get(`${API}/gallery`)
       .then((res) => setGallery(res.data))

@@ -21,6 +21,8 @@ const ArtworkDetails = () => {
     depth,
   } = artwork;
 
+  console.log(image);
+
   const displayComments = () => {
     setShowComments(!showComments);
   };
