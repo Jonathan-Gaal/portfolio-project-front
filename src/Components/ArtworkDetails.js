@@ -29,7 +29,9 @@ const ArtworkDetails = () => {
 
   useEffect(() => {
     axios
-      .get(`${API}/gallery/${id}`)
+      .get(`${API}/gallery/${id}`, {
+        headers: { "Access-Control-Allow-Origin": "*" },
+      })
       .then((res) => {
         setArtwork(res.data);
       })
