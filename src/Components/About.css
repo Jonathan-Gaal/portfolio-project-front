@@ -1,5 +1,27 @@
 #homeImg{
     width: 70%;
-    border: ridge 5px goldenrod;
+    border: ridge 4px goldenrod;
     border-radius: 30px;
 }
+
+.devsPhoto{
+    width: 300px;
+        height: 300px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 5%;
+        border: ridge 3px goldenrod;
+        border-radius: 50%;
+    }
+
+
+.portrait {
+    width: 250px;
+    height: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 5%;
+border: ridge 3px goldenrod;
+border-radius: 25px;}
+
+    
