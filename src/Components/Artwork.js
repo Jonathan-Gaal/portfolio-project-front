@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-// import "./Artwork.css";
 
 // ARTWORK DISPLAYED IN gallery.map in GALLERY.js
 const Artwork = ({ artwork }) => {
