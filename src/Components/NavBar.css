@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Lumanosimo&display=swap');
+
+
 .NavBar {
     display: grid;
     grid-template-columns: 3fr .5fr .5fr .5fr;
@@ -11,8 +14,6 @@
     justify-content: center;
     text-align: left;
     box-shadow: 20px 20px 20px 7px GREY;
-
-
 }
 
 #navBarLogo{
@@ -38,7 +39,7 @@
     margin-top: auto;
     margin-bottom: auto;
     font-size: 2rem;
-    text-decoration: underline;
+    font-family: 'Lumanosimo', cursive;
     background-image: linear-gradient(to bottom right, rgb(177, 20, 62), rgba(25, 200, 194, 0.794));
     padding: 2%;
     border-radius: 25px;
@@ -63,9 +64,6 @@
 
 #homeBtn, #aboutBtn {
     font-size: 2rem;
-    text-decoration: underline;
- 
- 
 }
 
 a:hover {
