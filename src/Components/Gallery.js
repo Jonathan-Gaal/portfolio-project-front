@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
-import Artwork from "./Artwork";
+import ArtworkCard from "./ArtworkCard";
+import "./Gallery.css";
 const API = process.env.REACT_APP_API_URL;
 
 const Gallery = () => {
@@ -18,7 +18,7 @@ const Gallery = () => {
     <div className="Gallery">
       <section>
         {gallery.map((artwork) => {
-          return <Artwork key={artwork.id} artwork={artwork} />;
+          return <ArtworkCard key={artwork.id} artwork={artwork} />;
         })}
       </section>
     </div>
