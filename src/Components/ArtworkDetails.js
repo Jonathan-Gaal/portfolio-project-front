@@ -60,7 +60,7 @@ const ArtworkDetails = () => {
           <button id="galleryBtn">Back to Gallery</button>
         </Link>
         <button id="commentBtn" onClick={displayComments}>
-          Please Comment!
+          Please Comment
         </button>
       </div>
       <Comments showComments={showComments} />

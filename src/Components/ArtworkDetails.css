@@ -2,18 +2,3 @@
 border: 1px solid goldenrod;
 }
 
-#seeArtworkDetails {
-    width: 30%;
-    height: 5%;
-    margin-left: auto;
-    margin-right: auto;
-    border: ridge 3px goldenrod;
-    padding: .1%;
-    background-image: linear-gradient(to bottom right, rgb(196, 54, 92), rgba(25, 200, 194, 0.794));
-    color: white;
-    font-family: roboto;
-    font-size: large;
-    box-shadow: 3px 3px 3px GREY;
-    border-radius: 25px;
-    text-decoration: none;
-}

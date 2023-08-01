@@ -6,15 +6,15 @@ const ArtworkCard = ({ artwork }) => {
   const { title, category, image } = artwork;
 
   return (
-    <div className="ArtworkCard">
-      <img className="galleryImage" src={image} alt="artwork" />
-      <div>{title}</div>
-      <div>Category: {category}</div>
-
-      <Link to={`/gallery/${artwork.id}`}>
-        <div className="seeArtworkDetails">View details!</div>
-      </Link>
-    </div>
+    <Link to={`/gallery/${artwork.id}`}>
+      <div className="ArtworkCard">
+        <img className="galleryImage" src={image} alt="artwork" />
+        <div className="artWorkCard__details">
+          <div>{title}</div>
+          <div>Category: {category}</div>
+        </div>
+      </div>
+    </Link>
   );
 };
 
