@@ -4,6 +4,9 @@ padding-top: 5%;
 padding-bottom: 5%;
 /* border: ridge 3px goldenrod; */
 border-radius: 25px;
+position: relative;
+text-align: center;
+color: white;
 
 }
 
@@ -11,6 +14,23 @@ border-radius: 25px;
     width: 80%;
     border: ridge rgb(172, 146, 85) 4px;
     border-radius: 25px;
+
+}
+
+.galleryImage:hover {
+opacity: .3;
+}
+
+.galleryImage:hover + .artWorkCard__details {
+    display: block;
+}
+
+.artWorkCard__details{
+    display: none;
+  position: absolute;
+  width: 80%;
+  bottom: 15%;
+  right: 10%;  
 }
 
 .seeArtworkDetails {
