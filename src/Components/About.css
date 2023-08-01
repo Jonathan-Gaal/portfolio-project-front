@@ -1,7 +1,8 @@
 #homeImg{
-    width: 70%;
-    border: ridge 4px goldenrod;
-    border-radius: 30px;
+    width: 95%;
+    border: ridge rgb(172, 146, 85) 3px;
+    border-radius: 20px;
+    margin-top: 1.8%;
 }
 
 .devsPhoto{
@@ -10,7 +11,7 @@
         margin-left: auto;
         margin-right: 3%;
         margin-bottom: 5%;
-        border: ridge 3px goldenrod;
+        border: ridge rgb(172, 146, 85) 4px;
         border-radius: 50%;
     }
 
@@ -21,7 +22,7 @@
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 5%;
-border: ridge 3px goldenrod;
+border: ridge rgb(172, 146, 85) 4px;
 border-radius: 25px;}
 
     

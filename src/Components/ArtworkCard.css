@@ -9,7 +9,7 @@ border-radius: 25px;
 
 .galleryImage {
     width: 80%;
-    border: ridge 3px goldenrod;
+    border: ridge rgb(172, 146, 85) 4px;
     border-radius: 25px;
 }
 
@@ -18,9 +18,9 @@ border-radius: 25px;
     height: 20px;
     margin-left: auto;
     margin-right: auto;
-    border: ridge 3px goldenrod;
-    padding: 1%;
-    background-image: linear-gradient(to bottom right, rgb(196, 54, 92), rgba(25, 200, 194, 0.794));
+    border: ridge rgb(172, 146, 85) 4px;
+    padding: 2%;
+    background-image: linear-gradient(to bottom right, rgb(192, 136, 155), rgba(108, 170, 212, 0.794));
     color: white;
     font-family: roboto;
     font-size: large;
