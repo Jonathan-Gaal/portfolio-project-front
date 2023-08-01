@@ -14,56 +14,57 @@
     justify-content: center;
     text-align: left;
     box-shadow: 20px 20px 20px 7px GREY;
+    border-bottom: ridge rgb(172, 146, 85) 2.5px;
 }
 
 #navBarLogo{
-    
-    height: 100px;
-    width: 80px;
-    border: ridge 3px goldenrod;
-    border-radius: 50%;
-   
+height: 100px;
+width: 80px;
+border: ridge rgb(172, 146, 85) 4px;
+border-radius: 50%;
 }
 
 .navBarHeader{
-    display: grid;
-        grid-template-columns: 1fr 6fr;
-        margin-left: 15%;
+display: grid;
+grid-template-columns: 1fr 6fr;
+margin-left: 15%;
 }
 
 .NavBar h1, .NavBar h2 {
-   
-    width: 50%;
-    margin-left: 1%;
-    margin-right: 10%;
-    margin-top: auto;
-    margin-bottom: auto;
-    font-size: 2rem;
-    font-family: 'Lumanosimo', cursive;
-    background-image: linear-gradient(to bottom right, rgb(177, 20, 62), rgba(25, 200, 194, 0.794));
-    padding: 2%;
-    border-radius: 25px;
-    border: ridge 3px goldenrod;
-    text-align: center;
+width: 50%;
+margin-left: 1%;
+margin-right: 10%;
+margin-top: auto;
+margin-bottom: auto;
+font-size: 2rem;
+font-family: 'Lumanosimo', cursive;
+background-image: linear-gradient(to bottom right, rgb(214, 123, 147), rgba(25, 130, 200, 0.794));
+padding: 2%;
+border-radius: 25px;
+border: ridge rgb(172, 146, 85) 4px;
+text-align: center;
 }
 
 .NavBar a {
-    color: white;
-    text-decoration: none;
-    margin-top: auto;
-    margin-bottom: auto;
-    font-size: 1.2rem;
-
+color: white;
+text-decoration: none;
+margin-top: auto;
+margin-bottom: auto;
+font-size: 1.2rem;
 }
 
-#homeBtn {
-    width: 80%;
-    margin-right: 30px;
-    
+#seegalleryBtn {
+width: 90%;
+margin-right: 30px;
+padding: 2%;
+background-image: linear-gradient(to bottom right, rgb(214, 123, 147), rgba(25, 130, 200, 0.794));
+border: ridge rgb(172, 146, 85) 4px;
+text-align: center;
+border-radius: 15px;
 }
 
 #homeBtn, #aboutBtn {
-    font-size: 2rem;
+font-size: 2rem;
 }
 
 a:hover {
@@ -77,8 +78,8 @@ a:hover {
     }
 
     #homeBtn, #aboutBtn{
-        font-size: 1.5rem;
-        padding: 5%;
+    font-size: 1.5rem;
+    padding: 5%;
     }
 
     .NavBar a {

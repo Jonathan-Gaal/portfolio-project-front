@@ -13,7 +13,7 @@ const NavBar = () => {
       </Link>
 
       <Link to="/gallery">
-        <h2 id="homeBtn">Gallerie!</h2>
+        <div id="seegalleryBtn">Gallerie!</div>
       </Link>
     </nav>
   );
