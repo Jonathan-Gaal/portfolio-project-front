@@ -16,11 +16,9 @@ const Gallery = () => {
 
   return (
     <div className="Gallery">
-      <section>
-        {gallery.map((artwork) => {
-          return <ArtworkCard key={artwork.id} artwork={artwork} />;
-        })}
-      </section>
+      {gallery.map((artwork) => {
+        return <ArtworkCard key={artwork.id} artwork={artwork} />;
+      })}
     </div>
   );
 };
