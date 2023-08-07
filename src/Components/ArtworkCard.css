@@ -20,6 +20,8 @@ color: white;
 
 .galleryImage:hover {
 opacity: .3;
+transform: scale(1.2);
+rotate: 4deg;
 }
 
 .galleryImage:hover + .artWorkCard__details {
