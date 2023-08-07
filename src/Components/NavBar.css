@@ -13,14 +13,15 @@
     color: white;
     justify-content: center;
     text-align: left;
-    box-shadow: 20px 20px 20px 7px GREY;
-    border-bottom: ridge rgb(172, 146, 85) 2.5px;
+    /* box-shadow: 20px 20px 20px 7px GREY; */
+    border-bottom: ridge rgb(95, 86, 67) 2.5px;
+    font-family: 'Lumanosimo', cursive;
 }
 
 #navBarLogo{
 height: 100px;
 width: 80px;
-border: ridge rgb(172, 146, 85) 4px;
+border: ridge rgb(132, 112, 69) 2px;
 border-radius: 50%;
 }
 
@@ -30,18 +31,18 @@ grid-template-columns: 1fr 6fr;
 margin-left: 15%;
 }
 
-.NavBar h1, .NavBar h2 {
+.navBarHeadeText, .NavBar h2 {
 width: 50%;
 margin-left: 1%;
 margin-right: 10%;
 margin-top: auto;
 margin-bottom: auto;
 font-size: 2rem;
-font-family: 'Lumanosimo', cursive;
-background-image: linear-gradient(to bottom right, rgb(214, 123, 147), rgba(25, 130, 200, 0.794));
+
+background-color: rgb(102, 24, 24);
 padding: 2%;
 border-radius: 25px;
-border: ridge rgb(172, 146, 85) 4px;
+border: ridge rgb(116, 102, 69) 2px;
 text-align: center;
 }
 
@@ -53,12 +54,12 @@ margin-bottom: auto;
 font-size: 1.2rem;
 }
 
-#seegalleryBtn {
+.seegalleryBtn {
 width: 90%;
 margin-right: 30px;
 padding: 2%;
-background-image: linear-gradient(to bottom right, rgb(214, 123, 147), rgba(25, 130, 200, 0.794));
-border: ridge rgb(172, 146, 85) 4px;
+background-color: rgb(102, 24, 24);
+border: ridge rgb(129, 109, 65) 2.5px;
 text-align: center;
 border-radius: 15px;
 }
