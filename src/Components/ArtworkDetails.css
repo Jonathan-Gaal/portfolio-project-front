@@ -2,3 +2,9 @@
 border: 1px solid goldenrod;
 }
 
+#artworkImage {
+    width: 75%;
+    border-radius: 25px;
+    border: ridge 3px goldenrod;
+
+}

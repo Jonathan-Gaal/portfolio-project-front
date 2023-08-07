@@ -8,12 +8,12 @@ const NavBar = () => {
       <Link to="/">
         <div className="navBarHeader">
           <img id="navBarLogo" src={navBarLogo} alt="arabic teapot" />
-          <h1> Jon's Palace of Art</h1>
+          <div className="navBarHeadeText"> Jon's Palace of Art</div>
         </div>
       </Link>
 
       <Link to="/gallery">
-        <div id="seegalleryBtn">Gallerie!</div>
+        <div className="seegalleryBtn">Gallerie</div>
       </Link>
     </nav>
   );

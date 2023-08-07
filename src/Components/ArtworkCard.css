@@ -1,19 +1,20 @@
 .ArtworkCard {
-width: 100%;
-padding-top: 5%;
-padding-bottom: 5%;
+width: 90%;
+/* padding-top: 5%; */
+/* padding-bottom: 5%; */
 /* border: ridge 3px goldenrod; */
-border-radius: 25px;
 position: relative;
 text-align: center;
 color: white;
 
+
 }
 
 .galleryImage {
-    width: 80%;
-    border: ridge rgb(172, 146, 85) 4px;
-    border-radius: 25px;
+    width: 90%;
+    border: ridge rgb(95, 86, 67) 2.5px;
+    border-radius: 10px;
+   
 
 }
 

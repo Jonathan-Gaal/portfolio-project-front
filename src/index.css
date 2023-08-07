@@ -1,4 +1,3 @@
-
 body {
     margin: 0;
     -webkit-font-smoothing: antialiased;
@@ -6,7 +5,8 @@ body {
     font-family: monospace;
     text-align: center;
     box-sizing: border-box;
-    background-image: url("./assets/dirty-tiles.jpg");
+    /* background-image: url("./assets/dirty-tiles.jpg"); */
+    background-color: rgb(35, 33, 33);
 }
 
 .Artwork, .Gallery, .About {
@@ -14,12 +14,12 @@ body {
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 3%;
-    background-image: linear-gradient(to bottom right, rgb(130, 103, 112), rgba(108, 170, 212, 0.794));
-    border: ridge rgb(129, 110, 64) 4px;
+    /* background-color: black; */
+    /* border: ridge rgb(129, 110, 64) 4px; */
     border-radius: 25px;
     padding: 1%;
     color: white;
-    box-shadow: 15px 15px 15px 7px GREY;
+    /* box-shadow: 15px 15px 15px 7px GREY; */
 }
 
 
@@ -29,14 +29,14 @@ body {
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 3%;
-    background-image: linear-gradient(to bottom right, rgb(182, 123, 143), rgba(25, 130, 200, 0.794));
-    border: ridge rgb(172, 146, 85) 4px;
+    /* background-image: linear-gradient(to bottom right, rgb(182, 123, 143), rgba(25, 130, 200, 0.794)); */
+    /* border: ridge rgb(172, 146, 85) 4px; */
     border-radius: 25px;
     padding: 1%;
     font-family: 'Lumanosimo', cursive;
     font-size: 1.3em;
     color: white;
-    box-shadow: 15px 15px 15px 7px GREY;
+    /* box-shadow: 15px 15px 15px 7px GREY; */
 }
 
 
@@ -87,12 +87,7 @@ background-image: linear-gradient(to bottom right, rgb(196, 54, 92), rgba(25, 20
 }
 
 
-#artworkImage{
-    width: 70%;
-    border-radius: 25px;
-    border: ridge 3px goldenrod;
-    
-}
+
 
 
 
