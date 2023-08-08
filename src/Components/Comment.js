@@ -22,8 +22,8 @@ const Comment = ({ oneComment, handleDeleteComment, handleSubmit }) => {
         />
       ) : (
         <div className="Comment__commentContainer">
-          <div className="Comment__commenter">{commenter} : </div>
-          <div className="Comment__datePosted">Posted: {post_date}</div>
+          <div className="Comment__commenter">Posted by: {commenter} -</div>
+          <div className="Comment__datePosted"> On: {post_date}</div>
           <div className="Comment__comment">{comment}</div>
         </div>
       )}
