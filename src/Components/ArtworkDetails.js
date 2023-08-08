@@ -43,21 +43,23 @@ const ArtworkDetails = () => {
 
   return (
     <div className="Artwork">
-      <img id="artworkImage" src={image} alt="artwork"></img>
-      <h1>{title}</h1>
-      <h3>Category: {category}</h3>{" "}
-      <h3>
-        Dimensions: Width:{width} x Height:{height} x Depth:{depth} Diameter:
-        {diameter}
-      </h3>
-      <h3>Date Posted: {post_date}</h3>
-      <h3>Description: {description}</h3>
-      <div className="ShowPageButtons">
+      <img className="artworkImage" src={image} alt="artwork"></img>
+      <div className="ArtworkDetails__heading">{title}</div>
+      <div className="ArtworkDetails__details">
+        <div className="ArtworkDetails__detail">Category: {category}</div>{" "}
+        <div>
+          Dimensions: Width:{width} x Height:{height} x Depth:{depth} Diameter:
+          {diameter}
+        </div>
+        <div className="ArtworkDetails__detail">Date Posted: {post_date}</div>
+        <div className="ArtworkDetails__detail">Description: {description}</div>
+      </div>
+      <div className="ArtworkDetails__showPageButtons">
         <Link to={`/gallery`}>
-          <button id="galleryBtn">Gallery</button>
+          <button className="galleryBtn">Gallery</button>
         </Link>
-        <button id="commentBtn" onClick={displayComments}>
-          Comment
+        <button className="commentBtn" onClick={displayComments}>
+          Comments
         </button>
       </div>
       <Comments showComments={showComments} />

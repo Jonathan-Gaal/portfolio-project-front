@@ -2,9 +2,34 @@
 border: 1px solid goldenrod;
 } */
 
-#artworkImage {
+.artworkImage {
     width: 75%;
     border-radius: 25px;
     border: ridge rgb(172, 146, 85) 2px;
 
+}
+
+.ArtworkDetails__showPageButtons {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.ArtworkDetails__heading {
+    margin-top: 2%;
+    font-family: Eagle Lake;
+    font-weight: bold;
+    font-size: 1.7em;
+    text-decoration: underline;
+}
+
+.ArtworkDetails__details {
+    display: grid;
+    grid-template-rows:max-content;
+    row-gap: 1em;
+    width: 80%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    margin-left: auto;
+    margin-right: auto;
+    
 }
