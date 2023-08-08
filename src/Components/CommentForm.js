@@ -64,7 +64,7 @@ function CommentForm(props) {
           value={comment.commenter}
           type="text"
           onChange={handleTextChange}
-          placeholder="Your name"
+          placeholder="Your name..."
           required
         />
         <label htmlFor="comment">Comment:</label>
@@ -74,6 +74,7 @@ function CommentForm(props) {
           required
           value={comment.comment}
           onChange={handleTextChange}
+          placeholder="Your comment..."
         />
 
         <br />
