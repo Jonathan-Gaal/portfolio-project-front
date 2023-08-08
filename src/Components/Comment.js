@@ -1,5 +1,6 @@
 import { useState } from "react";
 import CommentForm from "./CommentForm";
+import "./Comment.css";
 
 //props = comment from map in Comments
 const Comment = ({ oneComment, handleDeleteComment, handleSubmit }) => {
@@ -26,12 +27,16 @@ const Comment = ({ oneComment, handleDeleteComment, handleSubmit }) => {
           <p>Posted: {post_date}</p>
         </div>
       )}
-      <button id="deleteCommentBtn" onClick={() => handleDeleteComment(id)}>
-        Delete Comment
-      </button>
-      <button id="editCommentBtn" onClick={toggleView}>
-        Edit Comment
-      </button>
+      <div className="Comment__deleteAndCommentButtonsContainer">
+        <button
+          className="deleteCommentBtn"
+          onClick={() => handleDeleteComment(id)}>
+          Delete Comment
+        </button>
+        <button className="editCommentBtn" onClick={toggleView}>
+          Edit Comment
+        </button>
+      </div>
     </div>
   );
 };

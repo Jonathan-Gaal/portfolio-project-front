@@ -2,10 +2,9 @@ body {
     margin: 0;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    font-family: monospace;
+    font-family: roboto;
     text-align: center;
     box-sizing: border-box;
-    /* background-image: url("./assets/dirty-tiles.jpg"); */
     background-color: rgb(35, 33, 33);
 }
 
@@ -14,12 +13,9 @@ body {
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 3%;
-    /* background-color: black; */
-    /* border: ridge rgb(129, 110, 64) 4px; */
     border-radius: 25px;
     padding: 1%;
     color: white;
-    /* box-shadow: 15px 15px 15px 7px GREY; */
 }
 
 
@@ -29,64 +25,52 @@ body {
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 3%;
-    /* background-image: linear-gradient(to bottom right, rgb(182, 123, 143), rgba(25, 130, 200, 0.794)); */
-    /* border: ridge rgb(172, 146, 85) 4px; */
     border-radius: 25px;
     padding: 1%;
-    font-family: 'Lumanosimo', cursive;
+    font-family: 'Eagle Lake', cursive;
     font-size: 1.3em;
     color: white;
-    /* box-shadow: 15px 15px 15px 7px GREY; */
 }
 
-
-
-.ShowPageButtons {
-    margin-left: auto;
-    margin-right: auto;
-    
-    
-    
-}
-
-#submit{
+.submitBtn{
     border-radius: 25px;
-    font-family: roboto;
+    font-family: 'Eagle Lake';
     color: white;
-    background-image: linear-gradient(to bottom right, rgb(196, 54, 92), rgba(25, 200, 194, 0.794));
-    border: ridge 3px goldenrod;
+    background-color: rgb(102, 24, 24);
+    border: ridge rgb(132, 112, 69) 2px;
     margin-left: auto;
     margin-right: auto;
     font-size: x-large;
     padding: 8px;
-    box-shadow: 5px 5px 5px 5px GREY;
-    
 }
 
-#galleryBtn, #deleteCommentBtn{
+.galleryBtn, .deleteCommentBtn {
     margin-right: .5%;
     margin-bottom: 3%;
-    border: ridge 3px goldenrod;
-background-image: linear-gradient(to bottom right, rgb(196, 54, 92), rgba(25, 200, 194, 0.794));
+    border: ridge rgb(132, 112, 69) 2px;
+    background-color: rgb(102, 24, 24);
     color: white;
-    font-family: 'Lumanosimo', cursive;
-    font-size: large;
-    box-shadow: 7px 7px 7px 7px GREY;
-    
+    font-family: 'Eagle Lake';
+    font-weight: bold;
+    font-size: large; 
 }
-#commentBtn, #editCommentBtn{
+.commentBtn, .editCommentBtn{
     margin-left: .5%;
     margin-bottom: 3%;
-    border: ridge 3px goldenrod;
-    background-image: linear-gradient(to bottom right, rgb(196, 54, 92), rgba(25, 200, 194, 0.794));
+    border: ridge rgb(132, 112, 69) 2px;
+    background-color: rgb(102, 24, 24);
     color: white;
-    font-family: 'Lumanosimo', cursive;
+    font-family: 'Eagle Lake';
     font-weight: bold;
     font-size: large;
-    box-shadow: 7px 7px 7px 7px GREY;
 }
 
-
+.commentBtn:hover, .editCommentBtn:hover, .galleryBtn:hover,
+.deleteCommentBtn:hover {
+    transform: scale(1);
+    rotate: 4deg;
+    cursor: pointer;
+}
 
 
 
@@ -94,7 +78,6 @@ background-image: linear-gradient(to bottom right, rgb(196, 54, 92), rgba(25, 20
 input{
     margin-bottom: 3%;
     margin-right: 3%;
-   
 }
 
 label{
@@ -102,7 +85,7 @@ label{
         
 }
 button{
-    border-radius: 25px;
+    border-radius: 50px;
     
 }
 

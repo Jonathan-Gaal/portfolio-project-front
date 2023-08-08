@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import "./CommentForm.css";
 
 function CommentForm(props) {
   let { id } = useParams();
@@ -77,7 +78,7 @@ function CommentForm(props) {
 
         <br />
 
-        <input id="submit" type="submit" />
+        <input className="submitBtn" type="submit" />
       </form>
       <h3>Comments</h3>
     </div>
