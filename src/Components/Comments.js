@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import CommentForm from "./CommentForm";
 import Comment from "./Comment";
+import "./Comments.css";
 
 const API = process.env.REACT_APP_API_URL;
 

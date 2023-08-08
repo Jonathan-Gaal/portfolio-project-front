@@ -21,20 +21,20 @@ const Comment = ({ oneComment, handleDeleteComment, handleSubmit }) => {
           handleSubmit={handleSubmit}
         />
       ) : (
-        <div>
-          <h3>{commenter}</h3>
-          <p>{comment}</p>
-          <p>Posted: {post_date}</p>
+        <div className="Comment__commentContainer">
+          <div className="Comment__commenter">{commenter} : </div>
+          <div className="Comment__datePosted">Posted: {post_date}</div>
+          <div className="Comment__comment">{comment}</div>
         </div>
       )}
       <div className="Comment__deleteAndCommentButtonsContainer">
         <button
           className="deleteCommentBtn"
           onClick={() => handleDeleteComment(id)}>
-          Delete Comment
+          Delete
         </button>
         <button className="editCommentBtn" onClick={toggleView}>
-          Edit Comment
+          Edit
         </button>
       </div>
     </div>
