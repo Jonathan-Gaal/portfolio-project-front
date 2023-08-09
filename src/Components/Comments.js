@@ -74,7 +74,9 @@ const Comments = ({ showComments }) => {
             />
           ))}
         </section>
-      ) : null}
+      ) : (
+        <h3>Be the first to comment!</h3>
+      )}
     </>
   );
 };

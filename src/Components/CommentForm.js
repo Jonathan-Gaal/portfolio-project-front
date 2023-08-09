@@ -81,7 +81,6 @@ function CommentForm(props) {
 
         <input className="submitBtn" type="submit" />
       </form>
-      <h3>Comments</h3>
     </div>
   );
 }
