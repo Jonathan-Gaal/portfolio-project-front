@@ -7,68 +7,48 @@ const ArtSearchBar = ({
   filteredGalleryData,
   setFilteredGalleryData,
 }) => {
-  const [searchArtworkTitle, setSearchArtworkTitle] = useState("");
-  setFilteredGalleryData(gallery);
+  const [
+    searchArtworkTitleSearchBarInput,
+    setSearchArtworkTitleSearchBarInput,
+  ] = useState("");
+  setFilteredGalleryData([gallery]);
 
   function filterArtworkTitlesByArtworkSearchBarInput(
-    artworkTitle,
+    artworkTitleStringFromArtworkSearchBarInput,
     filteredGalleryData
   ) {
     return filteredGalleryData.filter((artwork) => {
       const { title } = artwork;
-      const lowerCasedArtworkTitle = `${title}`.toLocaleLowerCase();
-      lowerCasedArtworkTitle.match(artworkTitle.toLocaleLowerCase());
+      const lowercasedArtworkTitle = `${title}`.toLocaleLowerCase();
+      return lowercasedArtworkTitle.match(
+        searchArtworkTitleSearchBarInput.toLowerCase()
+      );
     });
   }
+
+  const handleSearchbarTextChange = (e) => {
+    const artworkTitleFromSearchBar = e.target.value;
+    const artworksThatMatchArtworkSearchInputString =
+      artworkTitleFromSearchBar.length
+        ? filterArtworkTitlesByArtworkSearchBarInput(
+            artworkTitleFromSearchBar,
+            gallery
+          )
+        : gallery;
+    setFilteredGalleryData(artworksThatMatchArtworkSearchInputString);
+    setSearchArtworkTitleSearchBarInput(artworkTitleFromSearchBar);
+  };
 
   console.log(
     filterArtworkTitlesByArtworkSearchBarInput("mor", filteredGalleryData)
   );
-
-  // const handleTextChange = (e) => {
-  //   const title = e.target.value;
-  //   const result = title.length
-  //     ? filterArtworkTitlesByArtworkSearchBarInput(title, filteredGalleryData)
-  //     : gallery;
-  //   setFilteredGalleryData(result);
-  //   setSearchArtworkTitle(title);
-  // };
-
-  const handleSearchbarTextChange = (e) => {
-    const artworkTitle = e.target.value;
-    const artworksThatMatchArtworkSearchInputString = searchArtworkTitle.length
-      ? filterArtworkTitlesByArtworkSearchBarInput(
-          artworkTitle,
-          filteredGalleryData
-        )
-      : gallery;
-    setFilteredGalleryData(artworksThatMatchArtworkSearchInputString);
-    setSearchArtworkTitle(artworkTitle);
-  };
-
-  //____________**********
-
-  // function filterMovies(search, movies) {
-  //   return movies.filter((movie) =>
-  //     movie.title.toLowerCase().match(search.toLowerCase())
-  //   );
-  // }
-
-  // const handleTextChange = (e) => {
-  //   const title = e.target.value;
-  //   const result = title.length ? filterMovies(title, allMovies) : allMovies;
-  //   setMovies(result);
-  //   setSearchTitle(title);
-  // };
-
-  //____________**********
 
   return (
     <div className="ArtworkSearchBar">
       <input
         type="text"
         id="searchArtworkTitle"
-        value={searchArtworkTitle}
+        value={searchArtworkTitleSearchBarInput}
         className="ArtworkSearchBar__Input"
         placeholder="Search by name"
         onChange={handleSearchbarTextChange}></input>
