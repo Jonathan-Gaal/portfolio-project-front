@@ -1,6 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import "./ArtSearchBar.scss";
+import SearchIcon from "@mui/icons-material/Search";
 
 const ArtSearchBar = ({
   gallery,
@@ -44,9 +45,13 @@ const ArtSearchBar = ({
         type="search"
         id="searchArtworkTitle"
         value={searchArtworkTitleSearchBarInput}
-        className="ArtworkSearchBar__Input"
+        className="ArtworkSearchBar__Input input-field"
         placeholder="Search by artwork"
-        onChange={handleSearchbarTextChange}></input>
+        onChange={handleSearchbarTextChange}
+      />
+      <i className="searchIcon">
+        <SearchIcon />
+      </i>
     </div>
   );
 };
