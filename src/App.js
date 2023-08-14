@@ -5,7 +5,7 @@ import Index from "./Pages/Index";
 import Show from "./Pages/Show";
 import FourOFour from "./Pages/FourOFour";
 
-import "./App.css";
+import "./App.scss";
 
 function App() {
   return (

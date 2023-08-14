@@ -1,6 +1,6 @@
 import { useState } from "react";
 import CommentForm from "./CommentForm";
-import "./Comment.css";
+import "./Comment.scss";
 
 //props = comment from map in Comments
 const Comment = ({ oneComment, handleDeleteComment, handleSubmit }) => {

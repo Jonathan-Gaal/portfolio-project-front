@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import "./ArtworkCard.css";
+import "./ArtworkCard.scss";
 
 // ARTWORK DISPLAYED IN gallery.map in GALLERY.js
 const ArtworkCard = ({ artwork }) => {

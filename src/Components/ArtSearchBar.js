@@ -11,15 +11,14 @@ const ArtSearchBar = ({
     searchArtworkTitleSearchBarInput,
     setSearchArtworkTitleSearchBarInput,
   ] = useState("");
-  setFilteredGalleryData([gallery]);
 
   function filterArtworkTitlesByArtworkSearchBarInput(
     artworkTitleStringFromArtworkSearchBarInput,
-    filteredGalleryData
+    gallery
   ) {
-    return filteredGalleryData.filter((artwork) => {
+    return gallery.filter((artwork) => {
       const { title } = artwork;
-      const lowercasedArtworkTitle = `${title}`.toLocaleLowerCase();
+      const lowercasedArtworkTitle = `${title}`.toLowerCase();
       return lowercasedArtworkTitle.match(
         searchArtworkTitleSearchBarInput.toLowerCase()
       );
@@ -39,10 +38,6 @@ const ArtSearchBar = ({
     setSearchArtworkTitleSearchBarInput(artworkTitleFromSearchBar);
   };
 
-  console.log(
-    filterArtworkTitlesByArtworkSearchBarInput("mor", filteredGalleryData)
-  );
-
   return (
     <div className="ArtworkSearchBar">
       <input
@@ -50,7 +45,7 @@ const ArtSearchBar = ({
         id="searchArtworkTitle"
         value={searchArtworkTitleSearchBarInput}
         className="ArtworkSearchBar__Input"
-        placeholder="Search by name"
+        placeholder="Search by artwork"
         onChange={handleSearchbarTextChange}></input>
     </div>
   );
