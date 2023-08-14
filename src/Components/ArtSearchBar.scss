@@ -1,8 +1,8 @@
 .ArtworkSearchBar {
-    display: block;
-    width: 70.5%;
-    margin-left: auto;
-    margin-right: 16.2%;
+    display: flex;
+    width: 45%;
+    margin-left: 13.3%;
+    // margin-right: 16.2%;
 }
 
 
@@ -27,4 +27,17 @@
 
 .ArtworkSearchBar__Input:focus {
     color: black;
+}
+
+.input-field{
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+}
+
+.searchIcon {
+    place-items: center;
+    position: absolute;
+    margin-top: .2rem;
+    margin-left: .2rem;
 }
