@@ -41,7 +41,7 @@ const ArtSearchBar = ({
   return (
     <div className="ArtworkSearchBar">
       <input
-        type="text"
+        type="search"
         id="searchArtworkTitle"
         value={searchArtworkTitleSearchBarInput}
         className="ArtworkSearchBar__Input"
