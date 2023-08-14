@@ -1,5 +1,6 @@
 .Gallery__Data {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    // grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: repeat(auto-fill, minmax(25%, 1fr));
     row-gap: 3em;
 }
