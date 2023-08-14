@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import "./CommentForm.css";
+import "./CommentForm.scss";
 
 function CommentForm(props) {
   let { id } = useParams();

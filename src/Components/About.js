@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import homeImg from "../assets/home_image.jpg";
 import jonathanGaal from "../assets/jon_g.jpeg";
 import portrait from "../assets/portrait.jpeg";
-import "./About.css";
+import "./About.scss";
 const About = () => {
   return (
     <div className="About">

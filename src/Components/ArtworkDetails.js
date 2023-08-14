@@ -2,7 +2,7 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import Comments from "./Comments";
-import "./ArtworkDetails.css";
+import "./ArtworkDetails.scss";
 const API = process.env.REACT_APP_API_URL;
 
 const ArtworkDetails = () => {

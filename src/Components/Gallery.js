@@ -1,9 +1,9 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
 import ArtworkCard from "./ArtworkCard";
-import "./Gallery.css";
 import "./ArtSearchBar";
 import ArtSearchBar from "./ArtSearchBar";
+import "./Gallery.scss";
 const API = process.env.REACT_APP_API_URL;
 
 const Gallery = () => {
@@ -13,7 +13,10 @@ const Gallery = () => {
   useEffect(() => {
     axios
       .get(`${API}/gallery`)
-      .then((res) => setGallery(res.data))
+      .then((res) => {
+        setGallery(res.data);
+        setFilteredGalleryData(res.data);
+      })
       .catch((c) => console.warn("catch", c));
   }, []);
 
@@ -24,9 +27,11 @@ const Gallery = () => {
         filteredGalleryData={filteredGalleryData}
         setFilteredGalleryData={setFilteredGalleryData}
       />
-      {gallery.map((artwork) => {
-        return <ArtworkCard key={artwork.id} artwork={artwork} />;
-      })}
+      <div className="Gallery__Data">
+        {filteredGalleryData.map((artwork) => {
+          return <ArtworkCard key={artwork.id} artwork={artwork} />;
+        })}
+      </div>
     </div>
   );
 };
