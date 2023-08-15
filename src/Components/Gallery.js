@@ -25,10 +25,6 @@ function filterArtworkTitlesByArtworkSearchBarInput(
     return splitSearchBarInput.every((searchInputWord) => {
       return lowercasedArtworkTitle.match(searchInputWord);
     });
-    //use match or includes to check every word of the search term against the title string overall
-    // return lowercasedArtworkTitle.match(
-    //   artworkTitleStringFromArtworkSearchBarInput.toLowerCase()
-    // );
   });
 }
 
