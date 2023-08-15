@@ -1,42 +1,13 @@
 import React from "react";
-import { useState } from "react";
 import "./ArtSearchBar.scss";
 import SearchIcon from "@mui/icons-material/Search";
 
 const ArtSearchBar = ({
-  gallery,
-  filteredGalleryData,
-  setFilteredGalleryData,
+  searchArtworkTitleSearchBarInput,
+  setSearchArtworkTitleSearchBarInput,
 }) => {
-  const [
-    searchArtworkTitleSearchBarInput,
-    setSearchArtworkTitleSearchBarInput,
-  ] = useState("");
-
-  function filterArtworkTitlesByArtworkSearchBarInput(
-    artworkTitleStringFromArtworkSearchBarInput,
-    gallery
-  ) {
-    return gallery.filter((artwork) => {
-      const { title } = artwork;
-      const lowercasedArtworkTitle = `${title}`.toLowerCase();
-      return lowercasedArtworkTitle.match(
-        searchArtworkTitleSearchBarInput.toLowerCase()
-      );
-    });
-  }
-
   const handleSearchbarTextChange = (e) => {
-    const artworkTitleFromSearchBar = e.target.value;
-    const artworksThatMatchArtworkSearchInputString =
-      artworkTitleFromSearchBar.length
-        ? filterArtworkTitlesByArtworkSearchBarInput(
-            artworkTitleFromSearchBar,
-            gallery
-          )
-        : gallery;
-    setFilteredGalleryData(artworksThatMatchArtworkSearchInputString);
-    setSearchArtworkTitleSearchBarInput(artworkTitleFromSearchBar);
+    setSearchArtworkTitleSearchBarInput(e.target.value);
   };
 
   return (
