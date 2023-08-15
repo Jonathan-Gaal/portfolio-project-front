@@ -20,7 +20,7 @@ const ArtSearchBar = ({
         placeholder="Search by artwork"
         onChange={handleSearchbarTextChange}
       />
-      <i className="searchIcon">
+      <i className="ArtworkSearchBar__searchIcon">
         <SearchIcon />
       </i>
     </div>
