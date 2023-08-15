@@ -11,25 +11,24 @@ color: white;
 }
 
 .galleryImage {
-    width: 90%;
-    border: ridge rgb(95, 86, 67) 2.5px;
-    border-radius: 10px;
-   
-
+width: 90%;
+border: ridge rgb(95, 86, 67) 2.5px;
+border-radius: 10px;
+-webkit-transition: transform .9s ease-in-out;
 }
 
 .galleryImage:hover {
 opacity: .3;
-transform: scale(1.2);
+transform: scale(1.1);
 rotate: 4.1deg;
 }
 
 .galleryImage:hover + .artWorkCard__details {
-    display: block;
+display: block;
 }
 
 .artWorkCard__details{
-    display: none;
+display: none;
   position: absolute;
   width: 80%;
   bottom: 15%;
