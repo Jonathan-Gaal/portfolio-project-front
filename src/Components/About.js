@@ -1,4 +1,6 @@
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
+import AliceCarousel from "react-alice-carousel";
+import "react-alice-carousel/lib/alice-carousel.css";
 import homeImg from "../assets/home_image.jpg";
 import jonathanGaal from "../assets/jon_g.jpeg";
 import portrait from "../assets/portrait.jpeg";
@@ -6,7 +8,44 @@ import "./About.scss";
 const About = () => {
   return (
     <div className="About">
-      <img className="About__homeImg" src={homeImg} alt="moroccan style room" />
+      <div class="About__slider">
+        <div class="slide" id="slide-1">
+          <img
+            className="About__homeImg"
+            src={homeImg}
+            alt="moroccan style room"
+          />
+        </div>
+        <div class="slide" id="slide-2">
+          <img
+            className="About__homeImg"
+            src={homeImg}
+            alt="moroccan style room"
+          />
+        </div>
+        <div class="slide" id="slide-3">
+          <img
+            className="About__homeImg"
+            src={homeImg}
+            alt="moroccan style room"
+          />
+        </div>
+        <div class="slide" id="slide-4">
+          <img
+            className="About__homeImg"
+            src={homeImg}
+            alt="moroccan style room"
+          />
+        </div>
+        <div class="slide" id="slide-5">
+          <img
+            className="About__homeImg"
+            src={homeImg}
+            alt="moroccan style room"
+          />
+        </div>
+      </div>
+
       <div className="About__header">About Moi!</div>
       <div className="About__devPhotos">
         <img

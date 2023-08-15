@@ -1,3 +1,7 @@
+*{
+    box-sizing: border-box;
+}
+
 body {
     margin: 0;
     -webkit-font-smoothing: antialiased;
@@ -54,6 +58,7 @@ body {
     font-family: 'Eagle Lake';
     /* font-weight: bold; */
     font-size: large; 
+    -webkit-transition: transform 2s ease-in-out;
 }
 .commentBtn, .editCommentBtn{
     margin-left: .5%;
@@ -64,6 +69,7 @@ body {
     font-family: 'Eagle Lake';
     /* font-weight: bold; */
     font-size: large;
+    -webkit-transition: transform 2s ease-in-out;
 }
 
 .commentBtn:hover, .editCommentBtn:hover, .galleryBtn:hover,
