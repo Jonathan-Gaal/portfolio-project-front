@@ -1,28 +1,93 @@
-#homeImg{
-    width: 95%;
-    border: ridge rgb(172, 146, 85) 2.5px;
-    border-radius: 20px;
-    margin-top: 1.8%;
-}
+.About{
+    &__homeImg {
+            width: 95%;
+            border: ridge rgb(172, 146, 85) 2.5px;
+            border-radius: 20px;
+            margin-top: 1.8%;
+        }
 
-.devsPhoto{
-    width: 300px;
-        height: 300px;
-        margin-left: auto;
-        margin-right: 3%;
-        margin-bottom: 5%;
-        border: ridge rgb(172, 146, 85) 2px;
-        border-radius: 50%;
+    &__header {
+        margin: 3%;
+        font-size: 2rem;
     }
 
+        &__devsPhoto {
+            width: 300px;
+            height: 300px;
+            margin-left: auto;
+            margin-right: 3%;
+            margin-bottom: 5%;
+            border: ridge rgb(172, 146, 85) 2px;
+            border-radius: 50%;
+        }
 
-.portrait {
-    width: 250px;
-    height: 300px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 5%;
-border: ridge rgb(172, 146, 85) 2px;
-border-radius: 25px;}
+        &__portrait {
+            width: 250px;
+            height: 300px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 5%;
+            border: ridge rgb(172, 146, 85) 2px;
+            border-radius: 25px;
+        }
+        &__jonDetails{
+            .About__jonLinks {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                width: 60%;
+                margin-left: auto;
+                margin-right: auto;
+                
+
+                    .devsEmail {
+                        // background-color: red;
+                     a:active{
+                    color: white;
+                    text-decoration: none;
+                     }
+                    a:visited {
+                    color: white;
+                    text-decoration: underline;
+                    }
+                     
+            
+                    }
+            
+                    .devsGitHub {
+                        // background-color: green;
+
+                    a:active {
+                    color: white;
+                    text-decoration: none;
+                    }
+                    a:visited {
+                    color: white;
+                    text-decoration: underline;
+                    }
+                    }
+            
+                   
+
+        }
+       .bio {
+            // background-color: blue;
+        width: 60%;
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 1.1rem;
+     }
+        }
+}
+
+
+
+
+
+
+
+
+
+
+
 
     
