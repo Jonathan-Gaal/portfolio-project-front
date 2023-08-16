@@ -127,7 +127,7 @@
         margin-right: 500px;
         }
 
-       .image1{
+       .image1, .image2, .image3  {
         width: 100%;
         height: 100%;
         object-fit: cover;
@@ -135,24 +135,6 @@
         margin-top: 0;
         left: 0;
        }
-
-        .image2 {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        /* position: absolute; */
-        margin-top: 0;
-        left: 0;
-        }
-
-        .image3 {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        /* position: absolute; */
-        margin-top: 0;
-        left: 0;
-        }
 
 
     }
