@@ -1,6 +1,6 @@
 .About{
     &__img {
-            width: 95%;
+            width: 85%;
             border: ridge rgb(172, 146, 85) 2.5px;
             border-radius: 20px;
             margin-top: 1.8%;
@@ -118,8 +118,8 @@
         }
 
     &__aliceCarousel {
-        // width: 100%;
-        // height: 100%;
+        width: 100%;
+        height: 100%;
         border-radius: 10px;
 
         .alice-carousel__next-btn-wrapper{
