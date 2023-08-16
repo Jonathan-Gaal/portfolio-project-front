@@ -1,7 +1,3 @@
-
-
-
-
 .About{
     &__homeImg {
             width: 95%;
@@ -114,6 +110,49 @@
         font-size: 1.1rem;
      }
         }
+
+    &__aliceCarousel {
+        width: 100%;
+        height: 100%;
+        border-radius: 10px;
+
+        .alice-carousel__next-btn-wrapper{
+        margin-left: auto;
+        margin-right: 500px;
+        }
+
+       .image1{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        // position: absolute;
+        margin-top: 0;
+        left: 0;
+       }
+
+        .image2 {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        /* position: absolute; */
+        margin-top: 0;
+        left: 0;
+        }
+
+        .image3 {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        /* position: absolute; */
+        margin-top: 0;
+        left: 0;
+        }
+
+
+    }
+
+
+
 }
 
 
