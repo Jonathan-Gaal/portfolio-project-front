@@ -1,7 +1,9 @@
 // import { Link } from "react-router-dom";
 import AliceCarousel from "react-alice-carousel";
 import "react-alice-carousel/lib/alice-carousel.css";
-import homeImg from "../assets/home_image.jpg";
+import homeImg1 from "../assets/home_image1.jpg";
+import homeImg2 from "../assets/home_image2.jpg";
+import homeImg3 from "../assets/home_image3.jpg";
 import jonathanGaal from "../assets/jon_g.jpeg";
 import portrait from "../assets/portrait.jpeg";
 import "./About.scss";
@@ -20,18 +22,21 @@ const About = () => {
           fadeOutAnimation="true"
           animationType="fadeout">
           <img
-            className="About__homeImg"
-            src={homeImg}
+            className="About__img"
+            id="img1"
+            src={homeImg1}
             alt="moroccan style room"
           />
           <img
-            className="About__homeImg"
-            src={homeImg}
+            className="About__img"
+            id="img2"
+            src={homeImg2}
             alt="moroccan style room"
           />
           <img
-            className="About__homeImg"
-            src={homeImg}
+            className="About__img"
+            id="img3"
+            src={homeImg3}
             alt="moroccan style room"
           />
           {/* <img src={image4} className="image4"/> */}
@@ -91,7 +96,7 @@ const About = () => {
       </div>
 
       <div className="About__jonDetails">
-        <div className="devsName">Jonathan Gaal</div>
+        <div className="About__devsName">Jonathan Gaal</div>
 
         <div className="About__jonLinks">
           <div className="devsEmail">
