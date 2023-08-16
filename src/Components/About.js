@@ -8,7 +8,37 @@ import "./About.scss";
 const About = () => {
   return (
     <div className="About">
-      <div class="About__slider">
+      <div className="About__aliceCarousel">
+        <AliceCarousel
+          infinite="true"
+          autoPlay
+          duration={1000}
+          autoPlayInterval={5000}
+          transitionDuration={70000}
+          mouseTrackingEnabled={true}
+          disableAutoPlayOnAction={true}
+          fadeOutAnimation="true"
+          animationType="fadeout">
+          <img
+            className="About__homeImg"
+            src={homeImg}
+            alt="moroccan style room"
+          />
+          <img
+            className="About__homeImg"
+            src={homeImg}
+            alt="moroccan style room"
+          />
+          <img
+            className="About__homeImg"
+            src={homeImg}
+            alt="moroccan style room"
+          />
+          {/* <img src={image4} className="image4"/> */}
+        </AliceCarousel>
+      </div>
+
+      {/* <div class="About__slider">
         <div class="slide" id="slide-1">
           <img
             className="About__homeImg"
@@ -44,7 +74,7 @@ const About = () => {
             alt="moroccan style room"
           />
         </div>
-      </div>
+      </div> */}
 
       <div className="About__header">About Moi!</div>
       <div className="About__devPhotos">
