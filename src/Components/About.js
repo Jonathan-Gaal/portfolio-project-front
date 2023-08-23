@@ -43,44 +43,6 @@ const About = () => {
         </AliceCarousel>
       </div>
 
-      {/* <div class="About__slider">
-        <div class="slide" id="slide-1">
-          <img
-            className="About__homeImg"
-            src={homeImg}
-            alt="moroccan style room"
-          />
-        </div>
-        <div class="slide" id="slide-2">
-          <img
-            className="About__homeImg"
-            src={homeImg}
-            alt="moroccan style room"
-          />
-        </div>
-        <div class="slide" id="slide-3">
-          <img
-            className="About__homeImg"
-            src={homeImg}
-            alt="moroccan style room"
-          />
-        </div>
-        <div class="slide" id="slide-4">
-          <img
-            className="About__homeImg"
-            src={homeImg}
-            alt="moroccan style room"
-          />
-        </div>
-        <div class="slide" id="slide-5">
-          <img
-            className="About__homeImg"
-            src={homeImg}
-            alt="moroccan style room"
-          />
-        </div>
-      </div> */}
-
       <div className="About__header">About Moi!</div>
       <div className="About__devPhotos">
         <img
