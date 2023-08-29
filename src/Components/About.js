@@ -5,6 +5,13 @@ import "react-alice-carousel/lib/alice-carousel.css";
 import homeImg1 from "../assets/home_image1.jpg";
 import homeImg2 from "../assets/home_image2.jpg";
 import homeImg3 from "../assets/home_image3.jpg";
+import homeImg4 from "../assets/home_image4.jpg";
+import homeImg5 from "../assets/home_image5.jpg";
+import homeImg6 from "../assets/home_image6.jpg";
+import homeImg7 from "../assets/home_image7.jpg";
+import homeImg8 from "../assets/home_image8.jpg";
+import homeImg9 from "../assets/home_image9.jpg";
+import homeImg10 from "../assets/home_image10.jpg";
 import jonathanGaal from "../assets/jon_g.jpeg";
 import portrait from "../assets/portrait.jpeg";
 import "./About.scss";
@@ -43,6 +50,48 @@ const About = () => {
             className="About__img"
             id="img3"
             src={homeImg3}
+            alt="moroccan style room"
+          />
+          <img
+            className="About__img"
+            id="img4"
+            src={homeImg4}
+            alt="moroccan style room"
+          />
+          <img
+            className="About__img"
+            id="img5"
+            src={homeImg5}
+            alt="moroccan style room"
+          />
+          <img
+            className="About__img"
+            id="img6"
+            src={homeImg6}
+            alt="moroccan style room"
+          />
+          <img
+            className="About__img"
+            id="img7"
+            src={homeImg7}
+            alt="moroccan style room"
+          />
+          <img
+            className="About__img"
+            id="img8"
+            src={homeImg8}
+            alt="moroccan style room"
+          />
+          <img
+            className="About__img"
+            id="img9"
+            src={homeImg9}
+            alt="moroccan style room"
+          />
+          <img
+            className="About__img"
+            id="img10"
+            src={homeImg10}
             alt="moroccan style room"
           />
           {/* <img src={image4} className="image4"/> */}
