@@ -1,0 +1,21 @@
+.ArtworkDetailsImageSelectorBarCard{
+    &__Image {
+        width: 8vw;
+        height: 20vh;
+        border-radius: 10px;
+        border: 1px solid rgb(122, 100, 49);
+    }
+
+    &__Image:hover {
+           opacity: .3;
+           transform: scale(1.1);
+           rotate: 4.1deg;
+       }
+
+        &__Image:focus {
+        border: 5px solid blue;
+        }
+
+
+       
+}

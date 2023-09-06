@@ -2,6 +2,7 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import Comments from "./Comments";
+import { ArtworkDetailsImageSelectorBar } from "./ArtworkDetailsImageSelectorBar";
 import "./ArtworkDetails.scss";
 const API = process.env.REACT_APP_API_URL;
 
@@ -9,6 +10,8 @@ const ArtworkDetails = () => {
   let { id } = useParams();
   // let navigate = useNavigate();
   const [artwork, setArtwork] = useState({});
+  const [allArtworkImages, setAllArtworkImages] = useState([]);
+  const [selectedArtworkImage, setSelectedArtworkImage] = useState("");
   const [showComments, setShowComments] = useState(false);
   const {
     title,
@@ -39,9 +42,26 @@ const ArtworkDetails = () => {
       });
   }, [id]);
 
+  useEffect(() => {
+    axios
+      .get(`${API}/gallery/${id}/artImages`, {
+        headers: { "Access-Control-Allow-Origin": "*" },
+      })
+      .then((res) => {
+        setAllArtworkImages(res.data);
+      })
+      .catch((err) => {
+        console.warn("catch", err);
+      });
+  }, [id]);
+
   return (
     <div className="Artwork">
       <img className="artworkImage" src={image} alt="artwork"></img>
+      <ArtworkDetailsImageSelectorBar
+        allArtworkImages={allArtworkImages}
+        setSelectedArtworkImage={selectedArtworkImage}
+      />
       <div className="ArtworkDetails__heading">{title}</div>
       <div className="ArtworkDetails__details">
         <div className="ArtworkDetails__detail">Category: {category}</div>{" "}
