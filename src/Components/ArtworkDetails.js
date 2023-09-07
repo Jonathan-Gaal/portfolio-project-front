@@ -12,13 +12,14 @@ const ArtworkDetails = () => {
   const [artwork, setArtwork] = useState({});
   const [allArtworkImages, setAllArtworkImages] = useState([]);
   const [selectedArtworkImage, setSelectedArtworkImage] = useState("");
+  const [selectedArtworkImageCaption, setSelectedArtworkImageCaption] =
+    useState("");
   const [showComments, setShowComments] = useState(false);
   const {
     title,
     description,
     category,
     post_date,
-    image,
     diameter,
     width,
     height,
@@ -49,6 +50,8 @@ const ArtworkDetails = () => {
       })
       .then((res) => {
         setAllArtworkImages(res.data);
+        setSelectedArtworkImage(res.data[0].image_url);
+        setSelectedArtworkImageCaption(res.data[0].image_caption);
       })
       .catch((err) => {
         console.warn("catch", err);
@@ -56,11 +59,19 @@ const ArtworkDetails = () => {
   }, [id]);
 
   return (
-    <div className="Artwork">
-      <img className="artworkImage" src={image} alt="artwork"></img>
+    <div className="ArtworkDetails">
+      <img
+        className="ArtworkDetails__image"
+        src={selectedArtworkImage}
+        alt="artwork"
+      />
+      <div className="ArtworkDetails__caption">
+        {selectedArtworkImageCaption}
+      </div>
       <ArtworkDetailsImageSelectorBar
         allArtworkImages={allArtworkImages}
-        setSelectedArtworkImage={selectedArtworkImage}
+        setSelectedArtworkImage={setSelectedArtworkImage}
+        setSelectedArtworkImageCaption={setSelectedArtworkImageCaption}
       />
       <div className="ArtworkDetails__heading">{title}</div>
       <div className="ArtworkDetails__details">

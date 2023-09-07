@@ -5,6 +5,7 @@ import "./ArtworkDetailsImageSelectorBar.scss";
 export const ArtworkDetailsImageSelectorBar = ({
   allArtworkImages,
   setSelectedArtworkImage,
+  setSelectedArtworkImageCaption,
 }) => {
   return (
     <div className="ArtworkDetailsImageSelectorBar">
@@ -14,6 +15,7 @@ export const ArtworkDetailsImageSelectorBar = ({
             key={artworkImage.image_id}
             artworkImage={artworkImage}
             setSelectedArtworkImage={setSelectedArtworkImage}
+            setSelectedArtworkImageCaption={setSelectedArtworkImageCaption}
           />
         );
       })}
