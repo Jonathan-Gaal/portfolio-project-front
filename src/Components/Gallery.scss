@@ -1,11 +1,12 @@
 .Gallery {
 margin-left: 8%;
 
+
     &__data{
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(40%, 1fr));
     row-gap: 5rem;
-
+    margin-top: 5%;
     }
     
 }
