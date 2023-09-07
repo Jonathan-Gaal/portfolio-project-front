@@ -58,7 +58,7 @@ const Gallery = () => {
           setSearchArtworkTitleSearchBarInput
         }
       />
-      <div className="Gallery__Data">
+      <div className="Gallery__data">
         {filteredGalleryData.map((artwork) => {
           return <ArtworkCard key={artwork.id} artwork={artwork} />;
         })}
