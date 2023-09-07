@@ -17,7 +17,7 @@ const ArtSearchBar = ({
         id="searchArtworkTitle"
         value={searchArtworkTitleSearchBarInput}
         className="ArtworkSearchBar__Input input-field"
-        placeholder="Search by artwork"
+        placeholder="Search by artwork title..."
         onChange={handleSearchbarTextChange}
       />
       <i className="ArtworkSearchBar__searchIcon">
