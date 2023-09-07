@@ -21,7 +21,7 @@ export const ArtworkDetailsImageSelectorBarCard = ({
   return (
     <div className={classNames.join(" ")}>
       <img
-        className="ArtworkDetailsImageSelectorBarCard__Image"
+        className="ArtworkDetailsImageSelectorBarCard__image"
         src={image}
         alt="artwork"
         onClick={selectThisImageOnClick}
