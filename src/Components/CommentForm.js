@@ -55,7 +55,7 @@ function CommentForm(props) {
     });
   };
   return (
-    <div className="Edit">
+    <div className="EditComment">
       {props.children}
       <form onSubmit={handleSubmit}>
         <label htmlFor="commenter">Commenter:</label>

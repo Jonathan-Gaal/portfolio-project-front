@@ -44,9 +44,13 @@
                 margin-right: auto;
                 
 
-                    .devsEmail {
+                    .devsEmailLink {
                         // background-color: red;
-                     a:active{
+                        // color: orange;
+                    
+                            color: orange;
+                        
+                     &:hover{
                     color: white;
                     text-decoration: none;
                      }
@@ -58,10 +62,11 @@
             
                     }
             
-                    .devsGitHub {
+                    .devsGitHubLink {
                         // background-color: green;
+                        color: orange;
 
-                    a:active {
+                    &:hover {
                     color: white;
                     text-decoration: none;
                     }

@@ -1,11 +1,18 @@
-.Comment__deleteAndCommentButtonsContainer {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 8px;
-    width: 20%;
-    margin-left: auto;
-    margin-right: 175px;
+.Comment{
+
+    &__deleteAndCommentButtonsContainer {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+            width: 20%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
 }
+
+
+
 
 .Comment__commentContainer {
 margin-bottom: 2%;
