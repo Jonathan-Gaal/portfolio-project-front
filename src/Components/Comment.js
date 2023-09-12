@@ -29,11 +29,11 @@ const Comment = ({ oneComment, handleDeleteComment, handleSubmit }) => {
       )}
       <div className="Comment__deleteAndCommentButtonsContainer">
         <button
-          className="deleteCommentBtn"
+          className="Comment__deleteCommentBtn"
           onClick={() => handleDeleteComment(id)}>
           Delete
         </button>
-        <button className="editCommentBtn" onClick={toggleView}>
+        <button className="Comment__editCommentBtn" onClick={toggleView}>
           Edit
         </button>
       </div>
