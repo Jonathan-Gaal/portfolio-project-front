@@ -34,6 +34,7 @@ const Gallery = () => {
     searchArtworkTitleSearchBarInput,
     setSearchArtworkTitleSearchBarInput,
   ] = useState("");
+  const [selectInputOption, setSelectInputOption] = useState("default");
 
   useEffect(() => {
     axios
@@ -49,6 +50,49 @@ const Gallery = () => {
     gallery
   );
 
+  // setFilteredGallery(...filteredGallery, filteredGalleryData);
+
+  const selectHandleChange = (e) => {
+    setSelectInputOption(e.target.value);
+  };
+
+  const testItOut = (selectOptionString) => {
+    let filteredGalleryData = filterArtworkTitlesByArtworkSearchBarInput(
+      searchArtworkTitleSearchBarInput,
+      gallery
+    );
+
+    // let sortedArtByDate = filteredGalleryData.sort(
+    //   (a, b) =>
+    //     new Date(...a.initialRegistration.split("/").reverse()) -
+    //     new Date(...b.initialRegistration.split("/").reverse())
+    // );
+
+    if (selectInputOption === "default") {
+      return filteredGalleryData;
+    } else {
+      if (selectOptionString === "title") {
+        return filteredGalleryData.sort((a, b) =>
+          a.title.localeCompare(b.title)
+        );
+      }
+      if (selectOptionString === "category") {
+        return filteredGalleryData.sort((a, b) =>
+          a.category.localeCompare(b.category)
+        );
+      }
+      if (selectOptionString === "date") {
+        return filteredGalleryData.sort(
+          (a, b) =>
+            new Date(...a.post_date.split("-").reverse()) -
+            new Date(...b.post_date.split("-").reverse())
+        );
+      }
+    }
+  };
+
+  console.log(testItOut(selectInputOption));
+
   return (
     <div className="Gallery">
       <ArtSearchBar
@@ -58,8 +102,20 @@ const Gallery = () => {
           setSearchArtworkTitleSearchBarInput
         }
       />
+      <select
+        className="Gallery__sortBySelection"
+        name="flexCheck"
+        onChange={selectHandleChange}
+        // value={answer.sexual_orientation_preference}
+        id="sortSelector">
+        <option value={"default"}>Sort by</option>
+        <option value="title">Title</option>
+        <option value="category">Category</option>
+        <option value="date">Post date</option>
+      </select>
+
       <div className="Gallery__data">
-        {filteredGalleryData.map((artwork) => {
+        {testItOut(selectInputOption)?.map((artwork) => {
           return <ArtworkCard key={artwork.id} artwork={artwork} />;
         })}
       </div>

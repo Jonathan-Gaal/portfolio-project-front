@@ -10,7 +10,7 @@ const FourOFour = () => {
         src={fourOfourImage}
         alt="man with horse in a desert"
       />
-      <h1>Sorry, page not found</h1>
+      <h1>Sorry, page not found...</h1>
     </div>
   );
 };
