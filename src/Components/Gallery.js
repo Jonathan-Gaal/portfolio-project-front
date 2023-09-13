@@ -84,8 +84,8 @@ const Gallery = () => {
       if (selectOptionString === "date") {
         return filteredGalleryData.sort(
           (a, b) =>
-            new Date(...a.post_date.split("-")) -
-            new Date(...b.post_date.split("-"))
+            new Date(...a.creationdate.split("-")) -
+            new Date(...b.creationdate.split("-"))
         );
       }
     }

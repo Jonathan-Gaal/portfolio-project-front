@@ -19,6 +19,7 @@ const ArtworkDetails = () => {
     title,
     description,
     category,
+    creation_date,
     post_date,
     diameter,
     width,
@@ -58,12 +59,12 @@ const ArtworkDetails = () => {
       });
   }, [id]);
 
-  let convertDateToHumanReadableFormat = (artworkPostDate) => {
-    if (artworkPostDate === "N/A" || artworkPostDate === "n/a") {
+  let convertDateToHumanReadableFormat = (artworkRelatedDate) => {
+    if (artworkRelatedDate === "N/A" || artworkRelatedDate === "n/a") {
       return "N/A";
     } else {
-      const artworkPostDateToDateType = new Date(artworkPostDate);
-      return artworkPostDateToDateType.toDateString().slice(3);
+      const artworkRelatedDateToDateType = new Date(artworkRelatedDate);
+      return artworkRelatedDateToDateType.toDateString().slice(3);
     }
   };
 
@@ -89,7 +90,8 @@ const ArtworkDetails = () => {
           Dimensions: Width:{width} x Height:{height} x Depth:{depth} Diameter:
           {diameter}
         </div>
-        <div className="ArtworkDetails__detail">
+        <div className="ArtworkDetails__detail ArtworkCreatedAndPostedDates">
+          Date Created: {convertDateToHumanReadableFormat(creation_date)} ----
           Date Posted: {convertDateToHumanReadableFormat(post_date)}
         </div>
         <div className="ArtworkDetails__detail">Description: {description}</div>
