@@ -58,6 +58,15 @@ const ArtworkDetails = () => {
       });
   }, [id]);
 
+  let convertDateToHumanReadableFormat = (artworkPostDate) => {
+    if (artworkPostDate === "N/A" || artworkPostDate === "n/a") {
+      return "N/A";
+    } else {
+      const artworkPostDateToDateType = new Date(artworkPostDate);
+      return artworkPostDateToDateType.toDateString().slice(3);
+    }
+  };
+
   return (
     <div className="ArtworkDetails">
       <img
@@ -80,7 +89,9 @@ const ArtworkDetails = () => {
           Dimensions: Width:{width} x Height:{height} x Depth:{depth} Diameter:
           {diameter}
         </div>
-        <div className="ArtworkDetails__detail">Date Posted: {post_date}</div>
+        <div className="ArtworkDetails__detail">
+          Date Posted: {convertDateToHumanReadableFormat(post_date)}
+        </div>
         <div className="ArtworkDetails__detail">Description: {description}</div>
       </div>
       <div className="ArtworkDetails__showPageButtons">
