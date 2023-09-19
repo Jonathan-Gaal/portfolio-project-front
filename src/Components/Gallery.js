@@ -81,11 +81,18 @@ const Gallery = () => {
           a.category.localeCompare(b.category)
         );
       }
-      if (selectOptionString === "date") {
+      if (selectOptionString === "datecreated") {
         return filteredGalleryData.sort(
           (a, b) =>
-            new Date(...a.creationdate.split("-")) -
-            new Date(...b.creationdate.split("-"))
+            new Date(...a.creation_date.slice(0, 10).split("-")) -
+            new Date(...b.creation_date.slice(0, 10).split("-"))
+        );
+      }
+      if (selectOptionString === "dateposted") {
+        return filteredGalleryData.sort(
+          (a, b) =>
+            new Date(...a.post_date.slice(0, 10).split("-")) -
+            new Date(...b.post_date.slice(0, 10).split("-"))
         );
       }
     }
@@ -109,7 +116,8 @@ const Gallery = () => {
         <option value={"default"}>Sort by</option>
         <option value="title">Title</option>
         <option value="category">Category</option>
-        <option value="date">Post date</option>
+        <option value="datecreated">Date Created</option>
+        <option value="dateposted">Date Posted</option>
       </select>
 
       <div className="Gallery__data">
