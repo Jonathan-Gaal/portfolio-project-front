@@ -4,6 +4,7 @@ import Home from "./Pages/Home";
 import Index from "./Pages/Index";
 import Show from "./Pages/Show";
 import FourOFour from "./Pages/FourOFour";
+import UnderConstruction from "./Components/UnderConstruction";
 
 import "./App.scss";
 
@@ -18,6 +19,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/gallery" element={<Index />} />
             <Route path="/gallery/:id" element={<Show />} />
+            <Route path="/cart" element={<UnderConstruction />} />
             <Route path="*" element={<FourOFour />} />
           </Routes>
         </main>
