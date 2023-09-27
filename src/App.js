@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import NavBar from "./Components/NavBar";
 import Home from "./Pages/Home";
+import { SignIn } from "./Pages/SignIn";
 import Index from "./Pages/Index";
 import Show from "./Pages/Show";
 import FourOFour from "./Pages/FourOFour";
@@ -17,6 +18,7 @@ function App() {
         <main className="main">
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/signin" element={<SignIn />} />
             <Route path="/gallery" element={<Index />} />
             <Route path="/gallery/:id" element={<Show />} />
             <Route path="/cart" element={<UnderConstruction />} />
