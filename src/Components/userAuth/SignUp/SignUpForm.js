@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import { auth } from "../../../firebase";
 import { createUserWithEmailAndPassword } from "firebase/auth";
+import signUpImage from "../../../assets/signup.jpg";
 import {
   validateUserSignUpOrSignInEmail,
   validateUserPassword,
@@ -47,11 +48,15 @@ export const SignUpForm = () => {
   };
 
   return (
-    <div className="SignInUp Form">
+    <div className="SignInUpForm">
+      <img
+        className="SignInUpForm__img"
+        src={signUpImage}
+        alt="large moroccan door"
+      />
       <form
         className="SignInUpForm__form"
         onSubmit={validateUserSignUpSubmitInput}>
-        <div className="header">Create Account</div>
         <div className="SignIn/UpForm__emailAndPasswordContainer">
           <input
             className="SignInUpForm__input"
