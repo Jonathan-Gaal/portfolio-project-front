@@ -7,22 +7,13 @@ export function useContextUserProvider() {
 }
 
 function UserAuthAndDataContextProvider({ children }) {
-  const [userCity, setUserCity] = useState(null);
-  const [user, setUser] = useState("my name is null");
-  const [firstName, setFirstName] = useState(null);
-  const [zipcode, setZipcode] = useState("");
+  const [users, setUsers] = useState([]);
 
   return (
     <UserAuthAndDataContext.Provider
       value={{
-        user,
-        setUser,
-        firstName,
-        setFirstName,
-        zipcode,
-        setZipcode,
-        userCity,
-        setUserCity,
+        users,
+        setUsers,
       }}>
       {children}
     </UserAuthAndDataContext.Provider>
