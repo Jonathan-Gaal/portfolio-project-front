@@ -1,7 +1,11 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { auth } from "../../../firebase";
-import { createUserWithEmailAndPassword } from "firebase/auth";
+import {
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+} from "firebase/auth";
+import { useContextUserProvider } from "../../../Providers/userProvider";
 import signUpImage from "../../../assets/signup.jpg";
 import {
   validateUserSignUpOrSignInEmail,
@@ -21,6 +25,10 @@ export const SignUpForm = () => {
   const [newUserLastNameFromSignUpInput, setNewUserLastNameFromSignUpInput] =
     useState("");
 
+  const { setUser } = useContextUserProvider();
+
+  //TODO: CHECK UP ON SIGNINING INTO CURRENT USER USING BESTMATES REGISTER AS A REFERENCE. THIS WILL BE WHAT WE USE TO HAVE THE INFO OF THE LOGGED IN USER
+
   const validateUserSignUpSubmitInput = async (e) => {
     e.preventDefault();
 
@@ -35,9 +43,14 @@ export const SignUpForm = () => {
         newUserPasswordFromSignUpInput
       )
         .then((userCredential) => {
-          console.log("CREDENTIALS", userCredential);
+          console.log("CREDENTIALS", userCredential.user);
           if (userCredential.user.accessToken) {
-            axios.post(`${API}/users`);
+            axios.post(`${API}/users`, {
+              user_id: userCredential.user.uid,
+              firstName: newUserFirstNameFromSignUpInput,
+              lastName: newUserLastNameFromSignUpInput,
+              email: newUserEmailFromSignUpInput,
+            });
             window.alert("Congrats, account created!");
           }
         })
