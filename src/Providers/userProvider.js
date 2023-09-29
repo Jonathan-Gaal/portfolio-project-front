@@ -7,13 +7,13 @@ export function useContextUserProvider() {
 }
 
 function UserAuthAndDataContextProvider({ children }) {
-  const [users, setUsers] = useState([]);
+  const [loggedInUser, setLoggedInUser] = useState([]);
 
   return (
     <UserAuthAndDataContext.Provider
       value={{
-        users,
-        setUsers,
+        loggedInUser,
+        setLoggedInUser,
       }}>
       {children}
     </UserAuthAndDataContext.Provider>
