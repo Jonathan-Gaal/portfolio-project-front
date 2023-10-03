@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { auth } from "../../../firebase";
 import { signInWithEmailAndPassword } from "firebase/auth";
-import "../SignInUpForm.scss";
+import signInImage from "../../../assets/signin.jpg";
+import "./SignInForm.scss";
 
 export const SignInForm = () => {
   const [userEmailFromSignInInput, setUserEmailFromSignInInput] = useState("");
@@ -24,28 +25,32 @@ export const SignInForm = () => {
   };
 
   return (
-    <div className="SignInUp Form">
+    <div className="SignInForm">
+      <img
+        className="SignInForm__img"
+        src={signInImage}
+        alt="large moroccan door"
+      />
       <form
-        className="SignInUpForm__form"
+        className="SignInForm__form"
         onSubmit={validateUserSignInSubmitInput}>
-        <div className="header">Sign into your account</div>
-        <div className="SignIn/UpForm__emailAndPasswordContainer">
+        <div className="SignInForm__emailAndPasswordContainer">
           <input
-            className="SignInUpForm__input"
+            className="SignInForm__input"
             type="email"
             onChange={(e) => setUserEmailFromSignInInput(e.target.value)}
             placeholder="Enter your email"
             value={userEmailFromSignInInput}></input>
           <input
-            className="SignInUpForm__input"
+            className="SignInForm__input"
             type="password"
             onChange={(e) => setUserPasswordFromSignInInput(e.target.value)}
             placeholder="Enter your password"
             value={userPasswordFromSignInInput}></input>
-          <button className="SignInUpForm__submitButton" type="submit">
-            Sign In
-          </button>
         </div>
+        <button className="SignInForm__submitButton" type="submit">
+          Sign In
+        </button>
       </form>
     </div>
   );
