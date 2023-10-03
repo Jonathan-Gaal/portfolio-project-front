@@ -1,5 +1,11 @@
 .SignInUpForm {
-    
+    color: white;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+  
+
+
     &__form {
         margin-left: auto;
         margin-right: auto;
@@ -8,28 +14,47 @@
     }
 
     &__img {
-        width: 45%;
-            border: ridge rgb(129, 109, 65) 2.5px;
-            border-radius: 20px;
-            margin-bottom: 1%;
-            margin-left: auto;
-            margin-right: auto;
+        width: 100%;
+        border: ridge rgb(129, 109, 65) 2.5px;
+        border-radius: 20px;
+        margin-bottom: 1%;
+        margin-left: auto;
+        margin-right: auto;
     }
+
+    
 
     &__input {
+        display: block;
         border-radius: 5px;
-        
-       
+        padding: 5px;
+        width: 50%;
+        margin-left: auto;
+        margin-right: auto;
     }
 
-         &__emailAndPasswordContainer {
-            margin-left: 2.5%;
-  
-         }
+    &__passwordInputBox {
+        margin-bottom: 0px;
+    }
+    
+    &__passwordLabel{
+        display: block;
+        width: 50%;
+        margin-top: 2px;
+        margin-bottom: 2px;
+        margin-left: auto;
+        margin-right: auto;
+        font-size: smaller;
+        text-align: left;
+    }
 
-         &__submitButton {
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
-         }
+
+        
+
+
+    &__submitButton {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
 }
