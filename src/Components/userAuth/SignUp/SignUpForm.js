@@ -1,21 +1,21 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { auth } from "../../../firebase";
-import {
-  createUserWithEmailAndPassword,
-  signInWithEmailAndPassword,
-} from "firebase/auth";
+import { createUserWithEmailAndPassword } from "firebase/auth";
 import { useContextUserProvider } from "../../../Providers/userProvider";
 import signUpImage from "../../../assets/signup.jpg";
 import {
   validateUserSignUpOrSignInEmail,
   validateUserPassword,
 } from "../../../helpers";
-import "../SignInUpForm.scss";
+import "../SignUpForm.scss";
 
 const API = process.env.REACT_APP_API_URL;
 
 export const SignUpForm = () => {
+  let navigate = useNavigate();
+
   const [newUserEmailFromSignUpInput, setNewUserEmailFromSignUpInput] =
     useState("");
   const [newUserPasswordFromSignUpInput, setNewUserPasswordFromSignUpInput] =
@@ -26,8 +26,6 @@ export const SignUpForm = () => {
     useState("");
 
   const { setUser } = useContextUserProvider();
-
-  //TODO: CHECK UP ON SIGNINING INTO CURRENT USER USING BESTMATES REGISTER AS A REFERENCE. THIS WILL BE WHAT WE USE TO HAVE THE INFO OF THE LOGGED IN USER
 
   const validateUserSignUpSubmitInput = async (e) => {
     e.preventDefault();
@@ -43,7 +41,7 @@ export const SignUpForm = () => {
         newUserPasswordFromSignUpInput
       )
         .then((userCredential) => {
-          console.log("CREDENTIALS", userCredential.user);
+          // console.log("CREDENTIALS", userCredential.user);
           if (userCredential.user.accessToken) {
             axios.post(`${API}/users`, {
               user_id: userCredential.user.uid,
@@ -58,20 +56,24 @@ export const SignUpForm = () => {
           console.error(err);
         });
     }
+
+    setTimeout(() => {
+      navigate("/signin");
+    }, 2000);
   };
 
   return (
-    <div className="SignInUpForm">
+    <div className="SignUpForm">
       <img
-        className="SignInUpForm__img"
+        className="SignUpForm__img"
         src={signUpImage}
         alt="large moroccan door"
       />
       <form
-        className="SignInUpForm__form"
+        className="SignUpForm__form"
         onSubmit={validateUserSignUpSubmitInput}>
         <input
-          className="SignInUpForm__input SignInUpForm__email"
+          className="SignUpForm__input SignUpForm__email"
           type="email"
           onChange={(e) => setNewUserEmailFromSignUpInput(e.target.value)}
           placeholder="Enter your email"
@@ -80,7 +82,7 @@ export const SignUpForm = () => {
         />
 
         <input
-          className="SignInUpForm__input SignInUpForm__passwordInputBox"
+          className="SignUpForm__input SignUpForm__passwordInputBox"
           type="password"
           onChange={(e) => setNewUserPasswordFromSignUpInput(e.target.value)}
           placeholder="Enter Your Password"
@@ -89,12 +91,13 @@ export const SignUpForm = () => {
           minLength="8"
           maxLength="128"
         />
-        <div className="SignInUpForm__passwordLabel">
+        <div className="SignUpForm__passwordLabel">
           At least: 8 chars, 1 lower and uppercase letter, 1 digit, and special
           character"
         </div>
+
         <input
-          className="SignInUpForm__input"
+          className="SignUpForm__input"
           type="text"
           onChange={(e) => setNewUserFirstNameFromSignUpInput(e.target.value)}
           placeholder="First name: John/Jane"
@@ -102,7 +105,7 @@ export const SignUpForm = () => {
           required
         />
         <input
-          className="SignInUpForm__input"
+          className="SignUpForm__input"
           type="text"
           onChange={(e) => setNewUserLastNameFromSignUpInput(e.target.value)}
           placeholder="Last name: Doe"
@@ -110,7 +113,7 @@ export const SignUpForm = () => {
           required
         />
 
-        <button className="SignInUpForm__submitButton" type="submit">
+        <button className="SignUpForm__submitButton" type="submit">
           Sign Up
         </button>
       </form>
