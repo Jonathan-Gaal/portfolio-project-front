@@ -70,46 +70,49 @@ export const SignUpForm = () => {
       <form
         className="SignInUpForm__form"
         onSubmit={validateUserSignUpSubmitInput}>
-        <div className="SignIn/UpForm__emailAndPasswordContainer">
-          <input
-            className="SignInUpForm__input"
-            type="email"
-            onChange={(e) => setNewUserEmailFromSignUpInput(e.target.value)}
-            placeholder="Enter your email"
-            value={newUserEmailFromSignUpInput}
-            required
-          />
+        <input
+          className="SignInUpForm__input SignInUpForm__email"
+          type="email"
+          onChange={(e) => setNewUserEmailFromSignUpInput(e.target.value)}
+          placeholder="Enter your email"
+          value={newUserEmailFromSignUpInput}
+          required
+        />
 
-          <input
-            className="SignInUpForm__input"
-            type="password"
-            onChange={(e) => setNewUserPasswordFromSignUpInput(e.target.value)}
-            placeholder="Enter your password"
-            value={newUserPasswordFromSignUpInput}
-            required
-            minLength="8"
-            maxLength="128"
-          />
-          <input
-            className="SignInUpForm__input"
-            type="text"
-            onChange={(e) => setNewUserFirstNameFromSignUpInput(e.target.value)}
-            placeholder="First name: John/Jane"
-            value={newUserFirstNameFromSignUpInput}
-            required
-          />
-          <input
-            className="SignInUpForm__input"
-            type="text"
-            onChange={(e) => setNewUserLastNameFromSignUpInput(e.target.value)}
-            placeholder="Last name: Doe"
-            value={newUserLastNameFromSignUpInput}
-            required
-          />
-          <button className="SignInUpForm__submitButton" type="submit">
-            Sign Up
-          </button>
+        <input
+          className="SignInUpForm__input SignInUpForm__passwordInputBox"
+          type="password"
+          onChange={(e) => setNewUserPasswordFromSignUpInput(e.target.value)}
+          placeholder="Enter Your Password"
+          value={newUserPasswordFromSignUpInput}
+          required
+          minLength="8"
+          maxLength="128"
+        />
+        <div className="SignInUpForm__passwordLabel">
+          At least: 8 chars, 1 lower and uppercase letter, 1 digit, and special
+          character"
         </div>
+        <input
+          className="SignInUpForm__input"
+          type="text"
+          onChange={(e) => setNewUserFirstNameFromSignUpInput(e.target.value)}
+          placeholder="First name: John/Jane"
+          value={newUserFirstNameFromSignUpInput}
+          required
+        />
+        <input
+          className="SignInUpForm__input"
+          type="text"
+          onChange={(e) => setNewUserLastNameFromSignUpInput(e.target.value)}
+          placeholder="Last name: Doe"
+          value={newUserLastNameFromSignUpInput}
+          required
+        />
+
+        <button className="SignInUpForm__submitButton" type="submit">
+          Sign Up
+        </button>
       </form>
     </div>
   );
