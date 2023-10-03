@@ -1,5 +1,4 @@
 import { createContext, useContext, useState } from "react";
-
 export const UserAuthAndDataContext = createContext();
 
 export function useContextUserProvider() {
@@ -7,7 +6,7 @@ export function useContextUserProvider() {
 }
 
 function UserAuthAndDataContextProvider({ children }) {
-  const [loggedInUser, setLoggedInUser] = useState([]);
+  const [loggedInUser, setLoggedInUser] = useState({});
 
   return (
     <UserAuthAndDataContext.Provider
