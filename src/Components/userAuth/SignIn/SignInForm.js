@@ -1,23 +1,26 @@
 import React, { useState } from "react";
 import { auth } from "../../../firebase";
 import { signInWithEmailAndPassword } from "firebase/auth";
+import { useContextUserProvider } from "../../../Providers/userProvider";
 import signInImage from "../../../assets/signin.jpg";
 import "./SignInForm.scss";
 
 export const SignInForm = () => {
+  const { setLoggedInUser, loggedInUser } = useContextUserProvider();
   const [userEmailFromSignInInput, setUserEmailFromSignInInput] = useState("");
   const [userPasswordFromSignInInput, setUserPasswordFromSignInInput] =
     useState("");
 
-  const validateUserSignInSubmitInput = (e) => {
+  const validateUserAndSignInSubmitInput = async (e) => {
     e.preventDefault();
-    signInWithEmailAndPassword(
+    await signInWithEmailAndPassword(
       auth,
       userEmailFromSignInInput,
       userPasswordFromSignInInput
     )
       .then((userCredential) => {
         console.log("CREDENTIALS", userCredential);
+        setLoggedInUser({ ...auth.currentUser });
       })
       .catch((err) => {
         console.error(err);
@@ -33,7 +36,7 @@ export const SignInForm = () => {
       />
       <form
         className="SignInForm__form"
-        onSubmit={validateUserSignInSubmitInput}>
+        onSubmit={validateUserAndSignInSubmitInput}>
         <div className="SignInForm__emailAndPasswordContainer">
           <input
             className="SignInForm__input"
