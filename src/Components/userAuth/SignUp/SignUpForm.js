@@ -33,6 +33,7 @@ export const SignUpForm = () => {
     if (
       (await validateUserPassword(newUserPasswordFromSignUpInput)) === false
     ) {
+      setInvalidPassword(true);
       window.alert("Please enter a valid password");
     } else {
       createUserWithEmailAndPassword(
@@ -50,16 +51,15 @@ export const SignUpForm = () => {
               email: newUserEmailFromSignUpInput,
             });
             window.alert("Congrats, account created!");
+            setTimeout(() => {
+              navigate("/signin");
+            }, 2000);
           }
         })
         .catch((err) => {
           console.error(err);
         });
     }
-
-    setTimeout(() => {
-      navigate("/signin");
-    }, 2000);
   };
 
   return (
