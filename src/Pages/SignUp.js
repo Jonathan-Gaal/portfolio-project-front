@@ -1,5 +1,4 @@
-import { SignUpForm } from "../Components/userAuth/SignUp/SignUpForm";
-
+import { SignUpForm } from "../Components/UserComponents/UserSignUp&SignIn/SignUp/SignUpForm";
 export const SignUp = () => {
   return (
     <div className="SignUp">

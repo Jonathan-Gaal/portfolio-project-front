@@ -1,5 +1,4 @@
-import { SignInForm } from "../Components/userAuth/SignIn/SignInForm";
-
+import { SignInForm } from "../Components/UserComponents/UserSignUp&SignIn/SignIn/SignInForm";
 export const SignIn = () => {
   return (
     <div className="SignIn">

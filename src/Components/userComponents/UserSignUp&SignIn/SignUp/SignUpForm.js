@@ -1,20 +1,23 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import { auth } from "../../../firebase";
-import { createUserWithEmailAndPassword } from "firebase/auth";
-import { useContextUserProvider } from "../../../Providers/userProvider";
-import signUpImage from "../../../assets/signup.jpg";
+import { auth } from "../../../../firebase";
+import { useAuth } from "../../../../Providers/userProvider";
+import signUpImage from "../../../../assets/signup.jpg";
 import {
   validateUserSignUpOrSignInEmail,
   validateUserPassword,
-} from "../../../helpers";
-import "../SignUpForm.scss";
+} from "../../../../helpers";
+import "./SignUpForm.scss";
 
 const API = process.env.REACT_APP_API_URL;
 
 export const SignUpForm = () => {
-  let navigate = useNavigate();
+  const navigate = useNavigate();
+  // this is how we get user state from now on
+  // not on the components
+  const { loggedInUser } = useAuth();
+  console.log("SIGNUP", auth);
 
   const [newUserEmailFromSignUpInput, setNewUserEmailFromSignUpInput] =
     useState("");
@@ -24,8 +27,6 @@ export const SignUpForm = () => {
     useState("");
   const [newUserLastNameFromSignUpInput, setNewUserLastNameFromSignUpInput] =
     useState("");
-
-  const { setUser } = useContextUserProvider();
 
   const validateUserSignUpSubmitInput = async (e) => {
     e.preventDefault();

@@ -16,13 +16,9 @@ import jonathanGaal from "../assets/jon_g.jpeg";
 import portrait from "../assets/portrait.jpeg";
 import "./About.scss";
 
-import { useContextUserProvider } from "../Providers/userProvider";
-
 const About = () => {
-  const { user } = useContextUserProvider();
   return (
     <div className="About">
-      {/* <div>{user}</div> */}
       <div className="About__aliceCarousel">
         <AliceCarousel
           infinite="true"
