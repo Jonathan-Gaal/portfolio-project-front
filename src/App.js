@@ -8,6 +8,7 @@ import Index from "./Pages/Index";
 import Show from "./Pages/Show";
 import FourOFour from "./Pages/FourOFour";
 import UnderConstruction from "./Components/UnderConstruction";
+import { UserAuthAndDataContextProvider } from "../src/Providers/userProvider";
 
 import "./App.scss";
 
@@ -15,20 +16,21 @@ function App() {
   return (
     <div className="App">
       <Router>
-        <NavBar />
-
-        <main className="main">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/signin" element={<SignIn />} />
-            <Route path="/signup" element={<SignUp />} />
-            <Route path="/dashboard" element={<Dashboard />} />
-            <Route path="/gallery" element={<Index />} />
-            <Route path="/gallery/:id" element={<Show />} />
-            <Route path="/cart" element={<UnderConstruction />} />
-            <Route path="*" element={<FourOFour />} />
-          </Routes>
-        </main>
+        <UserAuthAndDataContextProvider>
+          <NavBar />
+          <main className="main">
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/signin" element={<SignIn />} />
+              <Route path="/signup" element={<SignUp />} />
+              <Route path="/dashboard" element={<Dashboard />} />
+              <Route path="/gallery" element={<Index />} />
+              <Route path="/gallery/:id" element={<Show />} />
+              <Route path="/cart" element={<UnderConstruction />} />
+              <Route path="*" element={<FourOFour />} />
+            </Routes>
+          </main>
+        </UserAuthAndDataContextProvider>
       </Router>
     </div>
   );

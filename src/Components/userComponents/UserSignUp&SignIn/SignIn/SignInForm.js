@@ -1,12 +1,12 @@
 import React, { useState } from "react";
-import { auth } from "../../../firebase";
+import { auth } from "../../../../firebase";
 import { signInWithEmailAndPassword } from "firebase/auth";
-import { useContextUserProvider } from "../../../Providers/userProvider";
-import signInImage from "../../../assets/signin.jpg";
+import { useAuth } from "../../../../Providers/userProvider";
+import signInImage from "../../../../assets/signin.jpg";
 import "./SignInForm.scss";
 
 export const SignInForm = () => {
-  const { setLoggedInUser, loggedInUser } = useContextUserProvider();
+  const { setLoggedInUser, loggedInUser } = useAuth();
   const [userEmailFromSignInInput, setUserEmailFromSignInInput] = useState("");
   const [userPasswordFromSignInInput, setUserPasswordFromSignInInput] =
     useState("");
