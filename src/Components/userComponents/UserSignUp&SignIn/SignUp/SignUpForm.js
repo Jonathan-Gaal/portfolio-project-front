@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { createUserWithEmailAndPassword } from "firebase/auth";
 import axios from "axios";
 import { auth } from "../../../../firebase";
 import { useAuth } from "../../../../Providers/userProvider";
@@ -17,7 +18,7 @@ export const SignUpForm = () => {
   // this is how we get user state from now on
   // not on the components
   const { loggedInUser } = useAuth();
-  console.log("SIGNUP", auth);
+  // console.log("SIGNUP", auth);
 
   const [newUserEmailFromSignUpInput, setNewUserEmailFromSignUpInput] =
     useState("");
