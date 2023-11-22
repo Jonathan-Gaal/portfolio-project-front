@@ -4,6 +4,7 @@ import Home from "./Pages/Home";
 import { SignIn } from "./Pages/SignIn";
 import { SignUp } from "./Pages/SignUp";
 import { Dashboard } from "./Pages/Dashboard";
+import { Account } from "./Pages/Account";
 import Index from "./Pages/Index";
 import Show from "./Pages/Show";
 import FourOFour from "./Pages/FourOFour";
@@ -24,6 +25,7 @@ function App() {
               <Route path="/signin" element={<SignIn />} />
               <Route path="/signup" element={<SignUp />} />
               <Route path="/dashboard" element={<Dashboard />} />
+              <Route path="/account" element={<Account />} />
               <Route path="/gallery" element={<Index />} />
               <Route path="/gallery/:id" element={<Show />} />
               <Route path="/cart" element={<UnderConstruction />} />
