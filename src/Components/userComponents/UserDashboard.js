@@ -1,17 +1,13 @@
 import { useState, useEffect } from "react";
+import { navigate, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { useAuth } from "../../Providers/userProvider";
 
 import "./UserDashboard.scss";
 
 export const UserDashboard = () => {
+  const navigate = useNavigate();
   const { loggedInUser, userSignOut } = useAuth();
-
-  const testButtonSignOut = () => {
-    userSignOut().then(() => {
-      console.log("USER SIGN OUT FIRED");
-    });
-  };
 
   useEffect(() => {
     // const currentUser = loggedInUser;
@@ -21,10 +17,5 @@ export const UserDashboard = () => {
   }, [loggedInUser]);
   // console.log("CURRENTUWSET  FROM USER DASHBOARD", currentUser);
   // if !logged
-  return (
-    <div className="UserDashboard">
-      UserDashboard
-      <button onClick={testButtonSignOut}>CLICK</button>
-    </div>
-  );
+  return <div className="UserDashboard">UserDashboard</div>;
 };
