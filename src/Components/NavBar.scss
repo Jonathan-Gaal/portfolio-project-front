@@ -58,7 +58,7 @@ margin-bottom: auto;
 font-size: 1.2rem;
 }
 
-.seeGalleryBtn {
+.seeGalleryBtn, .signInBtn, .signUpBtn, .signOutBtn {
 width: 90%;
 margin-right: 30px;
 padding: 2%;
@@ -68,11 +68,13 @@ text-align: center;
 border-radius: 15px;
 }
 
-.seeGalleryBtn:hover {
+.seeGalleryBtn:hover, .signInBtn:hover, .signUpBtn:hover, .signOutBtn:hover {
     transform: scale(1);
     rotate: 4.1deg;
     cursor: pointer;
 }
+
+
 
 .aboutBtn, .aboutBtn {
 font-size: 2rem;
