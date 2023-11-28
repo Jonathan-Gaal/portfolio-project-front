@@ -11,6 +11,7 @@
 }
 
 .NavBar a {
+    width: 1005;
     text-decoration: none;
     color: white;
 }
@@ -60,7 +61,7 @@ color: white;
 .navBarButtons {
 display: flex;
 justify-content: flex-end;
-width: 70%;
+width: 20%;
 height: 30%;
 margin-top: auto;
 margin-bottom: auto;
@@ -112,16 +113,17 @@ a:hover {
     }
 
         .navBarHeader {
-        margin-right: 10%;
+        margin-right: 30%;
         
         }
 
-                .navBarButtons {
+                // .navBarButtons {
+                // margin-left: 10%;
         
                
                  
         
-                }
+                // }
 
     #homeBtn, #aboutBtn{
     font-size: 1.5rem;
