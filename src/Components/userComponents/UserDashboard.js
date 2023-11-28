@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { navigate, useNavigate } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { useAuth } from "../../Providers/userProvider";
 
@@ -19,7 +19,9 @@ export const UserDashboard = () => {
   return (
     <div className="UserDashboard">
       UserDashboard
-      <div>{loggedInUserDataFromDB.test}</div>
+      <Link to="/account">
+        <div className="UserDashboard_accountDetails">Account Details</div>
+      </Link>
     </div>
   );
 };

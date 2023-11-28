@@ -15,34 +15,36 @@ const NavBar = () => {
   };
 
   return (
-    <nav className="NavBar">
-      <Link to="/">
-        <div className="navBarHeader">
-          <img className="navBarLogo" src={navBarLogo} alt="arabic teapot" />
+    <div className="NavBar">
+      <div className="navBarHeader">
+        <img className="navBarLogo" src={navBarLogo} alt="arabic teapot" />
+        <Link to="/">
           <div className="navBarHeaderText"> Jon's Palace of Art</div>
+        </Link>
+      </div>
+
+      <div className="navBarButtons">
+        <div className="seeGalleryBtn">
+          <Link to="/gallery">Gallerie</Link>
         </div>
-      </Link>
 
-      <Link to="/gallery">
-        <div className="seeGalleryBtn">Gallerie</div>
-      </Link>
-
-      <Link to="/signup">
-        <div className="signUpBtn">Sign Up</div>
-      </Link>
-
-      <Link to="/signin">
-        <div className="signInBtn">Sign In</div>
-      </Link>
-
-      {loggedInUser ? (
-        <div className="signOutBtn" onClick={signOutButton}>
-          Sign Out{" "}
+        <div className="signUpBtn">
+          <Link to="/signup">Sign Up</Link>
         </div>
-      ) : null}
 
-      {loggedInUser ? <div>{loggedInUser.email}</div> : null}
-    </nav>
+        <div className="signInBtn">
+          <Link to="/signin">Sign In</Link>
+        </div>
+
+        {loggedInUser ? (
+          <div className="signOutBtn" onClick={signOutButton}>
+            Sign Out{" "}
+          </div>
+        ) : null}
+      </div>
+
+      {/* {loggedInUser ? <div>{loggedInUser.email}</div> : null} */}
+    </div>
   );
 };
 export default NavBar;

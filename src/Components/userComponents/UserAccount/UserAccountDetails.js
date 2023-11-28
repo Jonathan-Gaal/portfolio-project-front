@@ -21,6 +21,9 @@ export const UserAccountDetails = () => {
       {loggedInUser ? (
         <div>
           User Account Details <div>{loggedInUserDataFromDB.test}</div>
+          <button className="changeAccountDetailsBtn">
+            Change Account Details
+          </button>
         </div>
       ) : (
         <div>Please Sign In</div>
