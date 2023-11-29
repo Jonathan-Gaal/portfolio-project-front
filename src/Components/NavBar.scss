@@ -1,5 +1,6 @@
 .NavBar {
     display: flex;
+    flex-flow: wrap;
     width: 100vw;
     min-height: 120px;
     margin-bottom: 1%;
@@ -114,7 +115,7 @@ a:hover {
 
         .navBarHeader {
         width: 5%;
-        margin-right: -30%;
+        margin-right: -28%;
         
         
         }

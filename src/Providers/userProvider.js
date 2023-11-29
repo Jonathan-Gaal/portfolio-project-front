@@ -11,9 +11,7 @@ const UserAuthAndDataContext = createContext();
 //children provides the prospective context to any prospective child components that may be wraped wirthin the context data provider
 export function UserAuthAndDataContextProvider({ children }) {
   const [loggedInUser, setLoggedInUser] = useState({});
-  const [loggedInUserDataFromDB, setLoggedInUserDataFromDB] = useState({
-    test: "hey",
-  });
+  const [loggedInUserDataFromDB, setLoggedInUserDataFromDB] = useState({});
 
   //runs only on comnent load and does NOT track the user state
   useEffect(() => {
