@@ -34,7 +34,8 @@ display: flex;
 margin-left: 2%;
 margin-top: auto;
 margin-bottom: auto;
-margin-right: 5%;
+margin-right: 15%;
+
 }
 
 
@@ -60,7 +61,6 @@ color: white;
 
 .navBarButtons {
 display: flex;
-justify-content: flex-end;
 width: 20%;
 height: 30%;
 margin-top: auto;
@@ -113,17 +113,25 @@ a:hover {
     }
 
         .navBarHeader {
-        margin-right: 30%;
+        width: 5%;
+        margin-right: -30%;
+        
         
         }
 
-                // .navBarButtons {
-                // margin-left: 10%;
+        .navBarHeaderText {
+            font-size: 1.1rem;
+            padding-left: 3%;
+            padding-right: 3%;
+        }
+
+                .navBarButtons {
+                margin-top: 10%;
         
                
                  
         
-                // }
+                }
 
     #homeBtn, #aboutBtn{
     font-size: 1.5rem;
