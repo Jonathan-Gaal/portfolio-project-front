@@ -11,6 +11,7 @@ export const UserDashboard = () => {
   const { loggedInUser, loggedInUserDataFromDB, setLoggedInUserDataFromDB } =
     useAuth();
 
+  const { firstname, lastname, email } = loggedInUserDataFromDB;
   const uid = loggedInUser.uid;
 
   const getUserDataFromDB = async (uid) => {
@@ -33,10 +34,17 @@ export const UserDashboard = () => {
 
   return (
     <div className="UserDashboard">
-      Hello {loggedInUser.email}!
-      <Link to="/account">
-        <div className="UserDashboard_accountDetails">Account Details</div>
-      </Link>
+      <div className="UserDashboard__dashboardNavigationBtns">
+        <div className="UserDashboard__seeAccountDetailsBtn">
+          <Link to="/account">Account Details</Link>
+        </div>
+        <div className="UserDashboard__seeFavoritesBtn">
+          <Link to="/favorites">Your Favorites</Link>
+        </div>
+        <div className="UserDashboard__seeShoppingCartBtn">
+          <Link to="/cart">Your Cart</Link>
+        </div>
+      </div>
     </div>
   );
 };

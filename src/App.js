@@ -26,6 +26,8 @@ function App() {
               <Route path="/signup" element={<SignUp />} />
               <Route path="/dashboard" element={<Dashboard />} />
               <Route path="/account" element={<Account />} />
+              <Route path="/favorites" element={<Account />} />
+              <Route path="/cart" element={<Account />} />
               <Route path="/gallery" element={<Index />} />
               <Route path="/gallery/:id" element={<Show />} />
               <Route path="/cart" element={<UnderConstruction />} />
