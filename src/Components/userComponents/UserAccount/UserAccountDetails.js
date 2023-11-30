@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { navigate, useNavigate } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { useAuth } from "../../../Providers/userProvider";
 
@@ -24,6 +24,9 @@ export const UserAccountDetails = () => {
           <button className="changeAccountDetailsBtn">
             Change Account Details
           </button>
+          <div className="UserAccountDetails__backToDashboardBtn">
+            <Link to="/dashboard">Back to Dashboard</Link>
+          </div>
         </div>
       ) : (
         <div>Please Sign In</div>
