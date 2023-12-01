@@ -5,6 +5,8 @@ import { SignIn } from "./Pages/SignIn";
 import { SignUp } from "./Pages/SignUp";
 import { Dashboard } from "./Pages/Dashboard";
 import { Account } from "./Pages/Account";
+import { UserFavorites } from "./Components/UserComponents/UserFavorites";
+import { UserShoppingCart } from "./Components/UserComponents/UserShoppingCart";
 import Index from "./Pages/Index";
 import Show from "./Pages/Show";
 import FourOFour from "./Pages/FourOFour";
@@ -26,8 +28,8 @@ function App() {
               <Route path="/signup" element={<SignUp />} />
               <Route path="/dashboard" element={<Dashboard />} />
               <Route path="/account" element={<Account />} />
-              <Route path="/favorites" element={<Account />} />
-              <Route path="/cart" element={<Account />} />
+              <Route path="/favorites" element={<UserFavorites />} />
+              <Route path="/cart" element={<UserShoppingCart />} />
               <Route path="/gallery" element={<Index />} />
               <Route path="/gallery/:id" element={<Show />} />
               <Route path="/cart" element={<UnderConstruction />} />
