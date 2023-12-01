@@ -34,7 +34,7 @@ export const UserDashboard = () => {
     await axios
       .get(`${API}/users/${uid}`)
       .then((res) => {
-        console.log(res);
+        // console.log(res);
         setLoggedInUserDataFromDB(res.data);
       })
       .catch((err) => {
