@@ -56,7 +56,7 @@ const Gallery = () => {
     setSelectInputOption(e.target.value);
   };
 
-  const testItOut = (selectOptionString) => {
+  const filteredGallery = (selectOptionString) => {
     let filteredGalleryData = filterArtworkTitlesByArtworkSearchBarInput(
       searchArtworkTitleSearchBarInput,
       gallery
@@ -121,7 +121,7 @@ const Gallery = () => {
       </select>
 
       <div className="Gallery__data">
-        {testItOut(selectInputOption)?.map((artwork) => {
+        {filteredGallery(selectInputOption)?.map((artwork) => {
           return <ArtworkCard key={artwork.id} artwork={artwork} />;
         })}
       </div>
