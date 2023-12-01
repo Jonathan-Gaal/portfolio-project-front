@@ -14,6 +14,8 @@ export const UserDashboard = () => {
   const { firstname, lastname, email } = loggedInUserDataFromDB;
   const uid = loggedInUser.uid;
 
+  const [selectedView, setSelectedView] = useState("favorites");
+
   const getUserDataFromDB = async (uid) => {
     await axios
       .get(`${API}/users/${uid}`)
