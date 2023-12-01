@@ -37,6 +37,12 @@ const NavBar = () => {
         </div>
 
         {loggedInUser ? (
+          <div className="dashboardBtn">
+            <Link to="/dashboard">Dashboard</Link>
+          </div>
+        ) : null}
+
+        {loggedInUser ? (
           <div className="signOutBtn" onClick={signOutButton}>
             Sign Out{" "}
           </div>
