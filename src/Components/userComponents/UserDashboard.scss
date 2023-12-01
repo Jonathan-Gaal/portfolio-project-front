@@ -3,11 +3,6 @@
     text-decoration: none;
 }
 
-.UserDashboard a:hover {
-    cursor: pointer;
-    color: rgb(255, 174, 0);
-}
-
 .UserDashboard {
     color: white;
     font-family: 'Eagle Lake';
@@ -30,5 +25,7 @@
     &__seeAccountDetailsBtn:hover, &__seeFavoritesBtn:hover, &__seeShoppingCartBtn:hover  {
         transform: scale(1);
             rotate: 4deg;
+            cursor: pointer;
+                color: rgb(255, 174, 0);
     }
 }

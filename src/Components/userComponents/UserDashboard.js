@@ -2,6 +2,9 @@ import { useState, useEffect } from "react";
 import { Link, Navigate, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { useAuth } from "../../Providers/userProvider";
+import { UserShoppingCart } from "./UserShoppingCart";
+import { UserFavorites } from "./UserFavorites";
+import { UserAccountDetails } from "./UserAccount/UserAccountDetails";
 
 import "./UserDashboard.scss";
 
@@ -14,7 +17,18 @@ export const UserDashboard = () => {
   const { firstname, lastname, email } = loggedInUserDataFromDB;
   const uid = loggedInUser.uid;
 
-  const [selectedView, setSelectedView] = useState("favorites");
+  const [selectedUserComponent, setSelectedUserComponent] =
+    useState("favorites");
+
+  const setUserComponentToShoppingCart = () => {
+    setSelectedUserComponent("shoppingcart");
+  };
+  const setUserComponentToFavorites = () => {
+    setSelectedUserComponent("favorites");
+  };
+  const setUserComponentToAccountDetails = () => {
+    setSelectedUserComponent("accountdetails");
+  };
 
   const getUserDataFromDB = async (uid) => {
     await axios
@@ -37,15 +51,36 @@ export const UserDashboard = () => {
   return (
     <div className="UserDashboard">
       <div className="UserDashboard__dashboardNavigationBtns">
-        <div className="UserDashboard__seeAccountDetailsBtn">
-          <Link to="/account">Account Details</Link>
+        <div
+          className="UserDashboard__seeAccountDetailsBtn"
+          onClick={setUserComponentToAccountDetails}>
+          {" "}
+          Account Details
         </div>
-        <div className="UserDashboard__seeFavoritesBtn">
-          <Link to="/favorites">Your Favorites</Link>
+        <div
+          className="UserDashboard__seeFavoritesBtn"
+          onClick={setUserComponentToFavorites}>
+          Your Favorites
         </div>
-        <div className="UserDashboard__seeShoppingCartBtn">
-          <Link to="/cart">Your Cart</Link>
+        <div
+          className="UserDashboard__seeShoppingCartBtn"
+          onClick={setUserComponentToShoppingCart}>
+          Your Cart
+          {/* <Link to="/cart">Your Cart</Link> */}
         </div>
+      </div>
+      <div className="UserDashboard__selectedUserComponent">
+        {selectedUserComponent === "accountdetails" ? (
+          <UserAccountDetails />
+        ) : null}
+      </div>
+
+      <div className="UserDashboard__selectedUserComponent">
+        {selectedUserComponent === "shoppingcart" ? <UserShoppingCart /> : null}
+      </div>
+
+      <div className="UserDashboard__selectedUserComponent">
+        {selectedUserComponent === "favorites" ? <UserFavorites /> : null}
       </div>
     </div>
   );
