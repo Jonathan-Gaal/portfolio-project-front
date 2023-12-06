@@ -22,18 +22,20 @@ export const UserShoppingCart = () => {
       .catch((err) => {
         console.error(err);
       });
-  }, []);
+  }, [userShoppingCart]);
 
   return (
     <div className="UserShoppingCart">
-      {userShoppingCart?.map((userShoppingCartItem) => {
-        return (
-          <UserShoppingCartItemCard
-            key={userShoppingCartItem.id}
-            userShoppingCartItem={userShoppingCartItem}
-          />
-        );
-      })}
+      <div className="UserShoppingCart__shoppingCartContainer">
+        {userShoppingCart?.map((userShoppingCartItem) => {
+          return (
+            <UserShoppingCartItemCard
+              key={userShoppingCartItem.id}
+              userShoppingCartItem={userShoppingCartItem}
+            />
+          );
+        })}
+      </div>
     </div>
   );
 };

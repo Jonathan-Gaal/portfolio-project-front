@@ -9,9 +9,9 @@ const NavBar = () => {
 
   const signOutButton = () => {
     userSignOut().then(() => {
-      navigate("/");
       console.log("USER SIGN OUT FIRED");
     });
+    navigate("/");
   };
 
   return (
@@ -24,16 +24,12 @@ const NavBar = () => {
       </div>
 
       <div className="navBarButtons">
-        <div className="seeGalleryBtn">
-          <Link to="/gallery">Gallerie</Link>
-        </div>
-
         <div className="signUpBtn">
           <Link to="/signup">Sign Up</Link>
         </div>
 
-        <div className="signInBtn">
-          <Link to="/signin">Sign In</Link>
+        <div className="seeGalleryBtn">
+          <Link to="/gallery">Gallerie</Link>
         </div>
 
         {loggedInUser ? (
@@ -46,7 +42,11 @@ const NavBar = () => {
           <div className="signOutBtn" onClick={signOutButton}>
             Sign Out{" "}
           </div>
-        ) : null}
+        ) : (
+          <div className="signInBtn">
+            <Link to="/signin">Sign In</Link>
+          </div>
+        )}
       </div>
 
       {/* {loggedInUser ? <div>{loggedInUser.email}</div> : null} */}
