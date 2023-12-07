@@ -12,6 +12,7 @@ const UserAuthAndDataContext = createContext();
 export function UserAuthAndDataContextProvider({ children }) {
   const [loggedInUser, setLoggedInUser] = useState({});
   const [loggedInUserDataFromDB, setLoggedInUserDataFromDB] = useState({});
+  const [userShoppingCart, setUserShoppingCart] = useState([]);
 
   //runs only on comnent load and does NOT track the user state
   useEffect(() => {
@@ -34,6 +35,8 @@ export function UserAuthAndDataContextProvider({ children }) {
         setLoggedInUser,
         loggedInUserDataFromDB,
         setLoggedInUserDataFromDB,
+        userShoppingCart,
+        setUserShoppingCart,
         userSignOut,
       }}>
       {/* 

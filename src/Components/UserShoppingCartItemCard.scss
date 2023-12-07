@@ -1,9 +1,25 @@
 .UserShoppingCartItemCard {
 
+    & a {
+        color: white;
+        text-decoration: none;
+       
+    }
+
+
 
     &__image {
         width: 100%;
         border: ridge rgb(95, 86, 67) 2.5px;
         border-radius: 15px;
     }
+
+        &:hover {
+            opacity: .3;
+            transform: scale(1.1);
+           
+        }
+
+     
 }
+

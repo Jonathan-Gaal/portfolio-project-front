@@ -48,7 +48,7 @@ body {
     padding: 8px;
 }
 
-.galleryBtn, .deleteCommentBtn {
+.galleryBtn, .deleteCommentBtn, .addToCartBtn {
     margin-right: .5%;
     margin-bottom: 3%;
     border: ridge rgb(132, 112, 69) 2px;
@@ -74,7 +74,7 @@ body {
 }
 
 .commentBtn:hover, .editCommentBtn:hover, .galleryBtn:hover,
-.deleteCommentBtn:hover {
+.deleteCommentBtn:hover, .addToCartBtn:hover {
     transform: scale(1);
     rotate: 4deg;
     cursor: pointer;

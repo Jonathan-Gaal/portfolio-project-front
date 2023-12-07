@@ -3,11 +3,13 @@ import { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import Comments from "./Comments";
 import { ArtworkDetailsImageSelectorBar } from "./ArtworkDetailsImageSelectorBar";
+import { useAuth } from "../Providers/userProvider";
 import "./ArtworkDetails.scss";
 const API = process.env.REACT_APP_API_URL;
 
 const ArtworkDetails = () => {
   let { id } = useParams();
+  const { loggedInUser } = useAuth();
   // let navigate = useNavigate();
   const [artwork, setArtwork] = useState({});
   const [allArtworkImages, setAllArtworkImages] = useState([]);
@@ -29,6 +31,20 @@ const ArtworkDetails = () => {
 
   const displayComments = () => {
     setShowComments(!showComments);
+  };
+
+  const addGalleryItemToUserShoppingCart = () => {
+    console.log("ADDED TO CART");
+    axios.get(`${API}/users${loggedInUser.uid}/cart`);
+
+    axios
+      .post(`${API}/users/${loggedInUser.uid}/cart`, {
+        item_id: id,
+        user_id: loggedInUser.uid,
+      })
+      .catch((err) => {
+        console.error(err);
+      });
   };
 
   useEffect(() => {
@@ -102,6 +118,11 @@ const ArtworkDetails = () => {
         </Link>
         <button className="commentBtn" onClick={displayComments}>
           Comments
+        </button>
+        <button
+          className="addToCartBtn"
+          onClick={addGalleryItemToUserShoppingCart}>
+          Add to Cart
         </button>
       </div>
       <Comments showComments={showComments} />
