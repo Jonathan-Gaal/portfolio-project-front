@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import Comments from "./Comments";
 import { ArtworkDetailsImageSelectorBar } from "./ArtworkDetailsImageSelectorBar";
+import { checkIfItemExistsInUserShoppingCart } from "../helpers";
 import {
   useAuth,
   userShoppingCart,
@@ -39,13 +40,7 @@ const ArtworkDetails = () => {
   };
 
   const addGalleryItemToUserShoppingCart = async () => {
-    const checkIfItemExistsInUserShoppingCart = await userShoppingCart.find(
-      (currentUserShoppingCartItem) => {
-        return Number(id) === currentUserShoppingCartItem.item_id;
-      }
-    );
-
-    if (checkIfItemExistsInUserShoppingCart) {
+    if (await checkIfItemExistsInUserShoppingCart(userShoppingCart, id)) {
       window.alert("Item is already in your cart.");
     } else {
       axios
