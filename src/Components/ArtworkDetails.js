@@ -3,13 +3,17 @@ import { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import Comments from "./Comments";
 import { ArtworkDetailsImageSelectorBar } from "./ArtworkDetailsImageSelectorBar";
-import { useAuth } from "../Providers/userProvider";
+import {
+  useAuth,
+  userShoppingCart,
+  setUserShoppingCart,
+} from "../Providers/userProvider";
 import "./ArtworkDetails.scss";
 const API = process.env.REACT_APP_API_URL;
 
 const ArtworkDetails = () => {
   let { id } = useParams();
-  const { loggedInUser } = useAuth();
+  const { loggedInUser, userShoppingCart, setUserShoppingCart } = useAuth();
   // let navigate = useNavigate();
   const [artwork, setArtwork] = useState({});
   const [allArtworkImages, setAllArtworkImages] = useState([]);
@@ -34,16 +38,31 @@ const ArtworkDetails = () => {
   };
 
   const addGalleryItemToUserShoppingCart = () => {
-    console.log("ADDED TO CART");
-    axios.get(`${API}/users${loggedInUser.uid}/cart`);
-
     axios
-      .post(`${API}/users/${loggedInUser.uid}/cart`, {
-        item_id: id,
-        user_id: loggedInUser.uid,
+      .get(`${API}/users/${loggedInUser.uid}/cart`, {
+        headers: { "Access-Control-Allow-Origin": "*" },
       })
-      .catch((err) => {
-        console.error(err);
+      .then((res) => {
+        setUserShoppingCart(res.data);
+        console.log("RES DATA FROM ADD TO SHOPPING CART GET", res.data);
+        for (let i = 0; i < res.data.length; i++) {
+          console.log("ITEM ID", res.data[i].item_id);
+          console.log("ID", id);
+          if (id === res.data[i].item_id) {
+            break;
+            window.alert("Item is already in your cart.");
+          } else {
+            axios
+              .post(`${API}/users/${loggedInUser.uid}/cart`, {
+                item_id: id,
+                user_id: loggedInUser.uid,
+              })
+              .then(window.alert("Item added to your cart!"))
+              .catch((err) => {
+                console.error(err);
+              });
+          }
+        }
       });
   };
 

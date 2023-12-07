@@ -20,7 +20,7 @@ export const UserShoppingCart = () => {
     axios
       .get(`${API}/users/${loggedInUser.uid}/cart`)
       .then((res) => {
-        console.log("RES FROM SHOPPING CART API CALL", res.data);
+        // console.log("RES FROM SHOPPING CART API CALL", res.data);
         setUserShoppingCart(res.data);
       })
       .catch((err) => {
