@@ -18,3 +18,11 @@ export const validateUserPassword = (password) => {
 
   return false;
 };
+
+export const checkIfItemExistsInUserShoppingCart = async (
+  userShoppingCart,
+  currentProductId
+) =>
+  await userShoppingCart.find((currentUserShoppingCartItem) => {
+    return Number(currentProductId) === currentUserShoppingCartItem.item_id;
+  });
