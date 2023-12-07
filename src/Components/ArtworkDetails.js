@@ -109,7 +109,7 @@ const ArtworkDetails = () => {
       .catch((err) => {
         console.error(err);
       });
-  }, [userShoppingCart]);
+  }, []);
 
   let convertDateToHumanReadableFormat = (artworkRelatedDate) => {
     if (artworkRelatedDate === "N/A" || artworkRelatedDate === "n/a") {
