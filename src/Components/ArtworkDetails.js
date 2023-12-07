@@ -9,6 +9,7 @@ import {
   setUserShoppingCart,
 } from "../Providers/userProvider";
 import "./ArtworkDetails.scss";
+import { UserShoppingCart } from "./UserComponents/UserShoppingCart";
 const API = process.env.REACT_APP_API_URL;
 
 const ArtworkDetails = () => {
@@ -37,34 +38,41 @@ const ArtworkDetails = () => {
     setShowComments(!showComments);
   };
 
-  const addGalleryItemToUserShoppingCart = () => {
+  const addGalleryItemToUserShoppingCart = async () => {
+    const checkIfItemExistsInUserShoppingCart = await userShoppingCart.find(
+      (currentUserShoppingCartItem) => {
+        return Number(id) === currentUserShoppingCartItem.item_id;
+      }
+    );
+
+    if (checkIfItemExistsInUserShoppingCart) {
+      window.alert("Item is already in your cart.");
+    } else {
+      axios
+        .post(`${API}/users/${loggedInUser.uid}/cart`, {
+          item_id: id,
+          user_id: loggedInUser.uid,
+        })
+        .then(window.alert("Item added to your cart!"))
+
+        .catch((err) => {
+          console.error(err);
+        });
+    }
+  };
+
+  useEffect(() => {
     axios
-      .get(`${API}/users/${loggedInUser.uid}/cart`, {
+      .get(`${API}/gallery/${id}`, {
         headers: { "Access-Control-Allow-Origin": "*" },
       })
       .then((res) => {
-        setUserShoppingCart(res.data);
-        console.log("RES DATA FROM ADD TO SHOPPING CART GET", res.data);
-        for (let i = 0; i < res.data.length; i++) {
-          console.log("ITEM ID", res.data[i].item_id);
-          console.log("ID", id);
-          if (id === res.data[i].item_id) {
-            break;
-            window.alert("Item is already in your cart.");
-          } else {
-            axios
-              .post(`${API}/users/${loggedInUser.uid}/cart`, {
-                item_id: id,
-                user_id: loggedInUser.uid,
-              })
-              .then(window.alert("Item added to your cart!"))
-              .catch((err) => {
-                console.error(err);
-              });
-          }
-        }
+        setArtwork(res.data);
+      })
+      .catch((err) => {
+        console.warn("catch", err);
       });
-  };
+  }, [id]);
 
   useEffect(() => {
     axios
@@ -93,6 +101,20 @@ const ArtworkDetails = () => {
         console.warn("catch", err);
       });
   }, [id]);
+
+  useEffect(() => {
+    axios
+      .get(`${API}/users/${loggedInUser.uid}/cart`, {
+        headers: { "Access-Control-Allow-Origin": "*" },
+      })
+      .then((res) => {
+        setUserShoppingCart(res.data);
+        // console.log("RES DATA FROM ADD TO SHOPPING CART GET", res.data);
+      })
+      .catch((err) => {
+        console.error(err);
+      });
+  }, [userShoppingCart]);
 
   let convertDateToHumanReadableFormat = (artworkRelatedDate) => {
     if (artworkRelatedDate === "N/A" || artworkRelatedDate === "n/a") {
