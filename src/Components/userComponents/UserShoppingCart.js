@@ -1,16 +1,20 @@
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import axios from "axios";
-import { useAuth } from "../../Providers/userProvider";
+import {
+  useAuth,
+  userShoppingCart,
+  setUserShoppingCart,
+} from "../../Providers/userProvider";
 import { UserShoppingCartItemCard } from "./UserShoppingCartItemCard";
 import "./UserShoppingCart.scss";
 
 const API = process.env.REACT_APP_API_URL;
 
 export const UserShoppingCart = () => {
-  const { loggedInUser } = useAuth();
+  const { loggedInUser, userShoppingCart, setUserShoppingCart } = useAuth();
 
-  const [userShoppingCart, setUserShoppingCart] = useState([]);
+  // const [userShoppingCart, setUserShoppingCart] = useState([]);
 
   useEffect(() => {
     axios

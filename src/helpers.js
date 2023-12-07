@@ -4,7 +4,7 @@ export const validateUserSignUpOrSignInEmail = (userEmail) => {
   }
 };
 
-export const validateUserPassword = (passwordToTest) => {
+export const validateUserPassword = (password) => {
   if (
     /[a-z]/.test(passwordToTest) &&
     /[A-Z]/.test(passwordToTest) &&

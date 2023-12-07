@@ -50,7 +50,6 @@ export const UserShoppingCartItemCard = ({ userShoppingCartItem }) => {
         />
         <div className="UserShoppingCartItemCard__details">
           <div>{title}</div>
-
           <div>Category: {category}</div>
         </div>
       </Link>
