@@ -53,6 +53,18 @@ const ArtworkDetails = () => {
         .catch((err) => {
           console.error(err);
         });
+
+      axios
+        .get(`${API}/users/${loggedInUser.uid}/cart`, {
+          headers: { "Access-Control-Allow-Origin": "*" },
+        })
+        .then((res) => {
+          setUserShoppingCart(res.data);
+          // console.log("RES DATA FROM ADD TO SHOPPING CART GET", res.data);
+        })
+        .catch((err) => {
+          console.error(err);
+        });
     }
   };
 
