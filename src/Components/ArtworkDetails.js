@@ -109,20 +109,6 @@ const ArtworkDetails = () => {
       });
   }, [id]);
 
-  useEffect(() => {
-    axios
-      .get(`${API}/users/${loggedInUser.uid}/cart`, {
-        headers: { "Access-Control-Allow-Origin": "*" },
-      })
-      .then((res) => {
-        setUserShoppingCart(res.data);
-        // console.log("RES DATA FROM ADD TO SHOPPING CART GET", res.data);
-      })
-      .catch((err) => {
-        console.error(err);
-      });
-  }, []);
-
   let convertDateToHumanReadableFormat = (artworkRelatedDate) => {
     if (artworkRelatedDate === "N/A" || artworkRelatedDate === "n/a") {
       return "N/A";

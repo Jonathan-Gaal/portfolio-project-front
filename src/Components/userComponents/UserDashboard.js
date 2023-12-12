@@ -8,8 +8,13 @@ import "./UserDashboard.scss";
 export const UserDashboard = () => {
   const API = process.env.REACT_APP_API_URL;
   const navigate = useNavigate();
-  const { loggedInUser, loggedInUserDataFromDB, setLoggedInUserDataFromDB } =
-    useAuth();
+  const {
+    loggedInUser,
+    loggedInUserDataFromDB,
+    setLoggedInUserDataFromDB,
+    userShoppingCart,
+    setUserShoppingCart,
+  } = useAuth();
 
   const { firstname, lastname, email } = loggedInUserDataFromDB;
   const uid = loggedInUser.uid;
@@ -30,6 +35,18 @@ export const UserDashboard = () => {
     if (uid) {
       getUserDataFromDB(uid);
     }
+
+    axios
+      .get(`${API}/users/${uid}/cart`, {
+        headers: { "Access-Control-Allow-Origin": "*" },
+      })
+      .then((res) => {
+        setUserShoppingCart(res.data);
+        // console.log("RES DATA FROM ADD TO SHOPPING CART GET", res.data);
+      })
+      .catch((err) => {
+        console.error(err);
+      });
   }, [loggedInUser]);
 
   return (
