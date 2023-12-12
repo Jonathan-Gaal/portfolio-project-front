@@ -14,19 +14,16 @@ const API = process.env.REACT_APP_API_URL;
 export const UserShoppingCart = () => {
   const { loggedInUser, userShoppingCart, setUserShoppingCart } = useAuth();
 
-  // const [userShoppingCart, setUserShoppingCart] = useState([]);
-
   useEffect(() => {
     axios
       .get(`${API}/users/${loggedInUser.uid}/cart`)
       .then((res) => {
-        // console.log("RES FROM SHOPPING CART API CALL", res.data);
         setUserShoppingCart(res.data);
       })
       .catch((err) => {
         console.error(err);
       });
-  }, []);
+  }, [loggedInUser]);
 
   return (
     <div className="UserShoppingCart">
