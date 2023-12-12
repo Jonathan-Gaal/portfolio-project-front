@@ -1,11 +1,18 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import {
+  useAuth,
+  userShoppingCart,
+  setUserShoppingCart,
+} from "../../Providers/userProvider";
+import { checkIfItemExistsInUserShoppingCart } from "../../helpers";
 import "../UserShoppingCartItemCard.scss";
 
 const API = process.env.REACT_APP_API_URL;
 
 export const UserShoppingCartItemCard = ({ userShoppingCartItem }) => {
+  const { loggedInUser, userShoppingCart, setUserShoppingCart } = useAuth();
   const { item_id } = userShoppingCartItem;
 
   const [
@@ -15,6 +22,27 @@ export const UserShoppingCartItemCard = ({ userShoppingCartItem }) => {
 
   const [userShoppingCartItemDetails, setUserShoppingCartItemDetails] =
     useState({});
+
+  const removeItemFromUserShoppingCart = async (loggedInUserId, itemId) => {
+    await axios
+      .delete(`${API}/users/${loggedInUser.uid}/cart/${item_id}`)
+      .then(window.alert("Item removed from your cart!"))
+
+      .catch((err) => {
+        console.error(err);
+      });
+
+    axios
+      .get(`${API}/users/${loggedInUser.uid}/cart`, {
+        headers: { "Access-Control-Allow-Origin": "*" },
+      })
+      .then((res) => {
+        setUserShoppingCart(res.data);
+      })
+      .catch((err) => {
+        console.error(err);
+      });
+  };
 
   useEffect(() => {
     axios
@@ -36,7 +64,7 @@ export const UserShoppingCartItemCard = ({ userShoppingCartItem }) => {
         setUserShoppingCartItemDetails(res.data);
       })
       .catch((c) => console.warn("catch", c));
-  }, []);
+  }, [item_id]);
 
   const { title, category } = userShoppingCartItemDetails;
 
@@ -50,9 +78,9 @@ export const UserShoppingCartItemCard = ({ userShoppingCartItem }) => {
         />
         <div className="UserShoppingCartItemCard__details">
           <div>{title}</div>
-          <div>Category: {category}</div>
         </div>
       </Link>
+      <button onClick={removeItemFromUserShoppingCart}>Remove</button>
     </div>
   );
 };
