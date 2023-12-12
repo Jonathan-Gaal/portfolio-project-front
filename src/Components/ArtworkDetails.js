@@ -68,18 +68,18 @@ const ArtworkDetails = () => {
     }
   };
 
-  useEffect(() => {
-    axios
-      .get(`${API}/gallery/${id}`, {
-        headers: { "Access-Control-Allow-Origin": "*" },
-      })
-      .then((res) => {
-        setArtwork(res.data);
-      })
-      .catch((err) => {
-        console.warn("catch", err);
-      });
-  }, [id]);
+  // useEffect(() => {
+  //   axios
+  //     .get(`${API}/gallery/${id}`, {
+  //       headers: { "Access-Control-Allow-Origin": "*" },
+  //     })
+  //     .then((res) => {
+  //       setArtwork(res.data);
+  //     })
+  //     .catch((err) => {
+  //       console.warn("catch", err);
+  //     });
+  // }, [id]);
 
   useEffect(() => {
     axios
@@ -90,7 +90,7 @@ const ArtworkDetails = () => {
         setArtwork(res.data);
       })
       .catch((err) => {
-        console.warn("catch", err);
+        console.error("catch", err);
       });
   }, [id]);
 
