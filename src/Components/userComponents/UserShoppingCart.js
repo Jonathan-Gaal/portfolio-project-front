@@ -26,7 +26,7 @@ export const UserShoppingCart = () => {
       .catch((err) => {
         console.error(err);
       });
-  }, [userShoppingCart]);
+  }, []);
 
   return (
     <div className="UserShoppingCart">
