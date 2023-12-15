@@ -23,7 +23,6 @@ export const UserDashboard = () => {
     await axios
       .get(`${API}/users/${uid}`)
       .then((res) => {
-        // console.log(res);
         setLoggedInUserDataFromDB(res.data);
       })
       .catch((err) => {
@@ -42,7 +41,6 @@ export const UserDashboard = () => {
       })
       .then((res) => {
         setUserShoppingCart(res.data);
-        // console.log("RES DATA FROM ADD TO SHOPPING CART GET", res.data);
       })
       .catch((err) => {
         console.error(err);

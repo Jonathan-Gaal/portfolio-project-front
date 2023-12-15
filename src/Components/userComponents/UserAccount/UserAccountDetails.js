@@ -14,13 +14,17 @@ export const UserAccountDetails = () => {
     userSignOut,
   } = useAuth();
 
+  const { firstname } = loggedInUserDataFromDB;
+
+  console.log("DATA FROM DB IN ACCOUNT DETAILS", loggedInUserDataFromDB);
+
   useEffect(() => {}, [loggedInUser]);
 
   return (
     <div className="UserAccountDetails">
       {loggedInUser ? (
         <div>
-          User Account Details <div>{loggedInUserDataFromDB.test}</div>
+          <div>Hello {loggedInUserDataFromDB.firstname}</div>
           <div className="UserAccountDetails__changeUserAccountDetailsdBtn">
             <Link to="/changeaccount">Change account settings</Link>
           </div>
