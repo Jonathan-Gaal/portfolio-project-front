@@ -70,6 +70,7 @@ export const UserShoppingCartItemCard = ({ userShoppingCartItem }) => {
 
   return (
     <div className="UserShoppingCartItemCard">
+      <button onClick={removeItemFromUserShoppingCart}>Remove</button>
       <Link to={`/gallery/${item_id}`}>
         <img
           className="UserShoppingCartItemCard__image"
@@ -80,7 +81,6 @@ export const UserShoppingCartItemCard = ({ userShoppingCartItem }) => {
           <div>{title}</div>
         </div>
       </Link>
-      <button onClick={removeItemFromUserShoppingCart}>Remove</button>
     </div>
   );
 };
