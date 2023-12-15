@@ -9,10 +9,8 @@ import {
 import { UserShoppingCartItemCard } from "./UserShoppingCartItemCard";
 import "./UserShoppingCart.scss";
 
-const API = process.env.REACT_APP_API_URL;
-
 export const UserShoppingCart = () => {
-  const { loggedInUser, userShoppingCart, setUserShoppingCart } = useAuth();
+  const { userShoppingCart } = useAuth();
   const [userShoppingCartTotal, setUserShoppingCartTotal] = useState(0);
 
   const calculateUserShoppingCartDisplayTotal = (userShoppingCart) => {
@@ -28,25 +26,24 @@ export const UserShoppingCart = () => {
   };
 
   useEffect(() => {
-    axios
-      .get(`${API}/users/${loggedInUser.uid}/cart`)
-      .then((res) => {
-        setUserShoppingCart(res.data);
-      })
-      .catch((err) => {
-        console.error(err);
-      });
-  }, [loggedInUser]);
+    const formattedUserShoppingCartDisplayTotal = new Intl.NumberFormat(
+      "en-US",
+      {
+        style: "currency",
+        currency: "USD",
+      }
+    );
 
-  useEffect(() => {
     setUserShoppingCartTotal(
-      calculateUserShoppingCartDisplayTotal(userShoppingCart)
+      formattedUserShoppingCartDisplayTotal.format(
+        calculateUserShoppingCartDisplayTotal(userShoppingCart)
+      )
     );
   }, [userShoppingCart]);
 
   return (
     <div className="UserShoppingCart">
-      <div>Total:${userShoppingCartTotal}</div>
+      <div>Total: {userShoppingCartTotal}</div>
       <div className="UserShoppingCart__shoppingCartContainer">
         {userShoppingCart?.map((userShoppingCartItem) => {
           return (
