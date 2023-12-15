@@ -28,7 +28,7 @@ function App() {
               <Route path="/signup" element={<SignUp />} />
               <Route path="/dashboard" element={<Dashboard />} />
               <Route path="/account" element={<Account />} />
-
+              <Route path="/changeaccount" element={<UnderConstruction />} />
               <Route path="/favorites" element={<UnderConstruction />} />
               <Route path="/cart" element={<UserShoppingCart />} />
               <Route path="/gallery" element={<Index />} />
