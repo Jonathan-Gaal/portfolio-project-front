@@ -33,6 +33,7 @@ const ArtworkDetails = () => {
     width,
     height,
     depth,
+    price,
   } = artwork;
 
   const displayComments = () => {
@@ -47,6 +48,7 @@ const ArtworkDetails = () => {
         .post(`${API}/users/${loggedInUser.uid}/cart`, {
           item_id: id,
           user_id: loggedInUser.uid,
+          item_price: price,
         })
         .then(window.alert("Item added to your cart!"))
 
@@ -136,6 +138,7 @@ const ArtworkDetails = () => {
       <div className="ArtworkDetails__heading">{title}</div>
       <div className="ArtworkDetails__details">
         <div className="ArtworkDetails__detail">Category: {category}</div>{" "}
+        <div className="ArtworkDetails__detail">Price: ${price}</div>
         <div>
           Dimensions: Width:{width} x Height:{height} x Depth:{depth} Diameter:
           {diameter}
