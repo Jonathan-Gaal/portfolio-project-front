@@ -18,8 +18,6 @@ export const UserAccountDetails = () => {
 
   const { firstname, email } = loggedInUserDataFromDB;
 
-  console.log("DATA FROM DB IN ACCOUNT DETAILS", loggedInUserDataFromDB);
-
   useEffect(() => {
     axios
       .get(`${API}/users/${loggedInUser.uid}`, {
