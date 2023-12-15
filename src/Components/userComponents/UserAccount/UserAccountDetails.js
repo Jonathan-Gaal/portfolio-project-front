@@ -21,9 +21,9 @@ export const UserAccountDetails = () => {
       {loggedInUser ? (
         <div>
           User Account Details <div>{loggedInUserDataFromDB.test}</div>
-          <button className="changeAccountDetailsBtn">
-            Change Account Details
-          </button>
+          <div className="UserAccountDetails__changeUserAccountDetailsdBtn">
+            <Link to="/changeaccount">Change account settings</Link>
+          </div>
           <div className="UserAccountDetails__backToDashboardBtn">
             <Link to="/dashboard">Back to Dashboard</Link>
           </div>
