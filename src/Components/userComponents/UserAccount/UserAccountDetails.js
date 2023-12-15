@@ -5,6 +5,8 @@ import { useAuth } from "../../../Providers/userProvider";
 
 import "./UserAccountDetails.scss";
 
+const API = process.env.REACT_APP_API_URL;
+
 export const UserAccountDetails = () => {
   const navigate = useNavigate();
   const {
@@ -14,17 +16,28 @@ export const UserAccountDetails = () => {
     userSignOut,
   } = useAuth();
 
-  const { firstname } = loggedInUserDataFromDB;
+  const { firstname, email } = loggedInUserDataFromDB;
 
   console.log("DATA FROM DB IN ACCOUNT DETAILS", loggedInUserDataFromDB);
 
-  useEffect(() => {}, [loggedInUser]);
+  useEffect(() => {
+    axios
+      .get(`${API}/users/${loggedInUser.uid}`, {
+        headers: { "Access-Control-Allow-Origin": "*" },
+      })
+      .then((res) => {
+        setLoggedInUserDataFromDB(res.data);
+      })
+      .catch((err) => {
+        console.error(err);
+      });
+  }, [loggedInUser]);
 
   return (
-    <div className="UserAccountDetails">
+    <div className="UserAccountDetailsContainer">
       {loggedInUser ? (
-        <div>
-          <div>Hello {loggedInUserDataFromDB.firstname}</div>
+        <div className="UserAccountDetails">
+          <div className="UserAccountDetails__greeting">Hi {firstname}</div>
           <div className="UserAccountDetails__changeUserAccountDetailsdBtn">
             <Link to="/changeaccount">Change account settings</Link>
           </div>
