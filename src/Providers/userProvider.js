@@ -27,7 +27,7 @@ export function UserAuthAndDataContextProvider({ children }) {
       // if there is a "user" object as a result of the datastream "phone call" it sets the state to the value of user || null
       user ? setLoggedInUser(user) : setLoggedInUser(null);
       // console.log("I HAVE RUN", user);
-      if (user) {
+      if (user?.uid) {
         const { uid } = user;
         userState.getUserDataFromDB(uid, setLoggedInUserDataFromDB);
         userState.getUserShoppingCart(uid, setUserShoppingCart);
