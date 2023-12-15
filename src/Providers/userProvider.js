@@ -2,6 +2,7 @@ import { useEffect, createContext, useContext, useState } from "react";
 //importing our auth / getAuth -- auth is the specific data stream related to the state of the users authentication credentials with firebase at any given moment.
 //importing the userSignOut function which in turn invokes firebase' signOut
 import { auth, userSignOut } from "../firebase";
+import * as userState from "../api/userState";
 
 // this gives us userAuthAndaDataContext.Provider - see below\
 // this allows us to access global state
@@ -12,6 +13,7 @@ const UserAuthAndDataContext = createContext();
 export function UserAuthAndDataContextProvider({ children }) {
   const [loggedInUser, setLoggedInUser] = useState({});
   const [loggedInUserDataFromDB, setLoggedInUserDataFromDB] = useState({});
+  const [userShippingAddresses, setUserShippingAddresses] = useState([]);
   const [userShoppingCart, setUserShoppingCart] = useState([]);
 
   //runs only on comnent load and does NOT track the user state
@@ -21,9 +23,20 @@ export function UserAuthAndDataContextProvider({ children }) {
     // NOTE * when you navigate away or refresh the entire context provider is also refreshed, therefore any state it had is not null again since it was re-initialized, thats why we have run useEffect ewach time the component reloads to restablish the datastream
 
     auth.onAuthStateChanged((user) => {
-      console.log("AUTH STATE CHANGED USER", user);
+      // console.log("AUTH STATE CHANGED USER", user);
       // if there is a "user" object as a result of the datastream "phone call" it sets the state to the value of user || null
       user ? setLoggedInUser(user) : setLoggedInUser(null);
+      // console.log("I HAVE RUN", user);
+      if (user) {
+        const { uid } = user;
+        userState.getUserDataFromDB(uid, setLoggedInUserDataFromDB);
+        userState.getUserShoppingCart(uid, setUserShoppingCart);
+        userState.getUserAddresses(uid, setUserShippingAddresses);
+      } else {
+        setLoggedInUserDataFromDB({});
+        setUserShoppingCart([]);
+        setUserShippingAddresses([]);
+      }
     });
   }, []);
 
@@ -37,6 +50,8 @@ export function UserAuthAndDataContextProvider({ children }) {
         setLoggedInUserDataFromDB,
         userShoppingCart,
         setUserShoppingCart,
+        userShippingAddresses,
+        setUserShippingAddresses,
         userSignOut,
       }}>
       {/* 

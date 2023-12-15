@@ -1,51 +1,11 @@
 import { useState, useEffect } from "react";
 import { Link, Navigate, useNavigate } from "react-router-dom";
 import axios from "axios";
-import { useAuth } from "../../Providers/userProvider";
 
 import "./UserDashboard.scss";
 
 export const UserDashboard = () => {
-  const API = process.env.REACT_APP_API_URL;
   const navigate = useNavigate();
-  const {
-    loggedInUser,
-    loggedInUserDataFromDB,
-    setLoggedInUserDataFromDB,
-    userShoppingCart,
-    setUserShoppingCart,
-  } = useAuth();
-
-  const { firstname, lastname, email } = loggedInUserDataFromDB;
-  const uid = loggedInUser.uid;
-
-  const getUserDataFromDB = async (uid) => {
-    await axios
-      .get(`${API}/users/${uid}`)
-      .then((res) => {
-        setLoggedInUserDataFromDB(res.data);
-      })
-      .catch((err) => {
-        console.error(err);
-      });
-  };
-
-  useEffect(() => {
-    if (uid) {
-      getUserDataFromDB(uid);
-    }
-
-    axios
-      .get(`${API}/users/${uid}/cart`, {
-        headers: { "Access-Control-Allow-Origin": "*" },
-      })
-      .then((res) => {
-        setUserShoppingCart(res.data);
-      })
-      .catch((err) => {
-        console.error(err);
-      });
-  }, [loggedInUser]);
 
   return (
     <div className="UserDashboard">

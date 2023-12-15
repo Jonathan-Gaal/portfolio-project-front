@@ -1,35 +1,14 @@
 import { useState, useEffect } from "react";
 import { Link, Navigate, useNavigate } from "react-router-dom";
-import axios from "axios";
 import { useAuth } from "../../../Providers/userProvider";
 
 import "./UserAccountDetails.scss";
 
-const API = process.env.REACT_APP_API_URL;
-
 export const UserAccountDetails = () => {
   const navigate = useNavigate();
-  const {
-    loggedInUser,
-    loggedInUserDataFromDB,
-    setLoggedInUserDataFromDB,
-    userSignOut,
-  } = useAuth();
+  const { loggedInUser, loggedInUserDataFromDB } = useAuth();
 
   const { firstname, email } = loggedInUserDataFromDB;
-
-  useEffect(() => {
-    axios
-      .get(`${API}/users/${loggedInUser.uid}`, {
-        headers: { "Access-Control-Allow-Origin": "*" },
-      })
-      .then((res) => {
-        setLoggedInUserDataFromDB(res.data);
-      })
-      .catch((err) => {
-        console.error(err);
-      });
-  }, [loggedInUser]);
 
   return (
     <div className="UserAccountDetailsContainer">
