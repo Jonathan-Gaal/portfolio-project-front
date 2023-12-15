@@ -13,6 +13,19 @@ const API = process.env.REACT_APP_API_URL;
 
 export const UserShoppingCart = () => {
   const { loggedInUser, userShoppingCart, setUserShoppingCart } = useAuth();
+  const [userShoppingCartTotal, setUserShoppingCartTotal] = useState(0);
+
+  const calculateUserShoppingCartDisplayTotal = (userShoppingCart) => {
+    return userShoppingCart.reduce(
+      (userShoppingCartTotalAccumulator, userShoppingCartItemPrice) => {
+        return (
+          userShoppingCartTotalAccumulator +
+          Number(userShoppingCartItemPrice.item_price)
+        );
+      },
+      0
+    );
+  };
 
   useEffect(() => {
     axios
@@ -25,8 +38,15 @@ export const UserShoppingCart = () => {
       });
   }, [loggedInUser]);
 
+  useEffect(() => {
+    setUserShoppingCartTotal(
+      calculateUserShoppingCartDisplayTotal(userShoppingCart)
+    );
+  }, [userShoppingCart]);
+
   return (
     <div className="UserShoppingCart">
+      <div>Total:${userShoppingCartTotal}</div>
       <div className="UserShoppingCart__shoppingCartContainer">
         {userShoppingCart?.map((userShoppingCartItem) => {
           return (
