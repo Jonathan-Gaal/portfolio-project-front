@@ -25,6 +25,8 @@ export const UserShoppingCart = () => {
     );
   };
 
+  const proceedToCheckoutHandleSubmit = () => {};
+
   useEffect(() => {
     const formattedUserShoppingCartDisplayTotal = new Intl.NumberFormat(
       "en-US",
@@ -53,6 +55,9 @@ export const UserShoppingCart = () => {
             />
           );
         })}
+        <Link to="/checkout">
+          <button>Checkout</button>
+        </Link>
       </div>
     </div>
   );
