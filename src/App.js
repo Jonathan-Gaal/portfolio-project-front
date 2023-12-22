@@ -7,6 +7,9 @@ import { Dashboard } from "./Pages/Dashboard";
 import { Account } from "./Pages/Account";
 import { UserFavorites } from "./Components/UserComponents/UserFavorites";
 import { UserShoppingCart } from "./Components/UserComponents/UserShoppingCart";
+import { Checkout } from "./Pages/Checkout";
+import { PaymentSuccess } from "./Pages/PaymentSuccess";
+import { PaymentFailed } from "./Pages/PaymentFailed";
 import Index from "./Pages/Index";
 import Show from "./Pages/Show";
 import FourOFour from "./Pages/FourOFour";
@@ -31,6 +34,9 @@ function App() {
               <Route path="/changeaccount" element={<UnderConstruction />} />
               <Route path="/favorites" element={<UnderConstruction />} />
               <Route path="/cart" element={<UserShoppingCart />} />
+              <Route path="/checkout" element={<Checkout />} />
+              <Route path="/success" element={<PaymentSuccess />} />
+              <Route path="/cancel" element={<PaymentFailed />} />
               <Route path="/gallery" element={<Index />} />
               <Route path="/gallery/:id" element={<Show />} />
               <Route path="/cart" element={<UnderConstruction />} />
