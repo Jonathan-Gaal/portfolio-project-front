@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
+import { calculateUserShoppingCartOrUserCheckoutTotal } from "../../helpers";
 import axios from "axios";
+
 import {
   useAuth,
   userShoppingCart,
@@ -11,19 +13,8 @@ import "./UserShoppingCart.scss";
 
 export const UserShoppingCart = () => {
   const { userShoppingCart } = useAuth();
-  const [userShoppingCartTotal, setUserShoppingCartTotal] = useState(0);
 
-  const calculateUserShoppingCartDisplayTotal = (userShoppingCart) => {
-    return userShoppingCart.reduce(
-      (userShoppingCartTotalAccumulator, userShoppingCartItemPrice) => {
-        return (
-          userShoppingCartTotalAccumulator +
-          Number(userShoppingCartItemPrice.item_price)
-        );
-      },
-      0
-    );
-  };
+  const [userShoppingCartTotal, setUserShoppingCartTotal] = useState(0);
 
   const proceedToCheckoutHandleSubmit = () => {};
 
@@ -38,7 +29,7 @@ export const UserShoppingCart = () => {
 
     setUserShoppingCartTotal(
       formattedUserShoppingCartDisplayTotal.format(
-        calculateUserShoppingCartDisplayTotal(userShoppingCart)
+        calculateUserShoppingCartOrUserCheckoutTotal(userShoppingCart)
       )
     );
   }, [userShoppingCart]);

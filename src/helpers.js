@@ -26,3 +26,17 @@ export const checkIfItemExistsInUserShoppingCart = async (
   await userShoppingCart.find((currentUserShoppingCartItem) => {
     return Number(currentProductId) === currentUserShoppingCartItem.item_id;
   });
+
+export const calculateUserShoppingCartOrUserCheckoutTotal = (
+  userShoppingCart
+) => {
+  return userShoppingCart.reduce(
+    (userShoppingCartTotalAccumulator, userShoppingCartItemPrice) => {
+      return (
+        userShoppingCartTotalAccumulator +
+        Number(userShoppingCartItemPrice.item_price)
+      );
+    },
+    0
+  );
+};

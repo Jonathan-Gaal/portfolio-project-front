@@ -1,8 +1,9 @@
 import { UserCheckout } from "../Components/UserComponents/UserAccount/UserCheckout/UserCheckout";
+// import { Elements } from "@stripe/react-stripe-js";
 
 export const Checkout = () => {
   return (
-    <div>
+    <div className="Checkout">
       <UserCheckout />
     </div>
   );
