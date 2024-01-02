@@ -13,7 +13,7 @@ const API = process.env.REACT_APP_API_URL;
 
 export const UserShoppingCartItemCard = ({ userShoppingCartItem }) => {
   const { loggedInUser, userShoppingCart, setUserShoppingCart } = useAuth();
-  const { item_id } = userShoppingCartItem;
+  const { item_id, item_price } = userShoppingCartItem;
 
   const [
     userShoppingCartItemCardMainImage,
@@ -79,6 +79,7 @@ export const UserShoppingCartItemCard = ({ userShoppingCartItem }) => {
         />
         <div className="UserShoppingCartItemCard__details">
           <div>{title}</div>
+          <div>${item_price}</div>
         </div>
       </Link>
     </div>

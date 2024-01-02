@@ -1,22 +1,51 @@
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
+import { useHref, useNavigate } from "react-router-dom";
 import { calculateUserShoppingCartOrUserCheckoutTotal } from "../../helpers";
 import axios from "axios";
+import { loadStripe, confirmCardPayment } from "@stripe/stripe-js";
+import { API, STRIPE_PK, STRIPE_SK } from "../../constants";
+import { useAuth } from "../../Providers/userProvider";
 
-import {
-  useAuth,
-  userShoppingCart,
-  setUserShoppingCart,
-} from "../../Providers/userProvider";
 import { UserShoppingCartItemCard } from "./UserShoppingCartItemCard";
 import "./UserShoppingCart.scss";
 
 export const UserShoppingCart = () => {
-  const { userShoppingCart } = useAuth();
+  const navigate = useNavigate();
+  const { loggedInUser, userShoppingCart } = useAuth();
 
   const [userShoppingCartTotal, setUserShoppingCartTotal] = useState(0);
+  const [stripeUserCheckoutSession, setStripeUserCheckoutSession] = useState(
+    {}
+  );
 
-  const proceedToCheckoutHandleSubmit = () => {};
+  const handleSubmitAtCheckout = () => {
+    axios
+      .post(
+        `${API}/create-checkout-session`,
+        {
+          items: userShoppingCart,
+        },
+        {
+          headers: {
+            "Access-Control-Allow-Origin": "*",
+          },
+        }
+      )
+      .then((res) => {
+        console.log("RES FROM CHECKOUT POST", res);
+
+        console.log(res.request.response);
+        if (res?.request.response) {
+          setStripeUserCheckoutSession(res.data);
+
+          window.open(`${res.data.url}`, "_blank");
+        }
+      })
+      .catch((err) => {
+        console.error(err);
+      });
+  };
 
   useEffect(() => {
     const formattedUserShoppingCartDisplayTotal = new Intl.NumberFormat(
@@ -46,9 +75,11 @@ export const UserShoppingCart = () => {
             />
           );
         })}
-        <Link to="/checkout">
-          <button>Checkout</button>
+
+        <Link to="/dashboard">
+          <button>Back to dashboard</button>
         </Link>
+        <button onClick={handleSubmitAtCheckout}>Place your order</button>
       </div>
     </div>
   );
