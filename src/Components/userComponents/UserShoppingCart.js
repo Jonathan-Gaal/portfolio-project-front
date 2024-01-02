@@ -71,6 +71,7 @@ export const UserShoppingCart = () => {
         alt="marketplace scene of Europeans buying bronze pots in a near-eastern bazaar"
       />
       <div>Total: {userShoppingCartTotal}</div>
+      <button onClick={handleSubmitAtCheckout}>Place your order</button>
       <div className="UserShoppingCart__shoppingCartContainer">
         {userShoppingCart?.map((userShoppingCartItem) => {
           return (
@@ -84,7 +85,6 @@ export const UserShoppingCart = () => {
         <Link to="/dashboard">
           <button>Back to dashboard</button>
         </Link>
-        <button onClick={handleSubmitAtCheckout}>Place your order</button>
       </div>
     </div>
   );
