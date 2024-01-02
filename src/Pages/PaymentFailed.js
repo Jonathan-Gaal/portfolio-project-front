@@ -1,4 +1,4 @@
-import { FailedUserPayment } from "../Components/UserComponents/UserAccount/UserCheckout/FailedUserPayment";
+import { FailedUserPayment } from "../Components/UserComponents/UserCheckout/FailedUserPayment";
 
 export const PaymentFailed = () => {
   return (

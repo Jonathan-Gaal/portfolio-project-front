@@ -1,13 +1,13 @@
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { useHref, useNavigate } from "react-router-dom";
-import { calculateUserShoppingCartOrUserCheckoutTotal } from "../../helpers";
+import { calculateUserShoppingCartOrUserCheckoutTotal } from "../../../helpers";
 import axios from "axios";
 import { loadStripe, confirmCardPayment } from "@stripe/stripe-js";
-import { API, STRIPE_PK, STRIPE_SK } from "../../constants";
-import { useAuth } from "../../Providers/userProvider";
+import { API, STRIPE_PK, STRIPE_SK } from "../../../constants";
+import { useAuth } from "../../../Providers/userProvider";
 import { UserShoppingCartItemCard } from "./UserShoppingCartItemCard";
-import userShoppingCartImage from "../../assets/market-scene-for-checkout.jpg";
+import userShoppingCartImage from "../../../assets/market-scene-for-checkout.jpg";
 import "./UserShoppingCart.scss";
 
 export const UserShoppingCart = () => {

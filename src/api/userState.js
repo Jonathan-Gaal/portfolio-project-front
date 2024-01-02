@@ -1,10 +1,13 @@
 import axios from "axios";
 import { API } from "../constants";
 
-export const getUserDataFromDB = async (uid, setUserDBDataCallback) => {
+export const getUserDataFromDB = async (
+  loggedInUserUID,
+  setUserDBDataCallback
+) => {
   // TAKES setLoggedInUserDataFromDB AS CALLBACK
   await axios
-    .get(`${API}/users/${uid}`, {
+    .get(`${API}/users/${loggedInUserUID}`, {
       headers: { "Access-Control-Allow-Origin": "*" },
     })
     .then((res) => {
@@ -14,10 +17,13 @@ export const getUserDataFromDB = async (uid, setUserDBDataCallback) => {
       console.error(err);
     });
 };
-export const getUserShoppingCart = async (uid, setUserShoppingCartCallback) => {
+export const getUserShoppingCart = async (
+  loggedInUserUID,
+  setUserShoppingCartCallback
+) => {
   // TAKES setUserShoppingCart AS CALLBACK
   await axios
-    .get(`${API}/users/${uid}/cart`, {
+    .get(`${API}/users/${loggedInUserUID}/cart`, {
       headers: { "Access-Control-Allow-Origin": "*" },
     })
     .then((res) => {
@@ -28,10 +34,24 @@ export const getUserShoppingCart = async (uid, setUserShoppingCartCallback) => {
     });
 };
 
-export const getUserAddresses = async (uid, setUserAddressesCallback) => {
+//CALLED IN removeItemFromUserShoppingCart() IN UserShoppingCartItemCard
+export const deleteUserShoppingCartItem = async (loggedInUserUID, itemId) => {
   // TAKES setUserShoppingCart AS CALLBACK
   await axios
-    .get(`${API}/users/${uid}/addresses`, {
+    .delete(`${API}/users/${loggedInUserUID}/cart/${itemId}`)
+    .then(window.alert("Item removed from your cart"))
+    .catch((err) => {
+      console.error(err);
+    });
+};
+
+export const getUserAddresses = async (
+  loggedInUserUID,
+  setUserAddressesCallback
+) => {
+  // TAKES setUserShoppingCart AS CALLBACK
+  await axios
+    .get(`${API}/users/${loggedInUserUID}/addresses`, {
       headers: { "Access-Control-Allow-Origin": "*" },
     })
     .then((res) => {

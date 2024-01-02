@@ -1,4 +1,4 @@
-import { SuccessfulUserPayment } from "../Components/UserComponents/UserAccount/UserCheckout/SuccessfulUserPayment";
+import { SuccessfulUserPayment } from "../Components/UserComponents/UserCheckout/SuccessfulUserPayment";
 
 export const PaymentSuccess = () => {
   return (

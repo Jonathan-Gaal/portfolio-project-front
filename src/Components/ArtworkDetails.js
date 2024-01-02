@@ -10,7 +10,7 @@ import {
   setUserShoppingCart,
 } from "../Providers/userProvider";
 import "./ArtworkDetails.scss";
-import { UserShoppingCart } from "./UserComponents/UserShoppingCart";
+import { UserShoppingCart } from "./UserComponents/UserCheckout/UserShoppingCart";
 const API = process.env.REACT_APP_API_URL;
 
 const ArtworkDetails = () => {

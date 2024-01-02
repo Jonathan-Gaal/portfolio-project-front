@@ -6,8 +6,7 @@ import { SignUp } from "./Pages/SignUp";
 import { Dashboard } from "./Pages/Dashboard";
 import { Account } from "./Pages/Account";
 import { UserFavorites } from "./Components/UserComponents/UserFavorites";
-import { UserShoppingCart } from "./Components/UserComponents/UserShoppingCart";
-
+import { UserShoppingCart } from "./Components/UserComponents/UserCheckout/UserShoppingCart";
 import { PaymentSuccess } from "./Pages/PaymentSuccess";
 import { PaymentFailed } from "./Pages/PaymentFailed";
 import Index from "./Pages/Index";
