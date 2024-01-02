@@ -16,10 +16,14 @@ export const UserAccountDetails = () => {
         <div className="UserAccountDetails">
           <div className="UserAccountDetails__greeting">Hi {firstname}</div>
           <div className="UserAccountDetails__changeUserAccountDetailsdBtn">
-            <Link to="/changeaccount">Change account settings</Link>
+            <Link to="/changeaccount">
+              <button>Change account settings</button>
+            </Link>
           </div>
           <div className="UserAccountDetails__backToDashboardBtn">
-            <Link to="/dashboard">Back to Dashboard</Link>
+            <Link to="/dashboard">
+              <button>Back to Dashboard</button>
+            </Link>
           </div>
         </div>
       ) : (
