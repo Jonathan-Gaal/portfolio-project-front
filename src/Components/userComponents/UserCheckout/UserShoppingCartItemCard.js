@@ -5,11 +5,17 @@ import {
   useAuth,
   userShoppingCart,
   setUserShoppingCart,
-} from "../../Providers/userProvider";
-import { checkIfItemExistsInUserShoppingCart } from "../../helpers";
-import "../UserShoppingCartItemCard.scss";
-
-const API = process.env.REACT_APP_API_URL;
+} from "../../../Providers/userProvider";
+import {
+  getUserShoppingCart,
+  deleteUserShoppingCartItem,
+} from "../../../api/userState";
+import { checkIfItemExistsInUserShoppingCart } from "../../../helpers";
+import {
+  getGalleryDataFromDB,
+  getGalleryArtImagesFromDB,
+} from "../../../api/appState";
+import "./UserShoppingCartItemCard.scss";
 
 export const UserShoppingCartItemCard = ({ userShoppingCartItem }) => {
   const { loggedInUser, userShoppingCart, setUserShoppingCart } = useAuth();
@@ -24,46 +30,17 @@ export const UserShoppingCartItemCard = ({ userShoppingCartItem }) => {
     useState({});
 
   const removeItemFromUserShoppingCart = async (loggedInUserId, itemId) => {
-    await axios
-      .delete(`${API}/users/${loggedInUser.uid}/cart/${item_id}`)
-      .then(window.alert("Item removed from your cart!"))
+    await deleteUserShoppingCartItem(loggedInUser.uid, item_id);
 
-      .catch((err) => {
-        console.error(err);
-      });
-
-    axios
-      .get(`${API}/users/${loggedInUser.uid}/cart`, {
-        headers: { "Access-Control-Allow-Origin": "*" },
-      })
-      .then((res) => {
-        setUserShoppingCart(res.data);
-      })
-      .catch((err) => {
-        console.error(err);
-      });
+    //UPDATES USER SHOPPING CART STATE UPON REMOVAL OF AN ITEM FROM CART
+    getUserShoppingCart(loggedInUser.uid, setUserShoppingCart);
   };
 
   useEffect(() => {
-    axios
-      .get(`${API}/gallery/${item_id}/artImages`, {
-        headers: { "Access-Control-Allow-Origin": "*" },
-      })
-      .then((res) => {
-        setUserShoppingCartItemCardMainImage(res.data[0].image_url);
-      })
-      .catch((err) => {
-        console.warn("catch", err);
-      });
-  }, [item_id]);
-
-  useEffect(() => {
-    axios
-      .get(`${API}/gallery/${item_id}`)
-      .then((res) => {
-        setUserShoppingCartItemDetails(res.data);
-      })
-      .catch((c) => console.warn("catch", c));
+    //SETS THE USER SHOPPING CART IMAGES FOR EACH SHOPPING CART ITEM FROM GALLERY IMAGES TABLE
+    getGalleryArtImagesFromDB(item_id, setUserShoppingCartItemCardMainImage);
+    //SETS THE ITEM'S DETAILS BY FETCHING FROM THE GALLERY TABLE
+    getGalleryDataFromDB(item_id, setUserShoppingCartItemDetails);
   }, [item_id]);
 
   const { title, category } = userShoppingCartItemDetails;
