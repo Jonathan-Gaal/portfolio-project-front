@@ -12,10 +12,19 @@ const UnderConstruction = () => {
         src={underConstructionImage}
         alt="people repairing a mud brick building"
       />
-      <h1>Page under construction...</h1>
-      <Link to="/dashboard">
-        <button onClick={() => pageHistory.goBack()}>Go back</button>
-      </Link>
+      <div className="UnderConstruction__messageAndBackButton">
+        {" "}
+        <h2 className="UnderConstruction__mainMessage">
+          Page under construction...
+        </h2>
+        <Link to="/dashboard">
+          <button
+            className="UnderConstruction__backButton"
+            onClick={() => pageHistory.goBack()}>
+            Go back
+          </button>
+        </Link>
+      </div>
     </div>
   );
 };
