@@ -14,7 +14,7 @@ import { UserShoppingCart } from "./UserComponents/UserShoppingCart";
 const API = process.env.REACT_APP_API_URL;
 
 const ArtworkDetails = () => {
-  let { id } = useParams();
+  const { id } = useParams();
   const { loggedInUser, userShoppingCart, setUserShoppingCart } = useAuth();
   // let navigate = useNavigate();
   const [artwork, setArtwork] = useState({});
@@ -69,19 +69,6 @@ const ArtworkDetails = () => {
         });
     }
   };
-
-  // useEffect(() => {
-  //   axios
-  //     .get(`${API}/gallery/${id}`, {
-  //       headers: { "Access-Control-Allow-Origin": "*" },
-  //     })
-  //     .then((res) => {
-  //       setArtwork(res.data);
-  //     })
-  //     .catch((err) => {
-  //       console.warn("catch", err);
-  //     });
-  // }, [id]);
 
   useEffect(() => {
     axios
