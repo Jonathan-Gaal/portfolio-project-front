@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link, Navigate, useNavigate } from "react-router-dom";
 import axios from "axios";
+import userDahboardImage from "../../assets/snake-charmer.jpg";
 
 import "./UserDashboard.scss";
 
@@ -21,6 +22,11 @@ export const UserDashboard = () => {
           <Link to="/cart">Cart</Link>
         </div>
       </div>
+      <img
+        className="UserDashboard__img"
+        src={userDahboardImage}
+        alt="scene of men ina middle eastern palace room watching an adolescent boy holding a large snake"
+      />
     </div>
   );
 };
