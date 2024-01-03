@@ -48,7 +48,9 @@ export const UserShoppingCartItemCard = ({ userShoppingCartItem }) => {
   return (
     <div className="UserShoppingCartItemCard">
       <button onClick={removeItemFromUserShoppingCart}>Remove</button>
-      <Link to={`/gallery/${item_id}`}>
+      <Link
+        className="UserShoppingCartItemCard__linkToGalleryItem"
+        to={`/gallery/${item_id}`}>
         <img
           className="UserShoppingCartItemCard__image"
           src={userShoppingCartItemCardMainImage}

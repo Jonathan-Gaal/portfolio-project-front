@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
-import { Link, useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import Comments from "./Comments";
 import { ArtworkDetailsImageSelectorBar } from "./ArtworkDetailsImageSelectorBar";
 import { checkIfItemExistsInUserShoppingCart } from "../helpers";
@@ -16,7 +16,7 @@ const API = process.env.REACT_APP_API_URL;
 const ArtworkDetails = () => {
   const { id } = useParams();
   const { loggedInUser, userShoppingCart, setUserShoppingCart } = useAuth();
-  // let navigate = useNavigate();
+  const navigate = useNavigate();
   const [artwork, setArtwork] = useState({});
   const [allArtworkImages, setAllArtworkImages] = useState([]);
   const [selectedArtworkImage, setSelectedArtworkImage] = useState("");
@@ -137,18 +137,23 @@ const ArtworkDetails = () => {
         <div className="ArtworkDetails__detail">Description: {description}</div>
       </div>
       <div className="ArtworkDetails__showPageButtons">
-        <Link to={`/gallery`}>
-          <button className="galleryBtn">Gallery</button>
-        </Link>
-        <button className="commentBtn" onClick={displayComments}>
-          Comments
+        <button className="galleryBtn" onClick={() => navigate("/gallery")}>
+          Gallery
         </button>
+
         <button
           className="addToCartBtn"
           onClick={addGalleryItemToUserShoppingCart}>
           Add to Cart
         </button>
+        <button className="cartBtn" onClick={() => navigate("/cart")}>
+          Cart
+        </button>
       </div>
+      <button className="commentBtn" onClick={displayComments}>
+        Comments
+      </button>
+
       <Comments showComments={showComments} />
     </div>
   );

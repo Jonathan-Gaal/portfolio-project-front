@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { useHref, useNavigate } from "react-router-dom";
 import { calculateUserShoppingCartOrUserCheckoutTotal } from "../../../helpers";
@@ -66,12 +65,30 @@ export const UserShoppingCart = () => {
   return (
     <div className="UserShoppingCart">
       <img
-        className="UserShoppingCart__img"
+        className="UserShoppingCart__image"
         src={userShoppingCartImage}
         alt="marketplace scene of Europeans buying bronze pots in a near-eastern bazaar"
       />
-      <div>Total: {userShoppingCartTotal}</div>
-      <button onClick={handleSubmitAtCheckout}>Place your order</button>
+
+      <div className="UserShoppingCart__totalAndCheckoutButton">
+        <div className="UserShoppingCart__total">
+          Total: {userShoppingCartTotal}
+        </div>
+        <button
+          className="UserShoppingCart__checkoutButton"
+          onClick={handleSubmitAtCheckout}>
+          Place order
+        </button>
+      </div>
+      <div className="UserShoppingCart__navigationButtonsContainer">
+        <div className="UserShoppingCart__backGalleryButton">
+          <button onClick={() => navigate("/gallery")}>Gallery</button>
+        </div>
+        <div className="UserShoppingCart__backToDashboardButton">
+          <button onClick={() => navigate("/dashboard")}>Dashboard</button>
+        </div>
+      </div>
+
       <div className="UserShoppingCart__shoppingCartContainer">
         {userShoppingCart?.map((userShoppingCartItem) => {
           return (
@@ -81,10 +98,6 @@ export const UserShoppingCart = () => {
             />
           );
         })}
-
-        <Link to="/dashboard">
-          <button>Back to dashboard</button>
-        </Link>
       </div>
     </div>
   );

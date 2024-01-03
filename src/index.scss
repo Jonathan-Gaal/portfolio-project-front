@@ -13,6 +13,39 @@ body {
     background-image: linear-gradient(to right, rgb(44, 42, 42), rgb(35, 33, 33), rgb(17, 25, 25));
 }
 
+input {
+    margin-bottom: 3%;
+    margin-right: 3%;
+}
+
+label {
+    margin-left: 2%;
+
+}
+
+button {
+    border-radius: 50px;
+    margin-left: .5%;
+    margin-bottom: 3%;
+    border: ridge rgb(132, 112, 69) 2.5px;
+    background-color: rgb(88, 26, 26);
+    color: white;
+    font-family: 'Eagle Lake';
+    /* font-weight: bold; */
+    font-size: large;
+    -webkit-transition: transform 2s ease-in-out;
+    transition: transform 2s ease-in-out;
+
+}
+
+
+
+button:hover {
+    transform: scale(1);
+    rotate: 4deg;
+    cursor: pointer;
+}
+
 .Artwork, .Gallery__Data, .About {
     width: 75%;
     margin-left: auto;
@@ -36,65 +69,52 @@ body {
     color: white;
 }
 
-.submitBtn{
-    border-radius: 25px;
-    font-family: 'Eagle Lake';
-    color: white;
-    background-color: rgb(88, 26, 26);
-    border: ridge rgb(132, 112, 69) 2px;
-    margin-left: auto;
-    margin-right: auto;
-    font-size: x-large;
-    padding: 8px;
-}
+// .submitBtn{
+//     border-radius: 25px;
+//     font-family: 'Eagle Lake';
+//     color: white;
+//     background-color: rgb(88, 26, 26);
+//     border: ridge rgb(132, 112, 69) 2px;
+//     margin-left: auto;
+//     margin-right: auto;
+//     font-size: x-large;
+//     padding: 8px;
+// }
 
-.galleryBtn, .deleteCommentBtn, .addToCartBtn {
-    margin-right: .5%;
-    margin-bottom: 3%;
-    border: ridge rgb(132, 112, 69) 2px;
-    background-color: rgb(88, 26, 26);
-    color: white;
-    font-family: 'Eagle Lake';
-    /* font-weight: bold; */
-    font-size: large; 
-    -webkit-transition: transform 2s ease-in-out;
-            transition: transform 2s ease-in-out;
-}
-.commentBtn, .editCommentBtn{
-    margin-left: .5%;
-    margin-bottom: 3%;
-    border: ridge rgb(132, 112, 69) 2px;
-    background-color: rgb(88, 26, 26);
-    color: white;
-    font-family: 'Eagle Lake';
-    /* font-weight: bold; */
-    font-size: large;
-    -webkit-transition: transform 2s ease-in-out;
-            transition: transform 2s ease-in-out;
-}
+// .galleryBtn, .deleteCommentBtn, .addToCartBtn {
+//     margin-right: .5%;
+//     margin-bottom: 3%;
+//     border: ridge rgb(132, 112, 69) 2px;
+//     background-color: rgb(88, 26, 26);
+//     color: white;
+//     font-family: 'Eagle Lake';
+//     /* font-weight: bold; */
+//     font-size: large; 
+//     -webkit-transition: transform 2s ease-in-out;
+//             transition: transform 2s ease-in-out;
+// }
+// .commentBtn, .editCommentBtn{
+//     margin-left: .5%;
+//     margin-bottom: 3%;
+//     border: ridge rgb(132, 112, 69) 2px;
+//     background-color: rgb(88, 26, 26);
+//     color: white;
+//     font-family: 'Eagle Lake';
+//     /* font-weight: bold; */
+//     font-size: large;
+//     -webkit-transition: transform 2s ease-in-out;
+//             transition: transform 2s ease-in-out;
+// }
 
-.commentBtn:hover, .editCommentBtn:hover, .galleryBtn:hover,
-.deleteCommentBtn:hover, .addToCartBtn:hover {
-    transform: scale(1);
-    rotate: 4deg;
-    cursor: pointer;
-}
-
-
+// .commentBtn:hover, .editCommentBtn:hover, .galleryBtn:hover,
+// .deleteCommentBtn:hover, .addToCartBtn:hover {
+//     transform: scale(1);
+//     rotate: 4deg;
+//     cursor: pointer;
+// }
 
 
-input{
-    margin-bottom: 3%;
-    margin-right: 3%;
-}
 
-label{
-    margin-left: 2%;
-        
-}
-button{
-    border-radius: 50px;
-    
-}
+
 
 
