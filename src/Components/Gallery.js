@@ -50,8 +50,6 @@ const Gallery = () => {
     gallery
   );
 
-  // setFilteredGallery(...filteredGallery, filteredGalleryData);
-
   const selectHandleChange = (e) => {
     setSelectInputOption(e.target.value);
   };
@@ -61,12 +59,6 @@ const Gallery = () => {
       searchArtworkTitleSearchBarInput,
       gallery
     );
-
-    // let sortedArtByDate = filteredGalleryData.sort(
-    //   (a, b) =>
-    //     new Date(...a.initialRegistration.split("/").reverse()) -
-    //     new Date(...b.initialRegistration.split("/").reverse())
-    // );
 
     if (selectInputOption === "default") {
       return filteredGalleryData;
@@ -100,25 +92,28 @@ const Gallery = () => {
 
   return (
     <div className="Gallery">
-      <ArtSearchBar
-        gallery={gallery}
-        searchArtworkTitleSearchBarInput={searchArtworkTitleSearchBarInput}
-        setSearchArtworkTitleSearchBarInput={
-          setSearchArtworkTitleSearchBarInput
-        }
-      />
-      <select
-        className="Gallery__sortBySelection"
-        name="flexCheck"
-        onChange={selectHandleChange}
-        // value={answer.sexual_orientation_preference}
-        id="sortSelector">
-        <option value={"default"}>Sort by</option>
-        <option value="title">Title</option>
-        <option value="category">Category</option>
-        <option value="datecreated">Date Created</option>
-        <option value="dateposted">Date Posted</option>
-      </select>
+      <div className="Gallery__inputs">
+        <ArtSearchBar
+          className="Gallery__artSearchBar"
+          gallery={gallery}
+          searchArtworkTitleSearchBarInput={searchArtworkTitleSearchBarInput}
+          setSearchArtworkTitleSearchBarInput={
+            setSearchArtworkTitleSearchBarInput
+          }
+        />
+        <select
+          className="Gallery__sortBySelection"
+          name="flexCheck"
+          onChange={selectHandleChange}
+          // value={answer.sexual_orientation_preference}
+          id="sortSelector">
+          <option value={"default"}>Sort by</option>
+          <option value="title">Title</option>
+          <option value="category">Category</option>
+          <option value="datecreated">Date Created</option>
+          <option value="dateposted">Date Posted</option>
+        </select>
+      </div>
 
       <div className="Gallery__data">
         {filteredGallery(selectInputOption)?.map((artwork) => {
