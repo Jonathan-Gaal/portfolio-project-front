@@ -6,7 +6,7 @@ import { SignUp } from "./Pages/SignUp";
 import { Dashboard } from "./Pages/Dashboard";
 import { Account } from "./Pages/Account";
 import { UserFavorites } from "./Components/UserComponents/UserFavorites";
-import { UserShoppingCart } from "./Components/UserComponents/UserCheckout/UserShoppingCart";
+import { Cart } from "./Pages/Cart";
 import { PaymentSuccess } from "./Pages/PaymentSuccess";
 import { PaymentFailed } from "./Pages/PaymentFailed";
 import Index from "./Pages/Index";
@@ -32,12 +32,11 @@ function App() {
               <Route path="/account" element={<Account />} />
               <Route path="/changeaccount" element={<UnderConstruction />} />
               <Route path="/favorites" element={<UnderConstruction />} />
-              <Route path="/cart" element={<UserShoppingCart />} />
+              <Route path="/cart" element={<Cart />} />
               <Route path="/success" element={<PaymentSuccess />} />
               <Route path="/cancel" element={<PaymentFailed />} />
               <Route path="/gallery" element={<Index />} />
               <Route path="/gallery/:id" element={<Show />} />
-              <Route path="/cart" element={<UnderConstruction />} />
               <Route path="*" element={<FourOFour />} />
             </Routes>
           </main>
