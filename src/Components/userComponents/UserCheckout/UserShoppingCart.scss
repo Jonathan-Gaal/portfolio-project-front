@@ -3,35 +3,20 @@
     margin-left: auto;
     margin-right: auto;
     color: white;
+    
 
-    button {
-    margin-left: .5%;
-        padding-left: .8%;
-        padding-right: .8%;
-        border: ridge rgb(132, 112, 69) 2px;
-        background-color: rgb(88, 26, 26);
-        color: white;
-        font-family: 'Eagle Lake';
-        font-weight: bold;
-        font-size: large;
-        -webkit-transition: transform 2s ease-in-out;
-        transition: transform 2s ease-in-out;
+
+    &__total {
+        display: inline-block;
+        margin-right: .5%;
+        font-size: 2em;
     }
 
-        button:hover {
-            transform: scale(1);
-            rotate: 4deg;
-            cursor: pointer;
-        }
-
-    &__img{
+    &__image{
         width: 50%;
             border: ridge rgb(129, 109, 65) 2.5px;
             border-radius: 20px;
     }
-
-
-
 
 
 
@@ -45,9 +30,19 @@
 
                                 // &__shoppingCartContainer {
                                 //     display:flex;
-                                //    justify-content: space-evenly;
+                                //     column-gap: 2rem;
+                                //     row-gap: 5rem;
+                                //     margin-top: 5%;
                                     
 
                                 // }
+
+                                &__navigationButtonsContainer {
+                                    display: flex;
+                                    column-gap: 1%;
+                                    justify-content: center;
+                                }
+
         
     }
+    

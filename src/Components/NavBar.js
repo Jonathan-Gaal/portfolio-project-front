@@ -24,32 +24,32 @@ const NavBar = () => {
       </div>
 
       <div className="navBarButtons">
-        <div className="signUpBtn">
-          <Link to="/signup">Sign Up</Link>
-        </div>
+        <button className="signUpBtn" onClick={() => navigate("/signup")}>
+          Sign Up
+        </button>
 
-        <div className="seeGalleryBtn">
-          <Link to="/gallery">Gallerie</Link>
-        </div>
+        <button className="seeGalleryBtn" onClick={() => navigate("/gallery")}>
+          Gallerie
+        </button>
 
         {loggedInUser ? (
-          <div className="dashboardBtn">
-            <Link to="/dashboard">Dashboard</Link>
-          </div>
+          <button
+            className="dashboardBtn"
+            onClick={() => navigate("/dashboard")}>
+            Dashboard
+          </button>
         ) : null}
 
         {loggedInUser ? (
-          <div className="signOutBtn" onClick={signOutButton}>
-            Sign Out{" "}
-          </div>
+          <button className="signOutBtn" onClick={signOutButton}>
+            Sign Out
+          </button>
         ) : (
-          <div className="signInBtn">
-            <Link to="/signin">Sign In</Link>
-          </div>
+          <button className="signInBtn" onClick={() => navigate("/signin")}>
+            Sign In
+          </button>
         )}
       </div>
-
-      {/* {loggedInUser ? <div>{loggedInUser.email}</div> : null} */}
     </div>
   );
 };

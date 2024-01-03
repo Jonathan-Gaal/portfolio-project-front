@@ -7,7 +7,7 @@ const UnderConstruction = () => {
   return (
     <div className="UnderConstruction">
       <img
-        className="UnderConstruction__img"
+        className="UnderConstruction__image"
         id="UnderConstruction"
         src={underConstructionImage}
         alt="people repairing a mud brick building"
@@ -21,7 +21,7 @@ const UnderConstruction = () => {
           <button
             className="UnderConstruction__backButton"
             onClick={() => pageHistory.goBack()}>
-            Go back
+            Back
           </button>
         </Link>
       </div>
