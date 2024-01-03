@@ -75,16 +75,16 @@ export const UserShoppingCart = () => {
           Total: {userShoppingCartTotal}
         </div>
         <button
-          className="UserShoppingCart__checkoutButton"
+          className="UserShoppingCart__checkoutButton, largeFont"
           onClick={handleSubmitAtCheckout}>
           Place order
         </button>
       </div>
       <div className="UserShoppingCart__navigationButtonsContainer">
-        <div className="UserShoppingCart__backGalleryButton">
+        <div className="UserShoppingCart__backGalleryButton, largeFont">
           <button onClick={() => navigate("/gallery")}>Gallery</button>
         </div>
-        <div className="UserShoppingCart__backToDashboardButton">
+        <div className="UserShoppingCart__backToDashboardButton, largeFont">
           <button onClick={() => navigate("/dashboard")}>Dashboard</button>
         </div>
       </div>
