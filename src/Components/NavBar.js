@@ -24,10 +24,6 @@ const NavBar = () => {
       </div>
 
       <div className="navBarButtons">
-        <button className="signUpBtn" onClick={() => navigate("/signup")}>
-          Sign Up
-        </button>
-
         <button className="seeGalleryBtn" onClick={() => navigate("/gallery")}>
           Gallerie
         </button>
@@ -39,6 +35,10 @@ const NavBar = () => {
             Dashboard
           </button>
         ) : null}
+
+        <button className="signUpBtn" onClick={() => navigate("/signup")}>
+          Sign Up
+        </button>
 
         {loggedInUser ? (
           <button className="signOutBtn" onClick={signOutButton}>

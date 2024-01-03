@@ -1,6 +1,15 @@
 .Gallery {
 margin-left: 8%;
 
+& select {
+    height: 32px;
+    border-radius: 7px;
+}
+
+
+&__inputs {
+    display: flex;
+}
 
     &__data{
     display: grid;
