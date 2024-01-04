@@ -8,8 +8,7 @@ import { API, STRIPE_PK, STRIPE_SK } from "../../../constants";
 import { useAuth } from "../../../Providers/userProvider";
 
 import { UserShoppingCartItemCard } from "./UserShoppingCartItemCard";
-import userShoppingCartImage from "../../../assets/market-scene-for-checkout.jpg";
-
+const userShoppingCartImage = require("../../../assets/market-scene-for-checkout.jpg");
 import { calculateUserShoppingCartOrUserCheckoutTotal } from "../../../helpers";
 
 import "./UserShoppingCart.scss";
@@ -75,35 +74,43 @@ export const UserShoppingCart = () => {
         alt="marketplace scene of Europeans buying bronze pots in a near-eastern bazaar"
       />
 
-      <div className="UserShoppingCart__totalAndCheckoutButton">
-        <div className="UserShoppingCart__total">
-          Total: {userShoppingCartTotal}
-        </div>
-        <button
-          className="UserShoppingCart__checkoutButton, largeFont"
-          onClick={handleSubmitAtCheckout}>
-          Place order
-        </button>
-      </div>
-      <div className="UserShoppingCart__navigationButtonsContainer">
-        <div className="UserShoppingCart__backGalleryButton, largeFont">
-          <button onClick={() => navigate("/gallery")}>Gallery</button>
-        </div>
-        <div className="UserShoppingCart__backToDashboardButton, largeFont">
-          <button onClick={() => navigate("/dashboard")}>Dashboard</button>
-        </div>
-      </div>
+      {userShoppingCart.length > 0 ? (
+        <div className="UserShoppingCart__body">
+          <div className="UserShoppingCart__totalAndCheckoutButton">
+            <div className="UserShoppingCart__total">
+              Total: {userShoppingCartTotal}
+            </div>
+            <button
+              className="UserShoppingCart__checkoutButton, largeFont"
+              onClick={handleSubmitAtCheckout}>
+              Place order
+            </button>
+          </div>
+          <div className="UserShoppingCart__navigationButtonsContainer">
+            <div className="UserShoppingCart__backGalleryButton, largeFont">
+              <button onClick={() => navigate("/gallery")}>Gallery</button>
+            </div>
+            <div className="UserShoppingCart__backToDashboardButton, largeFont">
+              <button onClick={() => navigate("/dashboard")}>Dashboard</button>
+            </div>
+          </div>
 
-      <div className="UserShoppingCart__shoppingCartContainer">
-        {userShoppingCart?.map((userShoppingCartItem) => {
-          return (
-            <UserShoppingCartItemCard
-              key={userShoppingCartItem.id}
-              userShoppingCartItem={userShoppingCartItem}
-            />
-          );
-        })}
-      </div>
+          <div className="UserShoppingCart__shoppingCartContainer">
+            {userShoppingCart?.map((userShoppingCartItem) => {
+              return (
+                <UserShoppingCartItemCard
+                  key={userShoppingCartItem.id}
+                  userShoppingCartItem={userShoppingCartItem}
+                />
+              );
+            })}
+          </div>
+        </div>
+      ) : (
+        <div className="noCartItemsMessage, largeFont">
+          Nothing currently in your cart
+        </div>
+      )}
     </div>
   );
 };
