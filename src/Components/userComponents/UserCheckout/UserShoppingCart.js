@@ -18,9 +18,16 @@ export const UserShoppingCart = () => {
   const { loggedInUser, userShoppingCart } = useAuth();
 
   const [userShoppingCartTotal, setUserShoppingCartTotal] = useState(0);
-  const [stripeUserCheckoutSession, setStripeUserCheckoutSession] = useState(
-    {}
-  );
+  // const [stripeUserCheckoutSession, setStripeUserCheckoutSession] = useState(
+  //   {}
+  // );
+
+  let lastShoppingCartItemData = {};
+  if (userShoppingCart.length > 0) {
+    lastShoppingCartItemData = {
+      ...userShoppingCart[userShoppingCart.length - 1],
+    };
+  }
 
   const handleSubmitAtCheckout = () => {
     axios
@@ -40,7 +47,7 @@ export const UserShoppingCart = () => {
 
         console.log(res.request.response);
         if (res?.request?.response) {
-          setStripeUserCheckoutSession(res.data);
+          // setStripeUserCheckoutSession(res.data);
 
           window.location.replace(`${res.data.url}`);
         }
@@ -88,7 +95,12 @@ export const UserShoppingCart = () => {
           </div>
           <div className="UserShoppingCart__navigationButtonsContainer">
             <div className="UserShoppingCart__backGalleryButton, largeFont">
-              <button onClick={() => navigate("/gallery")}>Gallery</button>
+              <button
+                onClick={() =>
+                  navigate(`/gallery/${lastShoppingCartItemData.item_id}`)
+                }>
+                Last Gallerie Item
+              </button>
             </div>
             <div className="UserShoppingCart__backToDashboardButton, largeFont">
               <button onClick={() => navigate("/dashboard")}>Dashboard</button>

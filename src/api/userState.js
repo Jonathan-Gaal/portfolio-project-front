@@ -73,13 +73,11 @@ export const clearUserShoppingCart = async (
   setUserShoppingCartCallbackAfterPayment
 ) => {
   try {
-    // Make a DELETE request to clear the user's shopping cart
     await axios.delete(`${API}/users/${loggedInUserUID}/cart`, {
       headers: { "Access-Control-Allow-Origin": "*" },
       data: { userUID: loggedInUserUID },
     });
 
-    // After successfully clearing the cart, update the user's shopping cart state
     getUserShoppingCart(
       loggedInUserUID,
       setUserShoppingCartCallbackAfterPayment
