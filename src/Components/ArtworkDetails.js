@@ -138,7 +138,7 @@ const ArtworkDetails = () => {
       </div>
       <div className="ArtworkDetails__showPageButtons">
         <button className="galleryBtn" onClick={() => navigate("/gallery")}>
-          Gallery
+          Gallerie
         </button>
 
         <button
@@ -149,10 +149,10 @@ const ArtworkDetails = () => {
         <button className="cartBtn" onClick={() => navigate("/cart")}>
           Cart
         </button>
+        <button className="commentBtn" onClick={displayComments}>
+          Comments
+        </button>
       </div>
-      <button className="commentBtn" onClick={displayComments}>
-        Comments
-      </button>
 
       <Comments showComments={showComments} />
     </div>
