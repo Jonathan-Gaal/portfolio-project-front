@@ -123,18 +123,22 @@ const ArtworkDetails = () => {
         setSelectedArtworkImageCaption={setSelectedArtworkImageCaption}
       />
       <div className="ArtworkDetails__heading">{title}</div>
+      <div className="ArtworkDetails__info"></div>
       <div className="ArtworkDetails__details">
         <div className="ArtworkDetails__detail">Category: {category}</div>{" "}
         <div className="ArtworkDetails__detail">Price: ${price}</div>
         <div>
-          Dimensions: Width:{width} x Height:{height} x Depth:{depth} Diameter:
+          Dimensions: Width: {width} x Height: {height} x Depth: {depth}{" "}
+          Diameter:
           {diameter}
         </div>
         <div className="ArtworkDetails__detail ArtworkCreatedAndPostedDates">
           Date Created: {convertDateToHumanReadableFormat(creation_date)} ----
           Date Posted: {convertDateToHumanReadableFormat(post_date)}
         </div>
-        <div className="ArtworkDetails__detail">Description: {description}</div>
+        <div className="ArtworkDetails__description">
+          Description: {description}
+        </div>
       </div>
       <div className="ArtworkDetails__showPageButtons">
         <button className="galleryBtn" onClick={() => navigate("/gallery")}>
