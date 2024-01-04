@@ -1,0 +1,43 @@
+.SuccessfulUserPayment {
+    color: white;
+    font-family: 'Eagle Lake';
+
+    &__image {
+        width: 29%;
+        margin-top: 2%;
+        margin-bottom: 1%;
+        border: ridge rgb(129, 109, 65) 2.5px;
+        border-radius: 20px;
+    }
+
+    &__messageAndNavigationButtonsContainer{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &__message {
+        display: inline-block;
+        margin-right: .5%;
+        margin-bottom: 1%;
+       
+        font-size: 1em;
+
+    }
+
+    &__navigationButtonsContainer{
+        display: flex;
+    
+       
+    }
+
+    &__backToDashboardButton {
+        display: inline-block;
+    }
+
+    &__backToGalleryButton {
+        display: inline-block;
+    }
+
+
+}

@@ -43,7 +43,7 @@ export const UserShoppingCart = () => {
         if (res?.request?.response) {
           setStripeUserCheckoutSession(res.data);
 
-          window.open(`${res.data.url}`, "_blank");
+          window.location.replace(`${res.data.url}`);
         }
       })
       .catch((err) => {

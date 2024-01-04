@@ -38,11 +38,55 @@ export const getUserShoppingCart = async (
 export const deleteUserShoppingCartItem = async (loggedInUserUID, itemId) => {
   // TAKES setUserShoppingCart AS CALLBACK
   await axios
-    .delete(`${API}/users/${loggedInUserUID}/cart/${itemId}`)
+    .delete(`${API}/users/${loggedInUserUID}/cart/${itemId}`, {
+      headers: { "Access-Control-Allow-Origin": "*" },
+    })
     .then(window.alert("Item removed from your cart"))
     .catch((err) => {
       console.error(err);
     });
+};
+
+//CALLED IN SuccessfulUserPayment ON COMPONENT LOAD
+// export const clearUserShoppingCart = async (
+//   loggedInUserUID,
+//   setUserShoppingCartCallbackAfterPayment
+// ) => {
+//   await axios
+//     .delete(`${API}/users/${loggedInUserUID}/cart`, {
+//       headers: { "Access-Control-Allow-Origin": "*" },
+//       data: { userUID: loggedInUserUID },
+//     })
+//     .then(
+//       getUserShoppingCart(
+//         loggedInUserUID,
+//         setUserShoppingCartCallbackAfterPayment
+//       )
+//     )
+//     .catch((err) => {
+//       console.error(err);
+//     });
+// };
+
+export const clearUserShoppingCart = async (
+  loggedInUserUID,
+  setUserShoppingCartCallbackAfterPayment
+) => {
+  try {
+    // Make a DELETE request to clear the user's shopping cart
+    await axios.delete(`${API}/users/${loggedInUserUID}/cart`, {
+      headers: { "Access-Control-Allow-Origin": "*" },
+      data: { userUID: loggedInUserUID },
+    });
+
+    // After successfully clearing the cart, update the user's shopping cart state
+    getUserShoppingCart(
+      loggedInUserUID,
+      setUserShoppingCartCallbackAfterPayment
+    );
+  } catch (error) {
+    console.error("Error clearing shopping cart:", error);
+  }
 };
 
 export const getUserAddresses = async (
