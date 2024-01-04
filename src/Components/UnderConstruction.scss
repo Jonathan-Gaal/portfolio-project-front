@@ -1,6 +1,7 @@
 .UnderConstruction {
     color: white;
     font-family: Eagle Lake;
+    font-size: 1.2em;
 
     &__image {
             width: 47%;
@@ -15,9 +16,7 @@
         border: ridge rgb(132, 112, 69) 2px;
         background-color: rgb(88, 26, 26);
         color: white;
-        font-family: 'Eagle Lake';
-         font-weight: bold;
-        font-size: large;
+        font-size: .8em;
         -webkit-transition: transform 2s ease-in-out;
         transition: transform 2s ease-in-out;
     }
