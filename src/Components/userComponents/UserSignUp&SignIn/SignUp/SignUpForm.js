@@ -87,7 +87,7 @@ export const SignUpForm = () => {
           className="SignUpForm__input SignUpForm__passwordInputBox"
           type="password"
           onChange={(e) => setNewUserPasswordFromSignUpInput(e.target.value)}
-          placeholder="Enter Your Password"
+          placeholder="Create Your Password"
           value={newUserPasswordFromSignUpInput}
           required
           minLength="8"
