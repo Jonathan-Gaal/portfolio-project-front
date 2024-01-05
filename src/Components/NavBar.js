@@ -16,44 +16,54 @@ const NavBar = () => {
 
   return (
     <div className="NavBar">
-      <div className="NavBar__header">
-        <img className="NavBar__logo" src={navBarLogo} alt="arabic teapot" />
-
-        <div className="NavBar__headerText" onClick={() => navigate("/")}>
+      <img className="NavBar__logo" src={navBarLogo} alt="arabic teapot" />
+      <div className="NavBar__positioningDiv"></div>
+      <div className="NavBar__headerTextAndnavigationButtonsContainer">
+        <div
+          className="NavBar__headerTextAndnavigationButtonsContainer__headerText"
+          onClick={() => navigate("/")}>
           Jon's Palace Of Art
         </div>
-      </div>
 
-      <div className="NavBar__navigationButtons">
-        <button className="seeGalleryBtn" onClick={() => navigate("/gallery")}>
-          Gallerie
-        </button>
+        <div className="NavBar__headerTextAndnavigationButtonsContainer__navigationButtonsContainer">
+          <div className="NavBar__headerTextAndnavigationButtonsContainer__navigationButtonsContainer__navigationButtons">
+            <button className="homeBtn" onClick={() => navigate("/")}>
+              Home
+            </button>
 
-        {loggedInUser ? (
-          <button
-            className="NavBar__dashboardBtn"
-            onClick={() => navigate("/dashboard")}>
-            Dashboard
-          </button>
-        ) : null}
+            <button
+              className="seeGalleryBtn"
+              onClick={() => navigate("/gallery")}>
+              Gallerie
+            </button>
 
-        <button
-          className="NavBar__signUpBtn"
-          onClick={() => navigate("/signup")}>
-          Sign Up
-        </button>
+            {loggedInUser ? (
+              <button
+                className="NavBar__dashboardBtn"
+                onClick={() => navigate("/dashboard")}>
+                Dashboard
+              </button>
+            ) : null}
 
-        {loggedInUser ? (
-          <button className="NavBar__signOutBtn" onClick={signOutButton}>
-            Sign Out
-          </button>
-        ) : (
-          <button
-            className="NavBar__signInBtn"
-            onClick={() => navigate("/signin")}>
-            Sign In
-          </button>
-        )}
+            <button
+              className="NavBar__signUpBtn"
+              onClick={() => navigate("/signup")}>
+              Sign Up
+            </button>
+
+            {loggedInUser ? (
+              <button className="NavBar__signOutBtn" onClick={signOutButton}>
+                Sign Out
+              </button>
+            ) : (
+              <button
+                className="NavBar__signInBtn"
+                onClick={() => navigate("/signin")}>
+                Sign In
+              </button>
+            )}
+          </div>
+        </div>
       </div>
     </div>
   );
