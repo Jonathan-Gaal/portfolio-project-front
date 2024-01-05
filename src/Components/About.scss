@@ -1,9 +1,12 @@
 .About{
     &__img {
-            width: 85%;
+        display: block;
+            width: 100%;
             border: ridge rgb(172, 146, 85) 2.5px;
             border-radius: 20px;
             margin-top: 1.8%;
+            margin-left: auto;
+            margin-right: auto;
         }
     
     &__header {
@@ -95,11 +98,13 @@
         width: 100%;
         height: 100%;
         border-radius: 10px;
-
-        .alice-carousel__next-btn-wrapper{
         margin-left: auto;
-        margin-right: 500px;
-        }
+        margin-bottom: auto;
+
+        // .alice-carousel__next-btn-wrapper{
+        // margin-left: auto;
+        // // margin-right: 500px;
+        // }
 
        .image1, .image2, .image3  {
         width: 100%;

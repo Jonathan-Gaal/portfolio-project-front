@@ -1,18 +1,7 @@
-.NavBar a {
-    width: 100%;
-    text-decoration: none;
-    color: white;
-}
-.NavBar button {
-    font-size: small;
-}
-
-
 .NavBar {
     display: flex;
-    flex-flow: wrap;
+    align-items: center;
     width: 100vw;
-    min-height: 120px;
     margin-bottom: 1%;
     background-image: url("../assets/navBarBG.jpg");
     background-repeat: initial;
@@ -20,79 +9,124 @@
     border-bottom: ridge rgb(95, 86, 67) 2.5px;
     font-family: 'Eagle Lake';
 
-// logo and header text are children
-    &__header {
-        width: 10%;
-        min-width: 300px;
-        display: flex;
-        margin-left: 2%;
-        margin-top: auto;
-        margin-bottom: auto;
-        margin-right: 15%;
-
+    & button {
+        font-size: small;
     }
 
     &__logo {
         display: inline-block;
-        height: 85%;
-        width: 10%;
-        min-width: 100px;
-        min-width: 80px;
+        height: 100px;
+        width: 80px;
+        margin: .5%;
         border: ridge rgb(132, 112, 69) 2px;
         border-radius: 50%;
     }
 
-    &__headerText {
-        height: 10%;
-        margin-left: 5%;
-        font-size: 1.4rem;
-        text-wrap: nowrap;
-        text-align: center;
-        padding: 2%;
-        border-radius: 15px;
-        border: ridge rgb(116, 102, 69) 2px;
-        color: white;
-        background-color: rgb(102, 24, 24);
+   
+
+
+    &__headerTextAndnavigationButtonsContainer {
+      
+        width: 25%;
+        height: 100%;
+
+        &__headerText {
+                display: inline-block;
+                width: 100%;
+                font-size: 2rem;
+                font-weight: bold;
+                text-wrap: nowrap;
+                text-decoration:underline;
+                padding: 1%;
+                padding-left: 2%;
+                padding-right: 2%;
+                border-radius: 15px;
+                color: white;
+                
+      
+  
+        
+            }
+        
+            &__headerText:hover {
+                transform: scale(1);
+                rotate: 4deg;
+                cursor: pointer;
+                color: rgb(255, 174, 0);
+            }
+
+
+
+        &__navigationButtonsContainer {
+            // margin-left: 190%;
+           
+       
+
+
+
+
+            &__navigationButtons {
+                    display: flex;
+            
+                    width: 90%;
+                }
+
+
+        }
+
+
+
+
+        
+
+        
+
+
+      
+
     }
 
-    &__HeaderText:hover {
-        transform: scale(1);
-        rotate: 4deg;
-        cursor: pointer;
-        color: rgb(255, 174, 0);
-    }
+    
+
+   
 
 
-    &__navigationButtons {
-        display: flex;
-
-        margin-left: 10%;
-        width: 90%;
-    }
-
+    
     // MEDIA QUERIES
 
     @media screen and (max-width: 768px) {
-        .NavBar h1 {
-            font-size: 1rem;
-            padding: 5%;
-        }
+     
 
 
 
-        .navBarHeaderText {
+        &__headerText {
             font-size: 1.1rem;
-            padding-left: 3%;
-            padding-right: 3%;
+      
         }
 
-        .navBarButtons {
-            margin-left: 18%;
-
-
-
-
+        &____headerTextAndnavigationButtonsContainer {
+            &__navigationButtonsContainer {
+                    margin-left: 200%;
+                    color: red;
+            
+            
+            
+            
+                    &__navigationButtons {
+                        display: flex;
+            
+                        width: 90%;
+            
+                    }
+            
+            
+                }
         }
+
+
+
+                
+     
 
 
 
