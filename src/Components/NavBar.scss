@@ -58,7 +58,7 @@
 
 
         &__navigationButtonsContainer {
-            // margin-left: 190%;
+       
            
        
 
@@ -69,6 +69,7 @@
                     display: flex;
             
                     width: 90%;
+                  
                 }
 
 
@@ -96,18 +97,29 @@
 
     @media screen and (max-width: 768px) {
      
+        &__logo {
+            
+                height: 75px;
+                width: 55px;
+                margin: .5%;
+                margin-left: 12%;
+                
+             
+            }
 
 
 
-        &__headerText {
-            font-size: 1.1rem;
-      
-        }
+        &__headerTextAndnavigationButtonsContainer {
 
-        &____headerTextAndnavigationButtonsContainer {
+
+            &__headerText {
+                font-size: 1.5rem;
+        
+            }
+
             &__navigationButtonsContainer {
-                    margin-left: 200%;
-                    color: red;
+                    margin-left: auto;
+                
             
             
             
@@ -115,7 +127,12 @@
                     &__navigationButtons {
                         display: flex;
             
-                        width: 90%;
+                        width: 100%;
+
+                        & button {
+                            width: 100%;
+                            font-size: .6em;
+                        }
             
                     }
             

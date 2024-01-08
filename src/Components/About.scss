@@ -48,14 +48,14 @@
                 font-family: roboto;
                 
 
-                    .devsEmailLink {
+                    .devsEmailLink, .devsGitHubLink {
                         // background-color: red;
-                        // color: orange;
+                        color: white;
                     
-                            color: orange;
+                           
                         
                      &:hover{
-                    color: white;
+                    color: orange;
                     text-decoration: none;
                      }
                     a:visited {
@@ -66,19 +66,6 @@
             
                     }
             
-                    .devsGitHubLink {
-                        // background-color: green;
-                        color: orange;
-
-                    &:hover {
-                    color: white;
-                    text-decoration: none;
-                    }
-                    a:visited {
-                    color: white;
-                    text-decoration: underline;
-                    }
-                    }
             
                    
 
@@ -117,6 +104,29 @@
 
 
     }
+
+         @media screen and (max-width: 768px) {
+            &__jonDetails {
+                    .About__jonLinks {
+                        display: block;
+                        font-size: .9em;
+                        text-align: justify;
+                        margin-left: auto;
+                        margin-right: auto;
+                    }
+            
+                    .bio {
+                        // background-color: blue;
+                        width: 54%;
+                        margin-left: auto;
+                        margin-right: auto;
+                        font-size: .8rem;
+                        text-align: justify;
+                        font-family: roboto;
+                    }
+                }
+
+         }
 
 
 
