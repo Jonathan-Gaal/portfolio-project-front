@@ -41,4 +41,17 @@
             cursor: pointer;
                 
     }
+
+        @media screen and (max-width: 768px) {
+            &__dashboardNavigationBtns {
+                    
+                    width: 90%;
+                    
+                }
+
+            &__img {
+                    width: 90%;
+                   
+                }
+        }
 }
