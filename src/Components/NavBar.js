@@ -17,7 +17,7 @@ const NavBar = () => {
   return (
     <div className="NavBar">
       <img className="NavBar__logo" src={navBarLogo} alt="arabic teapot" />
-      <div className="NavBar__positioningDiv"></div>
+
       <div className="NavBar__headerTextAndnavigationButtonsContainer">
         <div
           className="NavBar__headerTextAndnavigationButtonsContainer__headerText"
@@ -27,10 +27,6 @@ const NavBar = () => {
 
         <div className="NavBar__headerTextAndnavigationButtonsContainer__navigationButtonsContainer">
           <div className="NavBar__headerTextAndnavigationButtonsContainer__navigationButtonsContainer__navigationButtons">
-            <button className="homeBtn" onClick={() => navigate("/")}>
-              Home
-            </button>
-
             <button
               className="seeGalleryBtn"
               onClick={() => navigate("/gallery")}>
