@@ -5,7 +5,7 @@ import { SignIn } from "./Pages/SignIn";
 import { SignUp } from "./Pages/SignUp";
 import { Dashboard } from "./Pages/Dashboard";
 import { Account } from "./Pages/Account";
-import { UserFavorites } from "./Components/UserComponents/UserFavorites";
+import { UserFavorites } from "./Components/UserComponents/UserFavorites.js";
 import { Cart } from "./Pages/Cart";
 import { PaymentSuccess } from "./Pages/PaymentSuccess";
 import { PaymentFailed } from "./Pages/PaymentFailed";
