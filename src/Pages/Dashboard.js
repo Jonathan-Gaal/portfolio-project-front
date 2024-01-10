@@ -1,4 +1,5 @@
-import { UserDashboard } from "../Components/UserComponents/UserDashboard";
+import { UserDashboard } from "../Components/UserComponents/UserDashboard.js";
+
 import { useAuth } from "../Providers/userProvider";
 
 export const Dashboard = () => {
