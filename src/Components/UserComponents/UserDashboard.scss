@@ -1,0 +1,57 @@
+.UserDashboard a {
+    color: white;
+    text-decoration: none;
+  
+}
+.UserDashboard a:hover {
+    color: white;
+    text-decoration: none;
+    color: rgb(255, 174, 0);
+}
+
+.UserDashboard {
+    color: white;
+    font-family: 'Eagle Lake';
+
+    &__img {
+            width: 50%;
+            margin-top: 2%;
+            border: ridge rgb(129, 109, 65) 2.5px;
+            border-radius: 20px;
+    }
+
+
+
+    &__dashboardNavigationBtns {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        width: 50%;
+        height: 10vh;
+        margin-left: auto;
+        margin-right: auto;
+        background-color: rgb(102, 24, 24);
+        border: ridge #816d41 2.5px;
+        border-radius: 15px;
+    }
+
+    &__seeAccountDetailsBtn:hover, &__seeFavoritesBtn:hover, &__seeShoppingCartBtn:hover  {
+        transform: scale(1);
+            rotate: 4deg;
+            cursor: pointer;
+                
+    }
+
+        @media screen and (max-width: 768px) {
+            &__dashboardNavigationBtns {
+                    
+                    width: 90%;
+                    
+                }
+
+            &__img {
+                    width: 90%;
+                   
+                }
+        }
+}

@@ -1,0 +1,20 @@
+.FailedUserPayment {
+    color: white;
+
+    &__image {
+        width: 25%;
+        margin-top: 2%;
+        margin-bottom: 2%;
+        border: ridge rgb(129, 109, 65) 2.5px;
+            border-radius: 20px;
+    }
+
+    &__message {
+        margin-bottom: 2%;
+        font-size: 1.2em;
+        font-family: 'Eagle Lake';
+
+    }
+   
+
+}
