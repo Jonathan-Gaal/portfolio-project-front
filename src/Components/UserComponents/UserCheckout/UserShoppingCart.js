@@ -14,6 +14,7 @@ import { calculateUserShoppingCartOrUserCheckoutTotal } from "../../../helpers";
 import "./UserShoppingCart.scss";
 
 export const UserShoppingCart = () => {
+  const stripe = Stripe(process.env.REACT_APP_STRIPE_PK);
   const navigate = useNavigate();
   const { loggedInUser, userShoppingCart } = useAuth();
 
@@ -29,33 +30,68 @@ export const UserShoppingCart = () => {
     };
   }
 
-  const handleSubmitAtCheckout = () => {
+  const handleSubmitAtCheckout = (e) => {
+    e.preventDefault();
     axios
       .post(
         `${API}/create-checkout-session`,
         {
-          items: userShoppingCart,
+          items: JSON.stringify(userShoppingCart),
         },
         {
           headers: {
-            "Access-Control-Allow-Origin": "*",
+            // "Access-Control-Allow-Origin": "*",
+            "Content-Type": "application/json",
           },
         }
       )
       .then((res) => {
         console.log("RES FROM CHECKOUT POST", res);
 
-        console.log(res.request.response);
         if (res?.request?.response) {
-          // setStripeUserCheckoutSession(res.data);
+          setStripeUserCheckoutSession(res.data);
 
-          window.location.replace(`${res.data.url}`);
+          // window.location.replace(`${res.data.url}`);
         }
+      })
+      .then((session) => {
+        stripe.redirectToCheckout({ sessionId: session.id });
       })
       .catch((err) => {
         console.error(err);
       });
   };
+
+  // const handleSubmitAtCheckout = (e) => {
+  //
+  //   axios
+  //     .post(
+  //       `${API}/create-checkout-session`,
+  //       {
+  //         items: userShoppingCart,
+  //       },
+  //       {
+  //         headers: {
+  //           // "Access-Control-Allow-Origin": "*",
+  //
+  //         },
+  //
+  //       }
+  //     )
+  //     .then((res) => {
+  //       console.log("RES FROM CHECKOUT POST", res);
+
+  //       console.log(res.request.response);
+  //       if (res?.request?.response) {
+  //         // setStripeUserCheckoutSession(res.data);
+
+  //         window.location.replace(`${res.data.url}`);
+  //       }
+  //     })
+  //     .catch((err) => {
+  //       console.error(err);
+  //     });
+  // };
 
   useEffect(() => {
     const formattedUserShoppingCartDisplayTotal = new Intl.NumberFormat(
@@ -89,7 +125,7 @@ export const UserShoppingCart = () => {
             </div>
             <button
               className="UserShoppingCart__checkoutButton, largeFont"
-              onSubmit={handleSubmitAtCheckout}>
+              onClick={handleSubmitAtCheckout}>
               Place order
             </button>
           </div>
