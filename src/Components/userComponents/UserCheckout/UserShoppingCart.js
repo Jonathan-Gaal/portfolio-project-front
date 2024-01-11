@@ -14,7 +14,7 @@ import { calculateUserShoppingCartOrUserCheckoutTotal } from "../../../helpers";
 import "./UserShoppingCart.scss";
 
 export const UserShoppingCart = () => {
-  const stripe = Stripe(process.env.REACT_APP_STRIPE_PK);
+  const stripe = loadStripe(process.env.REACT_APP_STRIPE_PK);
   const navigate = useNavigate();
   const { loggedInUser, userShoppingCart } = useAuth();
 
