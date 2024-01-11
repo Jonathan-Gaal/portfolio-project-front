@@ -30,8 +30,7 @@ export const UserShoppingCart = () => {
     };
   }
 
-  const handleSubmitAtCheckout = (e) => {
-    e.preventDefault();
+  const handleSubmitAtCheckout = () => {
     axios
       .post(
         `${API}/create-checkout-session`,
