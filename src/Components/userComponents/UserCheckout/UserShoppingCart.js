@@ -89,7 +89,7 @@ export const UserShoppingCart = () => {
             </div>
             <button
               className="UserShoppingCart__checkoutButton, largeFont"
-              onClick={handleSubmitAtCheckout}>
+              onSubmit={handleSubmitAtCheckout}>
               Place order
             </button>
           </div>
