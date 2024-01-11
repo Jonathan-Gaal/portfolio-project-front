@@ -40,7 +40,7 @@ export const UserShoppingCart = () => {
         },
         {
           headers: {
-            // "Access-Control-Allow-Origin": "*",
+            "Access-Control-Allow-Origin": "*",
             "Content-Type": "application/json",
           },
         }
