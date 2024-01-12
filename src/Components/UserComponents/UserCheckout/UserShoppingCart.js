@@ -36,12 +36,12 @@ export const UserShoppingCart = () => {
         `${API}/create-checkout-session`,
         {
           items: userShoppingCart,
-          authorization: process.env.REACT_APP_STRIPE_PK,
         },
         {
           headers: {
             "Access-Control-Allow-Origin": "*",
             "Content-Type": "application/json",
+            authorization: process.env.REACT_APP_STRIPE_PK,
           },
         }
       )
