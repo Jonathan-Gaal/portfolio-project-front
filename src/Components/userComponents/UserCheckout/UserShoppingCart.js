@@ -35,6 +35,7 @@ export const UserShoppingCart = () => {
       .post(
         `${API}/create-checkout-session`,
         {
+          apiKey: process.env.REACT_APP_STRIPE_SK,
           items: userShoppingCart,
         },
         {
