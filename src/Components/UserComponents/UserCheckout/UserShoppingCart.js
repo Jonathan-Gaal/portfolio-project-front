@@ -31,6 +31,7 @@ export const UserShoppingCart = () => {
   }
 
   const handleSubmitAtCheckout = () => {
+    console.log(process.env.REACT_APP_STRIPE_PK);
     axios
       .post(
         `${API}/create-checkout-session`,
@@ -41,7 +42,7 @@ export const UserShoppingCart = () => {
           headers: {
             "Access-Control-Allow-Origin": "*",
             "Content-Type": "application/json",
-            authorization: process.env.REACT_APP_STRIPE_PK,
+            authorization: `${process.env.REACT_APP_STRIPE_PK}`,
           },
         }
       )
