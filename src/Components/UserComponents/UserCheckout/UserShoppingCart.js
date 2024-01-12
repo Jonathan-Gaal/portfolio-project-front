@@ -49,14 +49,11 @@ export const UserShoppingCart = () => {
         console.log("RES FROM CHECKOUT POST", res);
 
         if (res?.request?.response) {
-          setStripeUserCheckoutSession(res.data);
-
-          window.location.href(`${res.data.url}`);
+          // setStripeUserCheckoutSession(res.data);
+          window.location.replace(`${res.data.url}`);
         }
       })
-      // .then((session) => {
-      //   stripe.redirectToCheckout({ sessionId: session.id });
-      // })
+
       .catch((err) => {
         console.error(err);
       });
