@@ -35,7 +35,7 @@ export const UserShoppingCart = () => {
       .post(
         `${API}/create-checkout-session`,
         {
-          items: JSON.stringify(userShoppingCart),
+          items: userShoppingCart,
         },
         {
           headers: {
@@ -50,12 +50,12 @@ export const UserShoppingCart = () => {
         if (res?.request?.response) {
           setStripeUserCheckoutSession(res.data);
 
-          // window.location.replace(`${res.data.url}`);
+          window.location.href(`${res.data.url}`);
         }
       })
-      .then((session) => {
-        stripe.redirectToCheckout({ sessionId: session.id });
-      })
+      // .then((session) => {
+      //   stripe.redirectToCheckout({ sessionId: session.id });
+      // })
       .catch((err) => {
         console.error(err);
       });
