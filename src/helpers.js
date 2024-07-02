@@ -5,6 +5,7 @@ export const validateUserSignUpOrSignInEmail = (userEmail) => {
 };
 
 export const validateUserPassword = (passwordToTest) => {
+  console.log(passwordToTest);
   if (
     /[a-z]/.test(passwordToTest) &&
     /[A-Z]/.test(passwordToTest) &&
