@@ -31,7 +31,6 @@ export const UserShoppingCart = () => {
   }
 
   const handleSubmitAtCheckout = () => {
-    console.log(process.env.REACT_APP_STRIPE_PK);
     axios
       .post(
         `${API}/create-checkout-session`,
