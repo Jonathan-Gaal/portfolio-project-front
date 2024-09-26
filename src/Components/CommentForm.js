@@ -18,12 +18,6 @@ function CommentForm(props) {
 
   let currentDate = `${month}-${day}-${year}`;
 
-  //   setPostDate(currentDate);
-
-  console.log(postDate);
-
-  //   currentDate();
-
   const [comment, setComment] = useState({
     commenter: "",
     comment: "",
@@ -41,9 +35,9 @@ function CommentForm(props) {
     }
   }, [id, commentDetails, props]);
 
-  const handleSubmit = (e) => {
+  const handleSubmitComment = (e) => {
     e.preventDefault();
-    props.handleSubmit(comment, id);
+    props.handleSubmitComment(comment, id);
     if (commentDetails) {
       props.toggleView();
     }
@@ -57,7 +51,7 @@ function CommentForm(props) {
   return (
     <div className="EditComment">
       {props.children}
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmitComment}>
         <label htmlFor="commenter">Commenter:</label>
         <input
           id="commenter"
