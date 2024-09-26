@@ -6,6 +6,8 @@ import "./Comment.scss";
 const Comment = ({ oneComment, handleDeleteComment, handleSubmit }) => {
   const { commenter, comment, post_date, id } = oneComment;
 
+  const displayPostDate = new Date(post_date).toLocaleDateString();
+
   const [viewCommentEditForm, toggleViewCommentEditForm] = useState(false);
 
   const toggleView = () => {
@@ -23,7 +25,7 @@ const Comment = ({ oneComment, handleDeleteComment, handleSubmit }) => {
       ) : (
         <div className="Comment__commentContainer">
           <div className="Comment__commenter">Posted by: {commenter} -</div>
-          <div className="Comment__datePosted"> On: {post_date}</div>
+          <div className="Comment__datePosted"> On: {displayPostDate}</div>
           <div className="Comment__comment">{comment}</div>
         </div>
       )}

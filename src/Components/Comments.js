@@ -64,7 +64,7 @@ const Comments = ({ showComments }) => {
     <>
       {showComments ? (
         <section className="Comments">
-          <CommentForm handleSubmit={handleCreateComment}></CommentForm>
+          <CommentForm handleSubmitComment={handleCreateComment}></CommentForm>
           {comments.map((comment) => (
             <Comment
               key={comment.id}
