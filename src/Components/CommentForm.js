@@ -53,7 +53,9 @@ function CommentForm(props) {
       {props.children}
       <form onSubmit={handleSubmitComment}>
         <div className="commenter">
-          <label htmlFor="commenter">Commenter:</label>
+          <label htmlFor="commenter" id="commenterInputLabel">
+            Commenter:
+          </label>
           <input
             id="commenter"
             value={comment.commenter}
@@ -65,7 +67,9 @@ function CommentForm(props) {
         </div>
 
         <div className="comment">
-          <label htmlFor="comment">Comment:</label>
+          <label htmlFor="comment" id="commentInputLabel">
+            Comment:
+          </label>
           <input
             id="comment"
             type="text"
