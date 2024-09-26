@@ -52,28 +52,33 @@ function CommentForm(props) {
     <div className="EditComment">
       {props.children}
       <form onSubmit={handleSubmitComment}>
-        <label htmlFor="commenter">Commenter:</label>
-        <input
-          id="commenter"
-          value={comment.commenter}
-          type="text"
-          onChange={handleTextChange}
-          placeholder="Your name..."
-          required
-        />
-        <label htmlFor="comment">Comment:</label>
-        <input
-          id="comment"
-          type="text"
-          required
-          value={comment.comment}
-          onChange={handleTextChange}
-          placeholder="Your comment..."
-        />
+        <div className="commenter">
+          <label htmlFor="commenter">Commenter:</label>
+          <input
+            id="commenter"
+            value={comment.commenter}
+            type="text"
+            onChange={handleTextChange}
+            placeholder="Your name..."
+            required
+          />
+        </div>
+
+        <div className="comment">
+          <label htmlFor="comment">Comment:</label>
+          <input
+            id="comment"
+            type="text"
+            required
+            value={comment.comment}
+            onChange={handleTextChange}
+            placeholder="Your comment..."
+          />
+        </div>
 
         <br />
 
-        <input className="submitBtn" type="submit" />
+        <input className="submitBtn" type="submit" value="Post Comment" />
       </form>
     </div>
   );

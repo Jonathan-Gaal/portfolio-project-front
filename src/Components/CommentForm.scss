@@ -1,3 +1,24 @@
+.submitBtn{
+   display: block;
+   margin-left: auto;
+   margin-right: auto;
+   margin-top: -7%;
+   border: ridge rgb(132, 112, 69) 2px;
+   border-radius: 20px;
+    background-color: rgb(88, 26, 26);
+    padding-left: 1.5%;
+    padding-right: 1.5%;
+    color: white;
+    font-family: 'Eagle Lake';
+    /* font-weight: bold; */
+    font-size: large;
+    -webkit-transition: transform 2s ease-in-out;
+    transition: transform 2s ease-in-out;
+   
+
+}
+
+
 .submitBtn:hover {
 transform: scale(1);
 rotate: 4.1deg;
