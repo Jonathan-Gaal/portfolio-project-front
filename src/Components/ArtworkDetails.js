@@ -41,6 +41,9 @@ const ArtworkDetails = () => {
   };
 
   const addGalleryItemToUserShoppingCart = async () => {
+    if (!loggedInUser) {
+      window.alert("Please sign in");
+    }
     if (await checkIfItemExistsInUserShoppingCart(userShoppingCart, id)) {
       window.alert("Item is already in your cart.");
     } else {
