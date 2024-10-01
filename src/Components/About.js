@@ -113,22 +113,20 @@ const About = () => {
 
         <div className="About__jonLinks">
           <div className="devsEmail">
-            <strong>Contact: </strong>
-            <a
+            <div
               className="devsEmailLink"
               target="blank"
               href={`mailto: jonathangaal@pursuit.org`}>
-              jonathangaal@pursuit.org
-            </a>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;jonathangaal@pursuit.org
+            </div>
           </div>
 
           <div className="devsGitHub">
-            <strong>GitHub: </strong>
             <a
               className="devsGitHubLink"
               target="blank"
               href="https://github.com/Jonathan-Gaal">
-              https://github.com/Jonathan-Gaal
+              Github: Jonathan-Gaal
             </a>
           </div>
         </div>
