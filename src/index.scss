@@ -2,15 +2,17 @@
     box-sizing: border-box;
 }
 
+
 body {
     margin: 0;
+    color: rgb(244, 240, 240);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    font-family: 'Eagle Lake', cursive;
+    font-family: 'Times New Roman', Times, serif;
     text-align: center;
     box-sizing: border-box;
     background-color: rgb(35, 33, 33);
-    background-image: linear-gradient(to right, rgb(44, 42, 42), rgb(35, 33, 33), rgb(17, 25, 25));
+    background-image: linear-gradient( to right, rgb(44, 42, 42), rgb(52, 49, 49), rgb(17, 25, 25));
 }
 
 input {
@@ -24,14 +26,13 @@ label {
 }
 
 button {
-    border-radius: 50px;
+    // border-radius: 50px;
     margin-left: .5%;
     margin-bottom: 3%;
-    border: ridge rgb(132, 112, 69) 2.5px;
+    // border: ridge rgb(132, 112, 69) 2.5px;
     background-color: rgb(88, 26, 26);
-    color: white;
+    color: rgb(244, 240, 240);
     font-family: 'Eagle Lake';
-    /* font-weight: bold; */
     font-size: small;
     -webkit-transition: transform 2s ease-in-out;
     transition: transform 2s ease-in-out;
@@ -44,7 +45,7 @@ button:hover {
     transform: scale(1);
     rotate: 4deg;
     cursor: pointer;
-    color: rgb(255, 174, 0);
+    color: #cd9a2b;
 }
 
 
@@ -71,7 +72,7 @@ button:hover {
     padding: 1%;
     font-family: 'Eagle Lake', cursive;
     font-size: 1.8em;
-    color: white;
+    color: rgb(244, 240, 240);
     text-wrap: nowrap;
 
 }

@@ -28,7 +28,7 @@ const NavBar = () => {
         <div className="NavBar__headerTextAndnavigationButtonsContainer__navigationButtonsContainer">
           <div className="NavBar__headerTextAndnavigationButtonsContainer__navigationButtonsContainer__navigationButtons">
             <button
-              className="seeGalleryBtn"
+              className="NavBar__dashboardBtn"
               onClick={() => navigate("/gallery")}>
               Gallerie
             </button>
@@ -42,18 +42,18 @@ const NavBar = () => {
             ) : null}
 
             <button
-              className="NavBar__signUpBtn"
+              className="NavBar__dashboardBtn"
               onClick={() => navigate("/signup")}>
               Sign Up
             </button>
 
             {loggedInUser ? (
-              <button className="NavBar__signOutBtn" onClick={signOutButton}>
+              <button className="NavBar__dashboardBtn" onClick={signOutButton}>
                 Sign Out
               </button>
             ) : (
               <button
-                className="NavBar__signInBtn"
+                className="NavBar__dashboardBtn"
                 onClick={() => navigate("/signin")}>
                 Sign In
               </button>
