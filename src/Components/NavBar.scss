@@ -3,15 +3,22 @@
     align-items: center;
     width: 100vw;
     margin-bottom: 1%;
-    background-image: url("../assets/navBarBG.jpg");
+    background-image: url("../assets/navBar2.jpg");
     background-repeat: initial;
-    color: white;
-    border-bottom: ridge rgb(95, 86, 67) 2.5px;
+    border-bottom: ridge rgb(95, 86, 67) 2px;
     font-family: 'Eagle Lake';
 
-    & button {
-        font-size: small;
+
+    
+
+    &__dashboardBtn {
+        background-color: transparent;
+        border: none;
+        font-size: 1rem;
+        font-weight: bold;
     }
+
+  
 
     &__logo {
         display: inline-block;
@@ -52,7 +59,7 @@
                 transform: scale(1);
                 rotate: 4deg;
                 cursor: pointer;
-                color: rgb(255, 174, 0);
+                color: #cd9a2b;
             }
 
 
@@ -67,7 +74,6 @@
 
             &__navigationButtons {
                     display: flex;
-            
                     width: 90%;
                   
                 }
