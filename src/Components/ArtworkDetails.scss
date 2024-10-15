@@ -1,6 +1,17 @@
 
 .ArtworkDetails{
 
+&__categoryPriceContainer {
+   
+    
+   
+}
+
+#category, #price {
+    display:inline-block
+    
+    
+}
 
 
     &__caption{
@@ -12,14 +23,12 @@
 
          &__image {
              width: 50%;
-             border-radius: 25px;
-             border: ridge rgb(172, 146, 85) .1px;
          }
 
     
 
     &__details {
-    display: grid;
+        display: grid;
         grid-template-rows: max-content;
         row-gap: 1em;
         width: 80%;
@@ -28,6 +37,8 @@
         margin-left: auto;
         margin-right: auto;
         font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+      
     }
 
         &__showPageButtons {
