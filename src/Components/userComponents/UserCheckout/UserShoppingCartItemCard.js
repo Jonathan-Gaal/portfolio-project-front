@@ -46,8 +46,12 @@ export const UserShoppingCartItemCard = ({ userShoppingCartItem }) => {
   const { title, category } = userShoppingCartItemDetails;
 
   return (
-    <div className="UserShoppingCartItemCard">
-      <button onClick={removeItemFromUserShoppingCart}>Remove</button>
+    <div className="applyBorderBtnsUserShoppingCartItemCard">
+      <button
+        className="applyBorderBtns"
+        onClick={removeItemFromUserShoppingCart}>
+        Remove
+      </button>
       <Link
         className="UserShoppingCartItemCard__linkToGalleryItem"
         to={`/gallery/${item_id}`}>

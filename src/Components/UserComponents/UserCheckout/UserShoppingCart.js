@@ -109,7 +109,7 @@ export const UserShoppingCart = () => {
   return (
     <div className="UserShoppingCart">
       <img
-        className="UserShoppingCart__image"
+        className="applyBorder UserShoppingCart__image"
         src={userShoppingCartImage}
         alt="marketplace scene of Europeans buying bronze pots in a near-eastern bazaar"
       />
@@ -121,26 +121,28 @@ export const UserShoppingCart = () => {
               Total: {userShoppingCartTotal}
             </div>
             <button
-              className="UserShoppingCart__checkoutButton, largeFont"
+              className="applyBorderBtns UserShoppingCart__checkoutButton, largeFont"
               onClick={handleSubmitAtCheckout}>
               Place order
             </button>
           </div>
           <div className="UserShoppingCart__navigationButtonsContainer">
-            <div className="UserShoppingCart__backGalleryButton, largeFont">
-              <button
-                onClick={() =>
-                  navigate(`/gallery/${lastShoppingCartItemData.item_id}`)
-                }>
-                Last Gallerie Item
-              </button>
-            </div>
-            <div className="UserShoppingCart__backToDashboardButton, largeFont">
-              <button onClick={() => navigate("/dashboard")}>Dashboard</button>
-            </div>
+            <button
+              className="applyBorderBtns"
+              onClick={() =>
+                navigate(`/gallery/${lastShoppingCartItemData.item_id}`)
+              }>
+              Last Gallerie Item
+            </button>
+
+            <button
+              className="applyBorderBtns applyBorderBtns"
+              onClick={() => navigate("/dashboard")}>
+              Dashboard
+            </button>
           </div>
 
-          <div className="UserShoppingCart__shoppingCartContainer">
+          <div className=" UserShoppingCart__shoppingCartContainer">
             {userShoppingCart?.map((userShoppingCartItem) => {
               return (
                 <UserShoppingCartItemCard
