@@ -23,7 +23,7 @@ function filterArtworkTitlesByArtworkSearchBarInput(
 
     //iterate over the search term (with .every)
     return splitSearchBarInput.every((searchInputWord) => {
-      return lowercasedArtworkTitle.match(searchInputWord);
+      return lowercasedArtworkTitle.includes(searchInputWord);
     });
   });
 }
