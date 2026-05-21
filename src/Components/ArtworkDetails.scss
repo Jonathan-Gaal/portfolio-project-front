@@ -3,6 +3,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 3rem;
+    height: 100vh;
    
 
 &__imageAndSelectorBarContainer {
@@ -15,7 +16,10 @@
 }
 
  &__detailsAndCommentsContainer {
-    //  width: 50%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+        
  }
 
 #category, #price {
@@ -56,16 +60,17 @@
     }
 
         &__showPageButtons {
+            width: 100%;
             margin-left: auto;
             margin-right: auto;
         }
 
                 &__heading {
                     margin-top: 2%;
-                    font-family: Eagle Lake;
+                    font-family: Roboto;
                     font-weight: bold;
                     font-size: 1.7em;
-                    text-decoration: underline;
+                   
                 }
 
     &__description {
