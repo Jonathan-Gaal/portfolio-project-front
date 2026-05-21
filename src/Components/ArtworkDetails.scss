@@ -6,7 +6,11 @@
    
 
 &__imageAndSelectorBarContainer {
-    // width: 50%;
+    .ArtworkDetails__imageAndSelectorBarContainer {
+            display: grid;
+            grid-template-rows: 1fr auto;
+            height: 100%;
+        }
 }
 
  &__detailsAndCommentsContainer {
@@ -28,7 +32,11 @@
     }
 
          &__image {
-             width: 50%;
+          
+                    width: 100%;
+                    height: 100%;
+                    object-fit: contain;
+                
          }
 
     
