@@ -112,69 +112,73 @@ const ArtworkDetails = () => {
 
   return (
     <div className="ArtworkDetails">
-      <img
-        className="applyBorder ArtworkDetails__image"
-        src={selectedArtworkImage}
-        alt="artwork"
-      />
-      <div className="ArtworkDetails__caption">
-        {selectedArtworkImageCaption}
+      <div className="ArtworkDetails__imageAndSelectorBarContainer">
+        <img
+          className="applyBorder ArtworkDetails__image"
+          src={selectedArtworkImage}
+          alt="artwork"
+        />
+        <div className="ArtworkDetails__caption">
+          {selectedArtworkImageCaption}
+        </div>
+        <ArtworkDetailsImageSelectorBar
+          allArtworkImages={allArtworkImages}
+          setSelectedArtworkImage={setSelectedArtworkImage}
+          setSelectedArtworkImageCaption={setSelectedArtworkImageCaption}
+        />
       </div>
-      <ArtworkDetailsImageSelectorBar
-        allArtworkImages={allArtworkImages}
-        setSelectedArtworkImage={setSelectedArtworkImage}
-        setSelectedArtworkImageCaption={setSelectedArtworkImageCaption}
-      />
-      <div className="ArtworkDetails__heading">{title}</div>
-      <div className="ArtworkDetails__info"></div>
-      <div className="ArtworkDetails__details">
-        <div className="ArtworkDetails__categoryPriceContainer">
-          <div className="ArtworkDetails__detail" id="category">
-            Category: {category}
-          </div>{" "}
-          <div className="ArtworkDetails__detail" id="price">
-            Price: ${price}
+      <div className="ArtworkDetails__detailsAndCommentsContainer">
+        <div className="ArtworkDetails__heading">{title}</div>
+        <div className="ArtworkDetails__info"></div>
+        <div className="ArtworkDetails__details">
+          <div className="ArtworkDetails__categoryPriceContainer">
+            <div className="ArtworkDetails__detail" id="category">
+              Category: {category}
+            </div>{" "}
+            <div className="ArtworkDetails__detail" id="price">
+              Price: ${price}
+            </div>
+          </div>
+
+          <div className="ArtworkDetails__detail __dimensions">
+            Dimensions: Width: {width} x Height: {height} x Depth: {depth}{" "}
+            Diameter:
+            {diameter}
+          </div>
+          <div className="ArtworkDetails__detail ArtworkCreatedAndPostedDates">
+            Created on: {convertDateToHumanReadableFormat(creation_date)}
+            Posted on: {convertDateToHumanReadableFormat(post_date)}
+          </div>
+          <div className="ArtworkDetails__detail __description">
+            Description: {description}
           </div>
         </div>
+        <div className="ArtworkDetails__showPageButtons">
+          <button
+            className="applyBorderBtns galleryBtn"
+            onClick={() => navigate("/gallery")}>
+            Gallerie
+          </button>
 
-        <div className="ArtworkDetails__detail __dimensions">
-          Dimensions: Width: {width} x Height: {height} x Depth: {depth}{" "}
-          Diameter:
-          {diameter}
+          <button
+            className="applyBorderBtns addToCartBtn"
+            onClick={addGalleryItemToUserShoppingCart}>
+            Add to Cart
+          </button>
+          <button
+            className="applyBorderBtns cartBtn"
+            onClick={() => navigate("/cart")}>
+            Cart
+          </button>
+          <button
+            className="applyBorderBtns commentBtn"
+            onClick={displayComments}>
+            Comments
+          </button>
         </div>
-        <div className="ArtworkDetails__detail ArtworkCreatedAndPostedDates">
-          Created on: {convertDateToHumanReadableFormat(creation_date)}
-          Posted on: {convertDateToHumanReadableFormat(post_date)}
-        </div>
-        <div className="ArtworkDetails__detail __description">
-          Description: {description}
-        </div>
+
+        <Comments showComments={showComments} />
       </div>
-      <div className="ArtworkDetails__showPageButtons">
-        <button
-          className="applyBorderBtns galleryBtn"
-          onClick={() => navigate("/gallery")}>
-          Gallerie
-        </button>
-
-        <button
-          className="applyBorderBtns addToCartBtn"
-          onClick={addGalleryItemToUserShoppingCart}>
-          Add to Cart
-        </button>
-        <button
-          className="applyBorderBtns cartBtn"
-          onClick={() => navigate("/cart")}>
-          Cart
-        </button>
-        <button
-          className="applyBorderBtns commentBtn"
-          onClick={displayComments}>
-          Comments
-        </button>
-      </div>
-
-      <Comments showComments={showComments} />
     </div>
   );
 };
