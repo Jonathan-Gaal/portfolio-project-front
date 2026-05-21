@@ -2,5 +2,10 @@
     width: 100%;
     flex: 1;
     overflow-y: auto;
+    scrollbar-width: thin;
+    /* Firefox */
+    scrollbar-color: #9a9a9a #e6e6e6;
+    /* Firefox */
+        
     
 }
