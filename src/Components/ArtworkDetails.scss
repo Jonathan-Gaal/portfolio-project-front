@@ -1,11 +1,17 @@
 
 .ArtworkDetails{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+   
 
-&__categoryPriceContainer {
-   
-    
-   
+&__imageAndSelectorBarContainer {
+    // width: 50%;
 }
+
+ &__detailsAndCommentsContainer {
+    //  width: 50%;
+ }
 
 #category, #price {
     display:inline-block
