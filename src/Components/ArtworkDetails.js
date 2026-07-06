@@ -149,7 +149,7 @@ const ArtworkDetails = () => {
             Created on: {convertDateToHumanReadableFormat(creation_date)}
             Posted on: {convertDateToHumanReadableFormat(post_date)}
           </div>
-          <div className="ArtworkDetails__detail __description">
+          <div className="ArtworkDetails__detail ArtworkDetails__description">
             Description: {description}
           </div>
         </div>

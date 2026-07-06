@@ -1,7 +1,7 @@
 
 .ArtworkDetails{
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
     gap: 3rem;
     height: 100vh;
    
@@ -12,6 +12,7 @@
             align-content: start;
             gap: 0.75rem;
             height: 100%;
+            padding: 1rem 1.25rem 0;
 
 }
 
@@ -19,6 +20,9 @@
     overflow: hidden;
     display: flex;
     flex-direction: column;
+    align-items: stretch;
+    padding-left: 1rem;
+    padding-right: 1rem;
         
  }
 
@@ -39,7 +43,7 @@
          &__image {
             display: block;
             width: 100%;
-            height: 100%;
+            height: auto;
             object-fit: contain;    
          }
 
@@ -49,11 +53,12 @@
         display: grid;
         grid-template-rows: max-content;
         row-gap: 1em;
-        width: 80%;
+        width: 100%;
         margin-top: 2%;
         margin-bottom: 2%;
-        margin-left: auto;
-        margin-right: auto;
+        margin-left: 0;
+        margin-right: 0;
+        text-align: left;
         font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 
       
@@ -67,6 +72,8 @@
 
                 &__heading {
                     margin-top: 2%;
+                    margin-left: 0;
+                    text-align: left;
                     font-family: Roboto;
                     font-weight: bold;
                     font-size: 1.7em;
@@ -74,6 +81,10 @@
                 }
 
     &__description {
+        text-align: justify;
+        text-justify: inter-word;
+        hyphens: auto;
+        padding-right: 12px;
         font-family: roboto;
     }
 }

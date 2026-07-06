@@ -102,16 +102,20 @@
     // MEDIA QUERIES
 
     @media screen and (max-width: 768px) {
+        &__dashboardBtn {
+            text-wrap: no-wrap;
+        }
      
         &__logo {
             
                 height: 75px;
                 width: 55px;
                 margin: .5%;
-                margin-left: 12%;
+               
                 
              
             }
+
 
 
 
