@@ -40,12 +40,13 @@ const NavBar = () => {
                 Dashboard
               </button>
             ) : null}
-
-            <button
-              className="NavBar__dashboardBtn"
-              onClick={() => navigate("/signup")}>
-              Sign Up
-            </button>
+            {loggedInUser ? null : (
+              <button
+                className="NavBar__dashboardBtn"
+                onClick={() => navigate("/signup")}>
+                Sign Up
+              </button>
+            )}
 
             {loggedInUser ? (
               <button className="NavBar__dashboardBtn" onClick={signOutButton}>
